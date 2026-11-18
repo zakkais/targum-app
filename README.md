@@ -21,15 +21,15 @@ across Modern Hebrew, Lashon HaKodesh, Aramaic, Yiddish, and English.
    Yitzhak Frank. Yiddish grammar in a later version.
 6. **Tools** — gematria calculator (Mispar Hechrachi, Siduri, Katan, Atbash,
    with im hakolel), and more to come.
-7. **Flashcards** — make your own cards and lists (Chumash, Gemara, dikduk),
-   Quizlet-style. Public sharing in a later version, once accounts exist.
 
 Plus: **Read mode** (paste a text, tap any word or abbreviation for its
 entry), a **loanwords** section (Greek, French, Persian, and more), and a
 **verb conjugator** (full tables, all binyanim and tenses, offline).
 
-Later versions: recorded audio pronunciation for Hebrew and Yiddish entries,
-and camera text scanning (like Google Lens).
+Later versions: user features — flashcards (make your own cards and lists),
+entry submissions, saved items sync, and public sharing — plus recorded
+audio pronunciation for Hebrew and Yiddish entries, and camera text
+scanning (like Google Lens).
 
 ## Status
 
