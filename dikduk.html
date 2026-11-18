@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Targum — Dikduk</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@400;500;700&family=Heebo:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="assets/css/style.css" rel="stylesheet">
+</head>
+<body>
+<div id="nav-root"></div>
+<noscript><nav class="container py-3" aria-label="Main navigation"><ul class="nav flex-column flex-sm-row gap-2"><li class="nav-item"><a class="nav-link p-0" href="index.html">Dictionary</a></li><li class="nav-item"><a class="nav-link p-0" href="roshei-teivos.html">Roshei Teivos</a></li><li class="nav-item"><a class="nav-link p-0" href="thesaurus.html">Thesaurus</a></li><li class="nav-item"><a class="nav-link p-0" href="dikduk.html">Dikduk</a></li><li class="nav-item"><a class="nav-link p-0" href="loanwords.html">Loanwords</a></li><li class="nav-item"><a class="nav-link p-0" href="conjugator.html">Conjugator</a></li><li class="nav-item"><a class="nav-link p-0" href="tools.html">Tools</a></li><li class="nav-item"><a class="nav-link p-0" href="read.html">Read Mode</a></li><li class="nav-item"><a class="nav-link p-0" href="sources.html">Sources</a></li></ul></nav></noscript>
+<main class="container py-4">
+<h1>Dikduk</h1>
+<p class="lead">A short grammar of Hebrew and Aramaic, following the classical works: the Radak and the Ramchal for Hebrew, and Yitzhak Frank for Aramaic. Tap any example word to open it in the dictionary. See the <a href="sources.html">Sources</a> page for the works this section is based on.</p>
+
+<ul class="nav nav-tabs" id="dikduk-tabs" role="tablist">
+<li class="nav-item" role="presentation">
+<button class="nav-link active" id="hebrew-tab" data-bs-toggle="tab" data-bs-target="#hebrew-pane" type="button" role="tab" aria-controls="hebrew-pane" aria-selected="true">Hebrew</button>
+</li>
+<li class="nav-item" role="presentation">
+<button class="nav-link" id="aramaic-tab" data-bs-toggle="tab" data-bs-target="#aramaic-pane" type="button" role="tab" aria-controls="aramaic-pane" aria-selected="false">Aramaic</button>
+</li>
+</ul>
+
+<div class="tab-content pt-4" id="dikduk-tab-content">
+
+<!-- ============ HEBREW ============ -->
+<div class="tab-pane fade show active" id="hebrew-pane" role="tabpanel" aria-labelledby="hebrew-tab" tabindex="0">
+
+<section class="mb-5">
+<h2 class="h4">The Shoresh (Root)</h2>
+<p>Most Hebrew words are built on a root of three letters, the <span lang="he" dir="rtl">שורש</span>. The root letters carry the core meaning, and different patterns built around them make verbs, nouns, and adjectives. Once you know the root, you can recognize a whole family of words.</p>
+<div class="table-responsive">
+<table class="table table-striped">
+<thead><tr><th scope="col">Root</th><th scope="col">Core meaning</th><th scope="col">Words from the root</th></tr></thead>
+<tbody>
+<tr><td lang="he" dir="rtl">כ־ת־ב</td><td>write</td><td><a href="index.html?q=כתב" lang="he" dir="rtl">כָּתַב</a> (he wrote), <a href="index.html?q=כתב" lang="he" dir="rtl">כְּתָב</a> (writing), <a href="index.html?q=מכתב" lang="he" dir="rtl">מִכְתָּב</a> (letter), <a href="index.html?q=כתבת" lang="he" dir="rtl">כְּתֹבֶת</a> (address)</td></tr>
+<tr><td lang="he" dir="rtl">ש־מ־ר</td><td>guard</td><td><a href="index.html?q=שמר" lang="he" dir="rtl">שָׁמַר</a> (he guarded), <a href="index.html?q=שומר" lang="he" dir="rtl">שׁוֹמֵר</a> (guard), <a href="index.html?q=משמר" lang="he" dir="rtl">מִשְׁמָר</a> (watch, guard duty)</td></tr>
+<tr><td lang="he" dir="rtl">ס־פ־ר</td><td>count; tell</td><td><a href="index.html?q=ספר" lang="he" dir="rtl">סָפַר</a> (he counted), <a href="index.html?q=סופר" lang="he" dir="rtl">סוֹפֵר</a> (scribe), <a href="index.html?q=ספר" lang="he" dir="rtl">סֵפֶר</a> (book), <a href="index.html?q=מספר" lang="he" dir="rtl">מִסְפָּר</a> (number)</td></tr>
+</tbody>
+</table>
+</div>
+<p>The Radak's <span lang="he" dir="rtl">ספר השרשים</span> (Sefer HaShorashim) is arranged by root: every word is listed under its three root letters, with the verb forms divided by binyan.</p>
+</section>
+
+<section class="mb-5">
+<h2 class="h4">The Binyanim (Verb Patterns)</h2>
+<p>A verb root takes different shapes, called binyanim, each with its own meaning. The seven standard binyanim are shown here with the root <span lang="he" dir="rtl">ש־מ־ר</span> (guard).</p>
+<div class="table-responsive">
+<table class="table table-striped">
+<thead><tr><th scope="col">Binyan</th><th scope="col">Meaning</th><th scope="col">Example</th></tr></thead>
+<tbody>
+<tr><td><span lang="he" dir="rtl">פָּעַל</span> (Paal)</td><td>Simple active</td><td><a href="index.html?q=שמר" lang="he" dir="rtl">שָׁמַר</a> — he guarded</td></tr>
+<tr><td><span lang="he" dir="rtl">נִפְעַל</span> (Nifal)</td><td>Passive or reflexive of Paal</td><td><a href="index.html?q=נשמר" lang="he" dir="rtl">נִשְׁמַר</a> — he was guarded</td></tr>
+<tr><td><span lang="he" dir="rtl">פִּעֵל</span> (Piel)</td><td>Intensive active</td><td><a href="index.html?q=שמר" lang="he" dir="rtl">שִׁמֵּר</a> — he kept carefully</td></tr>
+<tr><td><span lang="he" dir="rtl">פֻּעַל</span> (Pual)</td><td>Passive of Piel</td><td><a href="index.html?q=שמר" lang="he" dir="rtl">שֻׁמַּר</a> — he was kept carefully</td></tr>
+<tr><td><span lang="he" dir="rtl">הִפְעִיל</span> (Hifil)</td><td>Causative — to make something happen</td><td><a href="index.html?q=השמיר" lang="he" dir="rtl">הִשְׁמִיר</a> — he caused to guard</td></tr>
+<tr><td><span lang="he" dir="rtl">הֻפְעַל</span> (Hufal)</td><td>Passive of Hifil</td><td><a href="index.html?q=השמר" lang="he" dir="rtl">הֻשְׁמַר</a> — he was made to guard</td></tr>
+<tr><td><span lang="he" dir="rtl">הִתְפַּעֵל</span> (Hitpael)</td><td>Reflexive or reciprocal</td><td><a href="index.html?q=השתמר" lang="he" dir="rtl">הִשְׁתַּמֵּר</a> — he guarded himself</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<section class="mb-5">
+<h2 class="h4">Noun Patterns (Mishkalim)</h2>
+<p>Nouns are also built on patterns. The same root in a different pattern makes a different kind of word.</p>
+<div class="table-responsive">
+<table class="table table-striped">
+<thead><tr><th scope="col">Pattern</th><th scope="col">What it makes</th><th scope="col">Example</th></tr></thead>
+<tbody>
+<tr><td lang="he" dir="rtl">קָטָל</td><td>A plain noun</td><td><a href="index.html?q=דבר" lang="he" dir="rtl">דָּבָר</a> — word, thing</td></tr>
+<tr><td lang="he" dir="rtl">קֹטֵל</td><td>Someone who does the action</td><td><a href="index.html?q=סופר" lang="he" dir="rtl">סוֹפֵר</a> — scribe; <a href="index.html?q=שומר" lang="he" dir="rtl">שׁוֹמֵר</a> — guard</td></tr>
+<tr><td lang="he" dir="rtl">קָטִיל</td><td>An adjective</td><td><a href="index.html?q=חסיד" lang="he" dir="rtl">חָסִיד</a> — pious; <a href="index.html?q=תמים" lang="he" dir="rtl">תָּמִים</a> — whole, upright</td></tr>
+<tr><td lang="he" dir="rtl">מִקְטָל</td><td>A place or instrument</td><td><a href="index.html?q=מכתב" lang="he" dir="rtl">מִכְתָּב</a> — letter; <a href="index.html?q=משכן" lang="he" dir="rtl">מִשְׁכָּן</a> — dwelling, Tabernacle</td></tr>
+<tr><td lang="he" dir="rtl">מַקְטֵל</td><td>A place</td><td><a href="index.html?q=מדרש" lang="he" dir="rtl">מַדְרֵשׁ</a> — house of study</td></tr>
+<tr><td lang="he" dir="rtl">קְטָלָה</td><td>An abstract noun</td><td><a href="index.html?q=צדקה" lang="he" dir="rtl">צְדָקָה</a> — charity, justice</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<section class="mb-5">
+<h2 class="h4">Gender and Number</h2>
+<p>Every Hebrew noun is masculine or feminine. Feminine nouns often end in <span lang="he" dir="rtl">־ָה</span> or <span lang="he" dir="rtl">־ֶת</span>. Plurals usually end in <span lang="he" dir="rtl">־ִים</span> for masculine and <span lang="he" dir="rtl">־וֹת</span> for feminine, and pairs take the dual ending <span lang="he" dir="rtl">־ַיִם</span>.</p>
+<div class="table-responsive">
+<table class="table table-striped">
+<thead><tr><th scope="col">Form</th><th scope="col">Ending</th><th scope="col">Example</th></tr></thead>
+<tbody>
+<tr><td>Masculine plural</td><td lang="he" dir="rtl">־ִים</td><td><a href="index.html?q=סוס" lang="he" dir="rtl">סוּס</a> (horse) → <a href="index.html?q=סוסים" lang="he" dir="rtl">סוּסִים</a></td></tr>
+<tr><td>Feminine plural</td><td lang="he" dir="rtl">־וֹת</td><td><a href="index.html?q=סוסה" lang="he" dir="rtl">סוּסָה</a> (mare) → <a href="index.html?q=סוסות" lang="he" dir="rtl">סוּסוֹת</a></td></tr>
+<tr><td>Dual (two, or a natural pair)</td><td lang="he" dir="rtl">־ַיִם</td><td><a href="index.html?q=יום" lang="he" dir="rtl">יוֹם</a> (day) → <a href="index.html?q=יומיים" lang="he" dir="rtl">יוֹמַיִם</a> (two days); <a href="index.html?q=עין" lang="he" dir="rtl">עַיִן</a> (eye) → <a href="index.html?q=עיניים" lang="he" dir="rtl">עֵינַיִם</a> (eyes)</td></tr>
+</tbody>
+</table>
+</div>
+<p>Some nouns break the pattern: <a href="index.html?q=אבות" lang="he" dir="rtl">אָבוֹת</a> (fathers) is masculine but takes <span lang="he" dir="rtl">־וֹת</span>, and <a href="index.html?q=מלים" lang="he" dir="rtl">מִלִּים</a> (words) is feminine but takes <span lang="he" dir="rtl">־ִים</span>. The ending alone does not always tell you the gender.</p>
+</section>
+
+<section class="mb-5">
+<h2 class="h4">The Verb Tenses</h2>
+<p>Hebrew verbs have a past, a present (which is really a participle), and a future, plus an imperative and an infinitive. Here is the Paal verb <span lang="he" dir="rtl">שָׁמַר</span> (to guard).</p>
+<div class="table-responsive">
+<table class="table table-striped">
+<thead><tr><th scope="col">Tense</th><th scope="col">Form</th><th scope="col">Meaning</th></tr></thead>
+<tbody>
+<tr><td rowspan="3">Past</td><td><span lang="he" dir="rtl">שָׁמַרְתִּי</span></td><td>I guarded</td></tr>
+<tr><td><span lang="he" dir="rtl">שָׁמַרְתָּ</span></td><td>you (m.) guarded</td></tr>
+<tr><td><span lang="he" dir="rtl">שָׁמַר</span></td><td>he guarded</td></tr>
+<tr><td rowspan="2">Present</td><td><span lang="he" dir="rtl">שׁוֹמֵר</span></td><td>he guards / is guarding</td></tr>
+<tr><td><span lang="he" dir="rtl">שׁוֹמֶרֶת</span></td><td>she guards / is guarding</td></tr>
+<tr><td rowspan="3">Future</td><td><span lang="he" dir="rtl">אֶשְׁמֹר</span></td><td>I will guard</td></tr>
+<tr><td><span lang="he" dir="rtl">תִּשְׁמֹר</span></td><td>you (m.) will guard</td></tr>
+<tr><td><span lang="he" dir="rtl">יִשְׁמֹר</span></td><td>he will guard</td></tr>
+<tr><td>Imperative</td><td><span lang="he" dir="rtl">שְׁמֹר</span></td><td>guard! (m. singular)</td></tr>
+<tr><td>Infinitive</td><td><span lang="he" dir="rtl">לִשְׁמֹר</span></td><td>to guard</td></tr>
+</tbody>
+</table>
+</div>
+<p>The full tables for every tense and person are in the <a href="conjugator.html">Conjugator</a>.</p>
+</section>
+
+<section class="mb-5">
+<h2 class="h4">Prefixes and the Definite Article</h2>
+<p>Several one-letter words attach to the front of a Hebrew word: the definite article <span lang="he" dir="rtl">הַ־</span> (the), the prepositions <span lang="he" dir="rtl">בְּ־</span> (in), <span lang="he" dir="rtl">כְּ־</span> (like), <span lang="he" dir="rtl">לְ־</span> (to), <span lang="he" dir="rtl">מִ־</span> (from), the conjunction <span lang="he" dir="rtl">וְ־</span> (and), and the relative <span lang="he" dir="rtl">שֶׁ־</span> (that). The Ramchal's <span lang="he" dir="rtl">ספר הדקדוק</span> (Sefer HaDikduk) teaches grammar through the letters themselves: the roles each letter plays as a root letter, as a prefix, or as a suffix.</p>
+<div class="table-responsive">
+<table class="table table-striped">
+<thead><tr><th scope="col">Prefix</th><th scope="col">Meaning</th><th scope="col">Example</th></tr></thead>
+<tbody>
+<tr><td lang="he" dir="rtl">הַ־</td><td>the</td><td><a href="index.html?q=הספר" lang="he" dir="rtl">הַסֵּפֶר</a> — the book</td></tr>
+<tr><td lang="he" dir="rtl">בְּ־</td><td>in, with</td><td><a href="index.html?q=בספר" lang="he" dir="rtl">בְּסֵפֶר</a> — in a book</td></tr>
+<tr><td lang="he" dir="rtl">כְּ־</td><td>like, as</td><td><a href="index.html?q=כספר" lang="he" dir="rtl">כְּסֵפֶר</a> — like a book</td></tr>
+<tr><td lang="he" dir="rtl">לְ־</td><td>to, for</td><td><a href="index.html?q=לספר" lang="he" dir="rtl">לְסֵפֶר</a> — to a book</td></tr>
+<tr><td lang="he" dir="rtl">מִ־</td><td>from</td><td><a href="index.html?q=מספר" lang="he" dir="rtl">מִסֵּפֶר</a> — from a book</td></tr>
+<tr><td lang="he" dir="rtl">וְ־</td><td>and</td><td><a href="index.html?q=וספר" lang="he" dir="rtl">וְסֵפֶר</a> — and a book</td></tr>
+<tr><td lang="he" dir="rtl">שֶׁ־</td><td>that, which</td><td><a href="index.html?q=שספר" lang="he" dir="rtl">שֶׁסֵּפֶר</a> — that a book</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+
+</div>
+
+<!-- ============ ARAMAIC ============ -->
+<div class="tab-pane fade" id="aramaic-pane" role="tabpanel" aria-labelledby="aramaic-tab" tabindex="0">
+
+<section class="mb-5">
+<h2 class="h4">Noun States</h2>
+<p>An Aramaic noun appears in three states. The absolute is the plain form, the construct joins the noun to the word after it ("king of..."), and the emphatic ends in <span lang="he" dir="rtl">־ָא</span> and usually means "the". In the Gemara the emphatic state is the ordinary form of the noun, and often carries no special "the" force.</p>
+<div class="table-responsive">
+<table class="table table-striped">
+<thead><tr><th scope="col">State</th><th scope="col">Example</th><th scope="col">Meaning</th></tr></thead>
+<tbody>
+<tr><td>Absolute</td><td><a href="index.html?q=מלך" lang="he" dir="rtl">מֶלֶךְ</a></td><td>a king</td></tr>
+<tr><td>Construct</td><td><a href="index.html?q=מלך" lang="he" dir="rtl">מָלֵךְ</a></td><td>king of (e.g. <span lang="he" dir="rtl">מָלֵךְ מַלְכַיָּא</span>, king of kings)</td></tr>
+<tr><td>Emphatic</td><td><a href="index.html?q=מלכא" lang="he" dir="rtl">מַלְכָּא</a></td><td>the king</td></tr>
+<tr><td>Absolute</td><td><a href="index.html?q=בר" lang="he" dir="rtl">בַּר</a></td><td>a son</td></tr>
+<tr><td>Emphatic</td><td><a href="index.html?q=ברא" lang="he" dir="rtl">בְּרָא</a></td><td>the son</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<section class="mb-5">
+<h2 class="h4">Plurals</h2>
+<p>Aramaic plurals end in <span lang="he" dir="rtl">־ִין</span> for masculine and <span lang="he" dir="rtl">־ָן</span> for feminine. The emphatic plural ends in <span lang="he" dir="rtl">־ַיָּא</span>.</p>
+<div class="table-responsive">
+<table class="table table-striped">
+<thead><tr><th scope="col">Form</th><th scope="col">Example</th><th scope="col">Meaning</th></tr></thead>
+<tbody>
+<tr><td>Masculine plural</td><td><a href="index.html?q=מלכין" lang="he" dir="rtl">מַלְכִין</a></td><td>kings</td></tr>
+<tr><td>Feminine plural</td><td><a href="index.html?q=מלכן" lang="he" dir="rtl">מַלְכָן</a></td><td>queens</td></tr>
+<tr><td>Emphatic plural</td><td><a href="index.html?q=מלכיא" lang="he" dir="rtl">מַלְכַּיָּא</a></td><td>the kings</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<section class="mb-5">
+<h2 class="h4">Pronouns</h2>
+<div class="table-responsive">
+<table class="table table-striped">
+<thead><tr><th scope="col">Person</th><th scope="col">Singular</th><th scope="col">Plural</th></tr></thead>
+<tbody>
+<tr><td>First</td><td><a href="index.html?q=אנא" lang="he" dir="rtl">אֲנָא</a> — I</td><td><a href="index.html?q=אנן" lang="he" dir="rtl">אֲנַן</a> — we</td></tr>
+<tr><td>Second</td><td><a href="index.html?q=את" lang="he" dir="rtl">אַתְּ</a> — you</td><td><a href="index.html?q=אתון" lang="he" dir="rtl">אַתּוּן</a> — you (plural)</td></tr>
+<tr><td>Third masculine</td><td><a href="index.html?q=הוא" lang="he" dir="rtl">הוּא</a> — he</td><td rowspan="2"><a href="index.html?q=אנון" lang="he" dir="rtl">אִנּוּן</a> — they</td></tr>
+<tr><td>Third feminine</td><td><a href="index.html?q=היא" lang="he" dir="rtl">הִיא</a> — she</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<section class="mb-5">
+<h2 class="h4">The Verb Stems</h2>
+<p>Like Hebrew, Aramaic verbs come in stems, each with its own meaning. The six stems are shown here with the root <span lang="he" dir="rtl">כ־ת־ב</span> (write).</p>
+<div class="table-responsive">
+<table class="table table-striped">
+<thead><tr><th scope="col">Stem</th><th scope="col">Meaning</th><th scope="col">Example</th></tr></thead>
+<tbody>
+<tr><td><span lang="he" dir="rtl">פְּעַל</span> (Peal)</td><td>Simple active</td><td><a href="index.html?q=כתב" lang="he" dir="rtl">כְּתַב</a> — he wrote</td></tr>
+<tr><td><span lang="he" dir="rtl">פַּעֵל</span> (Pael)</td><td>Intensive active</td><td><a href="index.html?q=כתב" lang="he" dir="rtl">כַּתֵּב</a> — he wrote out, inscribed</td></tr>
+<tr><td><span lang="he" dir="rtl">אַפְעֵל</span> (Afel)</td><td>Causative</td><td><a href="index.html?q=אכתב" lang="he" dir="rtl">אַכְתֵּב</a> — he caused to write</td></tr>
+<tr><td><span lang="he" dir="rtl">אִתְפְּעֵל</span> (Itpeel)</td><td>Passive or reflexive of Peal</td><td><a href="index.html?q=אתכתב" lang="he" dir="rtl">אִתְכְּתֵב</a> — it was written</td></tr>
+<tr><td><span lang="he" dir="rtl">אִתְפַּעַל</span> (Itpaal)</td><td>Reflexive of Pael</td><td><a href="index.html?q=אתכתב" lang="he" dir="rtl">אִתְכַּתַּב</a> — he had himself inscribed</td></tr>
+<tr><td><span lang="he" dir="rtl">אִתַּפְעַל</span> (Ittafal)</td><td>Passive of Afel</td><td><a href="index.html?q=אתכתב" lang="he" dir="rtl">אִתַּכְתֵּב</a> — he was made to write</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<section class="mb-5">
+<h2 class="h4">The Participle as Present Tense</h2>
+<p>Aramaic has no separate present tense: the participle does the job. <a href="index.html?q=כתב" lang="he" dir="rtl">כָּתֵב</a> means "he writes" or "he is writing"; <a href="index.html?q=אזיל" lang="he" dir="rtl">אָזֵיל</a> means "he goes"; <a href="index.html?q=אתי" lang="he" dir="rtl">אָתֵי</a> means "he comes". The particle <span lang="he" dir="rtl">קָא</span> before a participle marks an action in progress: <span lang="he" dir="rtl">קָא כָּתֵב</span> — he is writing right now.</p>
+</section>
+
+<section class="mb-5">
+<h2 class="h4">Pronominal Suffixes</h2>
+<p>Pronouns attach to the end of nouns and prepositions. With <span lang="he" dir="rtl">בְּר־</span> (son):</p>
+<div class="table-responsive">
+<table class="table table-striped">
+<thead><tr><th scope="col">Suffix</th><th scope="col">Example</th><th scope="col">Meaning</th></tr></thead>
+<tbody>
+<tr><td lang="he" dir="rtl">־ִי</td><td><a href="index.html?q=ברי" lang="he" dir="rtl">בְּרִי</a></td><td>my son</td></tr>
+<tr><td lang="he" dir="rtl">־ָךְ</td><td><a href="index.html?q=ברך" lang="he" dir="rtl">בְּרָךְ</a></td><td>your son</td></tr>
+<tr><td lang="he" dir="rtl">־ֵיהּ</td><td><a href="index.html?q=בריה" lang="he" dir="rtl">בְּרֵיהּ</a></td><td>his son</td></tr>
+<tr><td lang="he" dir="rtl">־ָהּ</td><td><a href="index.html?q=ברה" lang="he" dir="rtl">בְּרָהּ</a></td><td>her son</td></tr>
+<tr><td lang="he" dir="rtl">־ַן</td><td><a href="index.html?q=ברן" lang="he" dir="rtl">בְּרַן</a></td><td>our son</td></tr>
+<tr><td lang="he" dir="rtl">־ְכוֹן</td><td><a href="index.html?q=ברכון" lang="he" dir="rtl">בְּרְכוֹן</a></td><td>your (plural) son</td></tr>
+<tr><td lang="he" dir="rtl">־ְהוֹן</td><td><a href="index.html?q=ברהון" lang="he" dir="rtl">בְּרְהוֹן</a></td><td>their son</td></tr>
+</tbody>
+</table>
+</div>
+<p>The same suffixes appear on prepositions: <a href="index.html?q=ליה" lang="he" dir="rtl">לֵיהּ</a> means "to him", so <span lang="he" dir="rtl">אָמַר לֵיהּ</span> is "he said to him". <a href="index.html?q=דיליה" lang="he" dir="rtl">דִּילֵיהּ</a> means "his" — literally, "of him".</p>
+</section>
+
+<section class="mb-5">
+<h2 class="h4">Common Gemara Words and Particles</h2>
+<p>A few words do most of the work in the Gemara. Learn these and whole passages open up.</p>
+<div class="table-responsive">
+<table class="table table-striped">
+<thead><tr><th scope="col">Word</th><th scope="col">Meaning</th><th scope="col">Note</th></tr></thead>
+<tbody>
+<tr><td><a href="index.html?q=ד" lang="he" dir="rtl">דְּ־</a></td><td>of; that; which</td><td>The relative and genitive particle: <span lang="he" dir="rtl">בֵּיתָא דְּרַבִּי</span> is "the house of Rebbi"</td></tr>
+<tr><td><a href="index.html?q=הא" lang="he" dir="rtl">הָא</a></td><td>here is; behold</td><td>Introduces a proof or a point</td></tr>
+<tr><td><a href="index.html?q=הכי" lang="he" dir="rtl">הָכִי</a></td><td>thus, so</td><td></td></tr>
+<tr><td><a href="index.html?q=הכא" lang="he" dir="rtl">הָכָא</a></td><td>here</td><td></td></tr>
+<tr><td><a href="index.html?q=התם" lang="he" dir="rtl">הָתָם</a></td><td>there</td><td></td></tr>
+<tr><td><a href="index.html?q=איכא" lang="he" dir="rtl">אִיכָּא</a></td><td>there is</td><td></td></tr>
+<tr><td><a href="index.html?q=ליכא" lang="he" dir="rtl">לֵיכָּא</a></td><td>there is not</td><td></td></tr>
+<tr><td><a href="index.html?q=מאי" lang="he" dir="rtl">מַאי</a></td><td>what</td><td><span lang="he" dir="rtl">מַאי טַעְמָא</span> — what is the reason?</td></tr>
+<tr><td><a href="index.html?q=מאן" lang="he" dir="rtl">מַאן</a></td><td>who</td><td><span lang="he" dir="rtl">מַאן תְּנָא</span> — who taught this?</td></tr>
+<tr><td><a href="index.html?q=האי" lang="he" dir="rtl">הַאי</a></td><td>this</td><td></td></tr>
+<tr><td><a href="index.html?q=הני" lang="he" dir="rtl">הָנֵי</a></td><td>these</td><td></td></tr>
+<tr><td><a href="index.html?q=אלא" lang="he" dir="rtl">אֶלָּא</a></td><td>but; rather</td><td>Introduces the corrected view</td></tr>
+<tr><td><a href="index.html?q=דלמא" lang="he" dir="rtl">דִּלְמָא</a></td><td>perhaps; lest</td><td></td></tr>
+<tr><td><a href="index.html?q=אלמא" lang="he" dir="rtl">אַלְמָא</a></td><td>evidently; so it follows</td><td>Draws the conclusion</td></tr>
+<tr><td><a href="index.html?q=מכדי" lang="he" dir="rtl">מִכְּדִי</a></td><td>since; whereas</td><td></td></tr>
+<tr><td><a href="index.html?q=ודאי" lang="he" dir="rtl">וַדַּאי</a></td><td>certainly</td><td></td></tr>
+</tbody>
+</table>
+</div>
+</section>
+
+</div>
+</div>
+</main>
+<div id="footer-root"></div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/nav.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>

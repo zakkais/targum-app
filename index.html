@@ -1,396 +1,331 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Lashon Translate — Mock v3 (tappable prototype)</title>
-<style>
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:system-ui,-apple-system,Roboto,"Segoe UI",sans-serif;background:#eef2f7;padding:16px;color:#1f2937}
-.wrap{max-width:420px;margin:0 auto}
-h1{font-size:19px;text-align:center;margin-bottom:2px}
-.sub{text-align:center;color:#6b7280;font-size:13px;margin-bottom:14px}
-.tabs{display:flex;gap:6px;margin-bottom:12px;overflow-x:auto;padding-bottom:4px}
-.tabs button{padding:10px 12px;border-radius:99px;border:1px solid #dbe2ea;background:#fff;color:#1f2937;font-weight:600;font-size:12px;cursor:pointer;flex-shrink:0;white-space:nowrap}
-.tabs button.on{background:#1a73e8;color:#fff;border-color:#1a73e8;font-weight:700}
-.phone{background:#fff;border-radius:32px;box-shadow:0 16px 40px rgba(15,42,68,.2);overflow:hidden;border:1px solid #dbe2ea}
-.status{display:flex;justify-content:space-between;padding:10px 20px 2px;font-size:11px;color:#6b7280}
-.appbar{background:linear-gradient(135deg,#0f2a44 0%,#1a56db 60%,#1a73e8 100%);color:#fff;padding:13px 16px 16px;border-radius:0 0 22px 22px}
-.appbar .name{font-size:18px;font-weight:700}
-.appbar .tag{font-size:11px;opacity:.85;margin-top:2px}
-.appbar .offline{display:inline-block;margin-top:9px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.3);font-size:11px;padding:3px 9px;border-radius:99px}
-.body{padding:14px 14px 10px}
-.langrow{display:flex;align-items:center;gap:8px;margin-bottom:11px}
-.langpill{flex:1;background:#eef4ff;border:1px solid #d3e2fd;color:#1a56db;font-weight:600;font-size:13px;text-align:center;padding:9px 4px;border-radius:13px;cursor:pointer}
-.swap{width:34px;height:34px;border-radius:50%;background:#1a73e8;color:#fff;border:none;font-size:16px;cursor:pointer;flex-shrink:0}
-.card{border:1px solid #e5e9f0;border-radius:16px;padding:13px;margin-bottom:11px;box-shadow:0 2px 8px rgba(15,42,68,.05)}
-.input-text{font-family:"Noto Serif Hebrew","Frank Ruhl Libre",serif;font-size:20px;line-height:1.7;text-align:right}
-.hint{font-size:11px;color:#9ca3af;margin-top:6px}
-.translit{font-size:13px;color:#6b7280;font-style:italic;margin-top:8px;border-top:1px dashed #e5e9f0;padding-top:8px}
-.output-text{font-size:16px;line-height:1.55}
-.wordrow{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
-.wordchip{background:#f1f5fb;border:1px solid #e2e8f0;border-radius:9px;padding:5px 8px;font-size:11px;text-align:center;cursor:pointer}
-.wordchip b{display:block;font-size:13px;font-family:"Noto Serif Hebrew",serif}
-.btn{width:100%;background:linear-gradient(135deg,#1a56db,#1a73e8);color:#fff;border:none;border-radius:13px;padding:12px;font-size:15px;font-weight:700;cursor:pointer;box-shadow:0 6px 14px rgba(26,115,232,.35)}
-.btn2{width:100%;background:#f8fafc;border:1px solid #e5e9f0;color:#1a56db;border-radius:13px;padding:11px;font-size:14px;font-weight:700;cursor:pointer;margin-top:8px}
-.toggles{display:flex;gap:8px;margin-top:11px}
-.toggle{flex:1;background:#f8fafc;border:1px solid #e5e9f0;border-radius:11px;padding:8px 6px;font-size:12px;text-align:center;cursor:pointer}
-.search{background:#f1f5fb;border:1px solid #e2e8f0;border-radius:99px;padding:10px 14px;font-size:14px;color:#6b7280;margin-bottom:10px}
-.search input{border:none;background:transparent;outline:none;font-size:14px;width:85%;font-family:inherit;color:#1f2937}
-.alpha{display:flex;gap:4px;overflow-x:auto;margin-bottom:10px;padding-bottom:4px}
-.alpha span{font-size:13px;padding:5px 9px;border-radius:8px;background:#f1f5fb;flex-shrink:0;cursor:pointer}
-.alpha span.on{background:#1a73e8;color:#fff;font-weight:700}
-.chips{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:11px}
-.chip{font-size:12px;padding:6px 10px;border-radius:99px;border:1px solid #dbe2ea;cursor:pointer}
-.chip.on{background:#1a73e8;color:#fff;border-color:#1a73e8;font-weight:600}
-.hw{font-family:"Noto Serif Hebrew",serif;font-size:20px;text-align:right}
-.meta{font-size:11px;color:#1a56db;font-weight:600;margin:3px 0}
-.gloss{font-size:14px;line-height:1.5}
-.detail{font-size:13px;color:#4b5563;margin-top:7px;border-top:1px solid #f0f0f0;padding-top:7px}
-.example{font-size:13px;margin-top:7px;background:#f8fafc;border-radius:10px;padding:8px}
-.listen{display:inline-block;margin-top:8px;background:#eef4ff;border:1px solid #d3e2fd;color:#1a56db;font-size:12px;font-weight:600;padding:5px 10px;border-radius:99px;cursor:pointer}
-.audionote{font-size:11px;color:#9ca3af;margin-top:6px}
-.abbr{font-family:"Noto Serif Hebrew",serif;font-size:23px;text-align:right}
-.expansion{font-family:"Noto Serif Hebrew",serif;font-size:15px;text-align:right;margin-top:3px}
-.genre{display:inline-block;font-size:11px;background:#fef3c7;color:#92400e;padding:3px 9px;border-radius:99px;margin-top:7px;font-weight:600}
-.letterhead{font-size:12px;color:#6b7280;font-weight:700;margin-bottom:6px}
-.topic{border:1px solid #e5e9f0;border-radius:14px;margin-bottom:8px;padding:11px 12px;font-size:14px;cursor:pointer}
-.langpills{display:flex;gap:6px;margin-bottom:11px}
-.langpills span{flex:1;text-align:center;font-size:13px;padding:9px 4px;border-radius:12px;background:#f1f5fb;font-weight:600;cursor:pointer}
-.langpills span.on{background:#1a73e8;color:#fff;font-weight:700}
-.morerow{border:1px solid #e5e9f0;border-radius:14px;margin-bottom:8px;padding:12px;font-size:14px;cursor:pointer}
-.morerow b{display:block;font-size:14px}
-.morerow span{font-size:12px;color:#6b7280}
-.thesgroup{margin-bottom:12px}
-.thesgroup h4{font-size:12px;color:#6b7280;margin-bottom:6px}
-.thesword{display:inline-block;background:#f1f5fb;border:1px solid #e2e8f0;border-radius:9px;padding:6px 10px;font-size:14px;margin:0 6px 6px 0;cursor:pointer}
-.thesword b{font-family:"Noto Serif Hebrew",serif;font-size:15px}
-.userow{border:1px solid #e5e9f0;border-radius:14px;padding:11px 12px;margin-bottom:8px;cursor:pointer}
-.userow .uw{font-family:"Noto Serif Hebrew",serif;font-size:17px;text-align:right}
-.userow .ug{font-size:13px;margin-top:2px}
-.userow .uu{font-size:12px;color:#6b7280;margin-top:5px;border-top:1px dashed #e5e9f0;padding-top:5px;line-height:1.5}
-.geminput{width:100%;border:1px solid #e5e9f0;border-radius:13px;padding:12px;font-size:20px;font-family:"Noto Serif Hebrew",serif;text-align:right;outline:none;margin-bottom:10px}
-.gemrow{display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px solid #f0f0f0;font-size:14px}
-.gemrow:last-child{border-bottom:none}
-.gemrow b{font-size:16px;color:#1a56db}
-.breakdown{font-size:12px;color:#6b7280;margin-top:6px;line-height:1.6}
-.listrow{display:flex;justify-content:space-between;align-items:center;border:1px solid #e5e9f0;border-radius:14px;padding:11px 12px;margin-bottom:8px;cursor:pointer}
-.listrow b{font-size:14px}
-.listrow span{font-size:12px;color:#6b7280}
-.share{font-size:12px;color:#1a56db;font-weight:600}
-.flashcard{border:2px solid #1a73e8;border-radius:18px;padding:26px 16px;text-align:center;margin-bottom:10px;cursor:pointer;min-height:150px;display:flex;flex-direction:column;justify-content:center;background:linear-gradient(180deg,#f8fbff,#fff)}
-.flashcard .front{font-family:"Noto Serif Hebrew",serif;font-size:28px}
-.flashcard .back{font-size:17px;line-height:1.5}
-.flashcard .tap{font-size:11px;color:#9ca3af;margin-top:12px}
-.field{width:100%;border:1px solid #e5e9f0;border-radius:11px;padding:10px;font-size:14px;outline:none;margin-bottom:8px;font-family:inherit}
-select.field{color:#1f2937}
-.passage{border:1px solid #e5e9f0;border-radius:16px;padding:14px;margin-bottom:11px;line-height:2.1;font-family:"Noto Serif Hebrew",serif;font-size:19px;text-align:right}
-.passage .w{cursor:pointer;border-bottom:2px dotted #1a73e8;padding:0 1px}
-.passage .w.abbrw{border-bottom:2px dotted #d97706}
-.entrypanel{border:1px solid #d3e2fd;background:#f8fbff;border-radius:16px;padding:12px;margin-bottom:11px}
-.bottomnav{display:flex;border-top:1px solid #eef1f5;padding:9px 6px 14px;background:#fff}
-.navitem{flex:1;text-align:center;font-size:11px;color:#9ca3af;cursor:pointer}
-.navitem.on{color:#1a56db;font-weight:700}
-.navitem .ico{font-size:19px;display:block}
-.note{text-align:center;font-size:12px;color:#6b7280;margin-top:10px;line-height:1.5}
-.screen{display:none}
-.screen.active{display:block}
-</style></head>
-<body><div class="wrap">
-<h1>Lashon Translate — Mock v3</h1>
-<p class="sub">Tappable prototype. All seven features, plus Tools, Read mode, loanwords, and audio. Working title only.</p>
-<div class="tabs" id="topTabs">
-<button data-screen="t" class="on">Translate</button>
-<button data-screen="d">Dictionary</button>
-<button data-screen="th">Thesaurus</button>
-<button data-screen="r">Roshei Teivos</button>
-<button data-screen="g">Dikduk</button>
-<button data-screen="tools">Tools</button>
-<button data-screen="f">Flashcards</button>
-<button data-screen="read">Read</button>
-<button data-screen="more">More</button>
-</div>
-<div class="phone">
-<div class="status"><span>16:27</span><span>Offline pack ready</span></div>
-<div class="appbar"><div class="name">Lashon Translate</div><div class="tag">Modern Hebrew · Lashon HaKodesh · Aramaic · Yiddish · English</div><span class="offline">● Offline — Hebrew pack downloaded</span></div>
-<div class="body">
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Targum — Dictionary</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@400;500;700&family=Heebo:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="assets/css/style.css" rel="stylesheet">
+</head>
+<body>
+  <div id="nav-root">
+    <noscript>
+      <nav class="bg-targum-navy p-3" data-bs-theme="dark" aria-label="Main navigation">
+        <a class="fw-bold text-decoration-none" href="index.html">Targum</a>
+        <span class="text-body-secondary"> · </span>
+        <a href="index.html">Dictionary</a>
+        <span class="text-body-secondary"> · </span>
+        <a href="roshei-teivos.html">Roshei Teivos</a>
+        <span class="text-body-secondary"> · </span>
+        <a href="thesaurus.html">Thesaurus</a>
+        <span class="text-body-secondary"> · </span>
+        <a href="dikduk.html">Dikduk</a>
+        <span class="text-body-secondary"> · </span>
+        <a href="loanwords.html">Loanwords</a>
+        <span class="text-body-secondary"> · </span>
+        <a href="conjugator.html">Conjugator</a>
+        <span class="text-body-secondary"> · </span>
+        <a href="tools.html">Tools</a>
+        <span class="text-body-secondary"> · </span>
+        <a href="read.html">Read Mode</a>
+        <span class="text-body-secondary"> · </span>
+        <a href="sources.html">Sources</a>
+      </nav>
+    </noscript>
+  </div>
+  <main class="container py-4">
+    <h1>Dictionary</h1>
+    <p class="lead">Look up words in Modern Hebrew, Lashon HaKodesh, Aramaic, Yiddish, and English.</p>
 
-<!-- TRANSLATE -->
-<div class="screen active" id="screen-t">
-<div class="langrow"><div class="langpill" id="langFrom">Lashon HaKodesh ▾</div><button class="swap" id="swapBtn">⇄</button><div class="langpill" id="langTo">English ▾</div></div>
-<div class="card"><div class="input-text" dir="rtl">בראשית ברא אלקים את השמים ואת הארץ</div><div class="hint">Detected: Lashon HaKodesh · 7 words · tap a word below for its entry</div></div>
-<div class="card"><div class="output-text">In the beginning God created the heavens and the earth.</div><div class="translit" id="translitLine">Bereishis bara Elokim es hashamayim ve'es ha'aretz</div>
-<div class="wordrow"><span class="wordchip"><b>בראשית</b>In the beginning</span><span class="wordchip"><b>ברא</b>created</span><span class="wordchip"><b>אלקים</b>God</span><span class="wordchip"><b>השמים</b>the heavens</span><span class="wordchip"><b>הארץ</b>the earth</span></div></div>
-<button class="btn" id="translateBtn">Translate</button>
-<div class="toggles"><div class="toggle" id="translitToggle"><b>Transliteration</b><br><span id="translitState">ON — tap to hide</span></div><div class="toggle"><b>Yiddish spelling</b><br>Both · YIVO · Hasidic</div></div>
-<button class="btn2" data-goto="read">Reading a text instead? Open Read mode →</button>
-<p class="hint" id="translateNote" style="text-align:center;margin-top:8px"></p>
-</div>
+    <form id="search-form" role="search" class="mb-3">
+      <label for="dict-search" class="form-label">Search the dictionary</label>
+      <div class="input-group">
+        <input type="search" class="form-control form-control-lg" id="dict-search" placeholder="Search Hebrew, Aramaic, Yiddish, or English…" aria-label="Search the dictionary" autocomplete="off">
+        <button class="btn btn-primary btn-lg" type="submit">Search</button>
+      </div>
+    </form>
 
-<!-- DICTIONARY -->
-<div class="screen" id="screen-d">
-<div class="search">⌕ &nbsp;<input id="dictSearch" placeholder="Search Hebrew, Aramaic, Yiddish, or English…"></div>
-<div class="alpha" dir="rtl" id="dictAlpha"><span class="on">א</span><span>ב</span><span>ג</span><span>ד</span><span>ה</span><span>ו</span><span>ז</span><span>ח</span><span>ט</span><span>י</span><span>כ</span><span>ל</span><span>מ</span><span>נ</span><span>ס</span><span>ע</span><span>פ</span><span>צ</span><span>ק</span><span>ר</span><span>ש</span><span>ת</span></div>
-<div class="chips" id="dictChips"><span class="chip on" data-filter="all">All</span><span class="chip" data-filter="all">Modern</span><span class="chip" data-filter="all">Lashon HaKodesh</span><span class="chip" data-filter="all">Aramaic</span><span class="chip" data-filter="all">Yiddish</span><span class="chip" data-filter="phrases">Phrases</span><span class="chip" data-filter="loan">Loanwords</span></div>
-<div id="dictMain">
-<div class="card" data-kind="phrase"><div class="hw" dir="rtl">שלום עליכם</div><div class="meta">HEBREW · PHRASE — ALSO USED IN YIDDISH</div><div class="gloss">Peace be upon you. A greeting, especially on meeting after time apart. Reply: aleichem shalom.</div><div class="detail"><b>Break-up:</b> shalom (peace) + aleichem (upon you)<br><b>Root:</b> Sh-L-M · <b>Yiddish form:</b> sholem-aleykhem</div><div class="example"><b>Example:</b> <i>Shalom aleichem — I have not seen you since last year.</i></div><span class="listen">▶ Listen</span><div class="audionote">Recorded audio — Hebrew entries.</div></div>
-<div class="card" data-kind="word"><div class="hw" dir="rtl">גמרא</div><div class="meta">ARAMAIC · NOUN</div><div class="gloss"><b>Literal:</b> learning; completion; what was learned and transmitted.<br><b>As a sefer:</b> the Talmudic discussion and commentary on the Mishnah.</div><div class="detail"><b>Root:</b> G-M-R, to complete, to learn</div><div class="example"><b>Example:</b> <i>The Gemara asks this question on the Mishnah.</i></div><div class="audionote">No audio for Aramaic entries yet.</div></div>
-<div class="card" data-kind="word"><div class="hw" dir="rtl">לימד</div><div class="meta">HEBREW · VERB · PIEL</div><div class="gloss">Taught; instructed. Intensive form of lamad (learned).</div><div class="detail"><b>Root:</b> L-M-D · <b>Binyan:</b> Piel · <b>Pattern:</b> doubled middle root letter<br><b>See also:</b> lamad (Paal, learned) · nilmad (Nifal, was learned)</div><div class="example"><div dir="rtl" style="font-family:'Noto Serif Hebrew',serif;font-size:15px;text-align:right">המורה לימד את הילדים</div><i>The teacher taught the children.</i></div><span class="listen">▶ Listen</span><div class="audionote">Recorded audio — Hebrew entries.</div></div>
-</div>
-<div id="dictLoan" style="display:none">
-<div class="card"><div class="hw" dir="rtl">סנהדרין</div><div class="meta">LOANWORD · FROM GREEK</div><div class="gloss">The high court of 71 judges. From Greek <i>synedrion</i>, a council sitting together.</div><div class="detail"><b>Used in:</b> Mishnah, Gemara, Rambam — wherever the court is discussed</div></div>
-<div class="card"><div class="hw" dir="rtl">פרדס</div><div class="meta">LOANWORD · FROM PERSIAN</div><div class="gloss">Orchard; walled garden. From Persian <i>pairidaeza</i>. Also the four levels of Torah study: Pshat, Remez, Drush, Sod.</div><div class="detail"><b>Used in:</b> Tanach, Gemara, Kabbalah</div></div>
-<div class="card"><div class="hw" dir="rtl">אפיקורוס</div><div class="meta">LOANWORD · FROM GREEK</div><div class="gloss">A heretic; one who denies Torah fundamentals. From Greek <i>Epicurus</i>.</div><div class="detail"><b>Used in:</b> Mishnah, Gemara, Rambam</div></div>
-</div>
-<p class="hint" id="dictNote" style="text-align:center"></p>
-</div>
+    <div class="mb-3">
+      <div class="nav nav-pills flex-wrap gap-1" id="lang-filter" role="group" aria-label="Language filter">
+        <button type="button" class="nav-link active" data-lang="all" aria-pressed="true">All</button>
+        <button type="button" class="nav-link" data-lang="modern" aria-pressed="false">Modern Hebrew</button>
+        <button type="button" class="nav-link" data-lang="ancient" aria-pressed="false">Lashon HaKodesh</button>
+        <button type="button" class="nav-link" data-lang="aramaic" aria-pressed="false">Aramaic</button>
+        <button type="button" class="nav-link" data-lang="yiddish" aria-pressed="false">Yiddish</button>
+        <button type="button" class="nav-link" data-lang="english" aria-pressed="false">English gloss search</button>
+      </div>
+    </div>
 
-<!-- THESAURUS -->
-<div class="screen" id="screen-th">
-<div class="search">⌕ &nbsp;<input id="thesSearch" value="שמחה" placeholder="Search for synonyms…"></div>
-<div id="thesResult">
-<div class="card"><div class="hw" dir="rtl">שמחה</div><div class="meta">HEBREW · NOUN</div><div class="gloss">Joy; happiness; gladness. The general word — the ones below are its shades.</div><div class="detail"><b>Root:</b> Sh-M-Ch</div></div>
-<div class="thesgroup"><h4>SYNONYMS — WHEN TO USE WHICH</h4>
-<div class="userow"><div class="uw" dir="rtl">גילה</div><div class="ug">Gladness; exultation</div><div class="uu"><b>Used when:</b> rejoicing over good news, mostly in poetry and prophecy — Tehillim, Yeshayahu.</div></div>
-<div class="userow"><div class="uw" dir="rtl">ששון</div><div class="ug">Joy; exultant gladness</div><div class="uu"><b>Used when:</b> the joy of celebration and deliverance; the classic pair is <i>sasson v'simcha</i> — Esther, Yirmiyahu.</div></div>
-<div class="userow"><div class="uw" dir="rtl">חדוה</div><div class="ug">Delight; heartfelt joy</div><div class="uu"><b>Used when:</b> inner, settled joy — most famously the joy of Hashem, <i>chedvas Hashem</i> (Nechemiah).</div></div>
-<div class="userow"><div class="uw" dir="rtl">עליצות</div><div class="ug">Merriment; exuberant rejoicing</div><div class="uu"><b>Used when:</b> outward, loud rejoicing; the rarest of the four, poetic.</div></div>
-</div>
-<div class="thesgroup"><h4>ANTONYMS</h4><span class="thesword"><b>עצב</b> · sadness</span><span class="thesword"><b>יגון</b> · sorrow</span><span class="thesword"><b>אבל</b> · mourning</span></div>
-<div class="thesgroup"><h4>RELATED WORDS</h4><span class="thesword"><b>שמח</b> · happy</span><span class="thesword"><b>משמח</b> · gladdening</span><span class="thesword"><b>שמחה</b> · rejoicing</span></div>
-<p class="hint">Tap any word to open its dictionary entry. Prototype: only שמחה is filled in. Usage notes modeled on Biur Shemos HaNirdafim by R' Shlomo Aharon Wertheimer.</p>
-</div>
-</div>
+    <div class="form-check form-switch mb-3" id="translit-wrap" hidden>
+      <input class="form-check-input" type="checkbox" role="switch" id="translit-toggle" checked>
+      <label class="form-check-label" for="translit-toggle">Show Yiddish transliteration</label>
+    </div>
 
-<!-- ROSHEI TEIVOS -->
-<div class="screen" id="screen-r">
-<div class="search">⌕ &nbsp;Search an abbreviation…</div>
-<div class="alpha" dir="rtl" id="rtAlpha"><span class="on">א</span><span>ב</span><span>ג</span><span>ד</span><span>ה</span><span>ו</span><span>ז</span><span>ח</span><span>ט</span><span>י</span><span>כ</span><span>ל</span><span>מ</span><span>נ</span><span>ס</span><span>ע</span><span>פ</span><span>צ</span><span>ק</span><span>ר</span><span>ש</span><span>ת</span></div>
-<div class="chips"><span class="chip on">All</span><span class="chip">Gemara</span><span class="chip">Halacha</span><span class="chip">Chassidus</span><span class="chip">Modern</span></div>
-<div class="letterhead">ב — BEIS</div>
-<div class="card"><div class="abbr" dir="rtl">בס״ד</div><div class="expansion" dir="rtl">בסיעתא דשמיא</div><div class="gloss">With the help of Heaven. Aramaic phrase used at the head of letters and seforim.</div><span class="genre">General · Aramaic</span></div>
-<div class="letterhead">ע — AYIN</div>
-<div class="card"><div class="abbr" dir="rtl">ע״פ</div><div class="expansion" dir="rtl">על פי</div><div class="gloss">According to; on the basis of.</div><span class="genre">Gemara · Halacha</span></div>
-<div class="letterhead">ר — REISH</div>
-<div class="card"><div class="abbr" dir="rtl">רש״י</div><div class="expansion" dir="rtl">רבי שלמה יצחקי</div><div class="gloss">Rabbi Shlomo Yitzchaki, the 11th-century French commentator on Tanach and Talmud.</div><span class="genre">Gemara · Rishonim</span></div>
-</div>
+    <div id="results" aria-live="polite"></div>
 
-<!-- DIKDUK -->
-<div class="screen" id="screen-g">
-<div class="langpills" id="grammarPills"><span class="on">Hebrew</span><span>Aramaic</span><span class="later" style="opacity:.45">Yiddish · later</span></div>
-<div class="letterhead">TOPICS</div>
-<div class="topic">Binyanim — the verb patterns <span style="float:right;color:#9ca3af">›</span></div>
-<div class="topic">Shoresh and word patterns <span style="float:right;color:#9ca3af">›</span></div>
-<div class="topic">Prefixes, suffixes, and pronouns <span style="float:right;color:#9ca3af">›</span></div>
-<div class="topic">Nouns, adjectives, and smichut <span style="float:right;color:#9ca3af">›</span></div>
-<div class="letterhead">BINYANIM AT A GLANCE</div>
-<div class="card" style="font-size:13px;line-height:1.9">
-<b>Paal</b> — simple active — lamad, learned<br>
-<b>Nifal</b> — passive — nichtav, was written<br>
-<b>Piel</b> — intensive — limeid, taught<br>
-<b>Pual</b> — passive of Piel — lumad, was taught<br>
-<b>Hifil</b> — causative — hichtiv, dictated<br>
-<b>Hufal</b> — passive of Hifil — huchtav, was dictated<br>
-<b>Hitpael</b> — reflexive — hitkateiv, corresponded<br>
-<b>Poel</b> — less common variant — romeim, exalted
-</div>
-<div style="font-size:12px;color:#6b7280;line-height:1.5">Sources noted per section: Hebrew after Radak and Ramchal, Aramaic after Frank. Yiddish grammar comes in a later version. Tap any verb in the dictionary to open its binyan table.</div>
-</div>
+    <h2 class="h4 mt-5">Browse alphabetically</h2>
+    <div class="d-flex flex-wrap gap-1 mb-3" id="aleph-beis" dir="rtl" role="group" aria-label="Aleph-Beis index"></div>
+    <p class="text-body-secondary">Choose a letter to list entries starting with it, or search above.</p>
+  </main>
+  <div id="footer-root"></div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/nav.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script>
+    (function () {
+      'use strict';
 
-<!-- TOOLS -->
-<div class="screen" id="screen-tools">
-<div class="letterhead">TOOLS</div>
-<div class="card"><b style="font-size:16px">Gematria calculator</b><div class="hint" style="margin-bottom:10px">Type a Hebrew word or phrase. Four classic methods, with a letter breakdown.</div>
-<input class="geminput" id="gemInput" value="שלום" dir="rtl">
-<button class="btn" id="gemCalc">Calculate</button>
-<div id="gemResults" style="margin-top:12px"></div>
-</div>
-<div class="card" style="opacity:.6"><b style="font-size:15px">More tools</b><div class="hint">This section will grow — more Torah-language tools will be added here.</div></div>
-</div>
+      var PAGE_SIZE = 200;
+      var searchInput = document.getElementById('dict-search');
+      var searchForm = document.getElementById('search-form');
+      var filterEl = document.getElementById('lang-filter');
+      var resultsEl = document.getElementById('results');
+      var translitWrap = document.getElementById('translit-wrap');
+      var translitToggle = document.getElementById('translit-toggle');
+      var lettersEl = document.getElementById('aleph-beis');
 
-<!-- FLASHCARDS -->
-<div class="screen" id="screen-f">
-<div class="letterhead">MY LISTS</div>
-<div class="listrow"><div><b>Chumash</b><br><span>12 cards</span></div><span class="share">⇪ Share</span></div>
-<div class="listrow"><div><b>Gemara</b><br><span id="gemaraCount">8 cards</span></div><span class="share">⇪ Share</span></div>
-<div class="listrow"><div><b>Dikduk</b><br><span>5 cards</span></div><span class="share">⇪ Share</span></div>
-<div class="letterhead" style="margin-top:12px">STUDY — GEMARA</div>
-<div class="flashcard" id="flashcard"><div id="flashContent"><div class="front" dir="rtl">גמרא</div></div><div class="tap">Tap the card to flip · <span id="flashPos">Card 1 of 3</span></div></div>
-<button class="btn" id="flashNext">Next card →</button>
-<div class="letterhead" style="margin-top:14px">MAKE A NEW CARD</div>
-<div class="card"><input class="field" id="newFront" placeholder="Front — Hebrew word" dir="rtl"><input class="field" id="newBack" placeholder="Back — meaning"><select class="field" id="newList"><option>Gemara</option><option>Chumash</option><option>Dikduk</option></select><button class="btn" id="addCard">Add card</button><p class="hint" id="addNote" style="text-align:center"></p></div>
-<p class="hint">Make your own cards, Quizlet-style. Lists can be shared publicly.</p>
-</div>
+      var currentLang = 'all';
+      var currentResults = [];
+      var shownCount = 0;
+      var currentLetter = null;
+      var searchTimer = null;
+      var searchSeq = 0;
 
-<!-- READ -->
-<div class="screen" id="screen-read">
-<div class="letterhead">TAP ANY WORD FOR ITS ENTRY</div>
-<div class="passage" dir="rtl"><span class="w" data-w="eizehu">איזהו</span> <span class="w" data-w="chacham">חכם</span>? <span class="w" data-w="halomeid">הלומד</span> <span class="w" data-w="mikol">מכל</span> <span class="w" data-w="adam">אדם</span></div>
-<div class="passage" dir="rtl"><span class="w" data-w="iyun">עיין</span> <span class="w abbrw" data-w="rashi">רש״י</span> <span class="w" data-w="sham">שם</span></div>
-<div class="entrypanel" id="readPanel"><div class="hint" style="margin:0">Tap a word above. Abbreviations are underlined in orange and expand in place.</div></div>
-<div class="card"><b style="font-size:14px">Paste your own text</b><div class="hint" style="margin-top:4px">Prototype: pasting is shown here, but lookup works on the sample passage above for now.</div></div>
-<p class="hint">Avos 4:1 — Who is wise? One who learns from every person.</p>
-</div>
+      function langsForFilter() {
+        if (currentLang === 'all' || currentLang === 'english') return Targum.LANGS.slice();
+        return [currentLang];
+      }
 
-<!-- MORE -->
-<div class="screen" id="screen-more">
-<div class="letterhead">MORE</div>
-<div class="morerow" data-goto="th"><b>Thesaurus</b><span>Synonyms, antonyms, and related words</span></div>
-<div class="morerow" data-goto="g"><b>Dikduk</b><span>Grammar — Hebrew and Aramaic, Yiddish later</span></div>
-<div class="morerow" data-goto="tools"><b>Tools</b><span>Gematria calculator, and more to come</span></div>
-<div class="morerow" data-goto="read"><b>Read mode</b><span>Paste a text, tap any word or abbreviation</span></div>
-<div class="morerow" data-goto="d" data-loan="1"><b>Loanwords</b><span>Words borrowed from Greek, French, Persian, and more</span></div>
-<div class="morerow"><b>Saved items</b><span>Saved words and lists — accounts to be discussed</span></div>
-<div class="morerow"><b>Offline packs</b><span>Download languages for offline use</span></div>
-</div>
+      // True when at least one of the requested language files loaded.
+      function ensureData(langs) {
+        return Promise.all(langs.map(function (lang) {
+          return Targum.loadDict(lang).then(function () { return true; }, function () { return false; });
+        })).then(function (flags) {
+          return flags.some(function (flag) { return flag; });
+        });
+      }
 
-</div>
-<div class="bottomnav" id="bottomNav"><div class="navitem on" data-screen="t"><span class="ico">⇄</span>Translate</div><div class="navitem" data-screen="d"><span class="ico">▤</span>Dictionary</div><div class="navitem" data-screen="r"><span class="ico">א״ב</span>Roshei Teivos</div><div class="navitem" data-screen="f"><span class="ico">▣</span>Flashcards</div><div class="navitem" data-screen="more"><span class="ico">☰</span>More</div></div>
-</div>
-<p class="note">Mock v3 — all seven features: Translate, Dictionary, Thesaurus, Roshei Teivos, Dikduk, Tools (Gematria), Flashcards — plus Read mode, loanwords, and audio. Everything on this page taps. Nothing here is saved — it is a prototype for review.</p>
-</div>
-<script>
-function showScreen(which){
-  document.querySelectorAll('.screen').forEach(function(s){s.classList.remove('active');});
-  document.getElementById('screen-'+which).classList.add('active');
-  document.querySelectorAll('#topTabs button').forEach(function(b){b.classList.toggle('on', b.getAttribute('data-screen')===which);});
-  document.querySelectorAll('#bottomNav .navitem').forEach(function(n){n.classList.toggle('on', n.getAttribute('data-screen')===which);});
-}
-document.querySelectorAll('#topTabs button, #bottomNav .navitem').forEach(function(el){
-  el.addEventListener('click', function(){ showScreen(el.getAttribute('data-screen')); });
-});
-document.querySelectorAll('[data-goto]').forEach(function(el){
-  el.addEventListener('click', function(){
-    showScreen(el.getAttribute('data-goto'));
-    if(el.getAttribute('data-loan')){ setDictFilter('loan'); }
-  });
-});
-document.getElementById('swapBtn').addEventListener('click', function(){
-  var f=document.getElementById('langFrom'), t=document.getElementById('langTo');
-  var tmp=f.textContent; f.textContent=t.textContent; t.textContent=tmp;
-});
-document.getElementById('translitToggle').addEventListener('click', function(){
-  var el=document.getElementById('translitLine'), st=document.getElementById('translitState');
-  if(el.style.display==='none'){el.style.display='block';st.textContent='ON — tap to hide';}
-  else{el.style.display='none';st.textContent='OFF — tap to show';}
-});
-document.getElementById('translateBtn').addEventListener('click', function(){
-  document.getElementById('translateNote').textContent='Prototype: translation shown above is a sample.';
-});
-function singleSelect(containerId, selector){
-  var c=document.getElementById(containerId);
-  if(!c) return;
-  c.querySelectorAll(selector).forEach(function(el){
-    el.addEventListener('click', function(){
-      c.querySelectorAll(selector).forEach(function(x){x.classList.remove('on');});
-      el.classList.add('on');
-    });
-  });
-}
-singleSelect('dictAlpha','span'); singleSelect('rtAlpha','span');
-singleSelect('grammarPills','span:not(.later)');
-document.querySelectorAll('.wordchip').forEach(function(ch){
-  ch.addEventListener('click', function(){ showScreen('d'); });
-});
-document.querySelectorAll('.thesword').forEach(function(w){
-  w.addEventListener('click', function(){ showScreen('d'); });
-});
-document.querySelectorAll('.userow').forEach(function(w){
-  w.addEventListener('click', function(){ showScreen('d'); });
-});
-document.querySelectorAll('.listen').forEach(function(b){
-  b.addEventListener('click', function(){
-    var note=b.parentElement.querySelector('.audionote');
-    if(note) note.textContent='Prototype: recorded audio coming — common words first.';
-  });
-});
-function setDictFilter(f){
-  document.querySelectorAll('#dictChips .chip').forEach(function(c){
-    c.classList.toggle('on', c.getAttribute('data-filter')===f);
-  });
-  var main=document.getElementById('dictMain'), loan=document.getElementById('dictLoan');
-  if(f==='loan'){ main.style.display='none'; loan.style.display='block'; }
-  else{
-    loan.style.display='none'; main.style.display='block';
-    document.querySelectorAll('#dictMain .card').forEach(function(card){
-      card.style.display = (f==='phrases' && card.getAttribute('data-kind')!=='phrase') ? 'none' : 'block';
-    });
-  }
-  document.getElementById('dictNote').textContent = (f==='all') ? '' : '';
-}
-document.querySelectorAll('#dictChips .chip').forEach(function(c){
-  c.addEventListener('click', function(){ setDictFilter(c.getAttribute('data-filter')); });
-});
-document.getElementById('thesSearch').addEventListener('change', function(){
-  var v=this.value.trim();
-  document.getElementById('thesResult').style.display = (v.indexOf('שמחה')!==-1 || v.toLowerCase().indexOf('simch')!==-1) ? 'block' : 'none';
-  if(document.getElementById('thesResult').style.display==='none'){
-    alert('Prototype: only שמחה is filled in.');
-    this.value='שמחה';
-    document.getElementById('thesResult').style.display='block';
-  }
-});
-var HECH={א:1,ב:2,ג:3,ד:4,ה:5,ו:6,ז:7,ח:8,ט:9,י:10,כ:20,ך:20,ל:30,מ:40,ם:40,נ:50,ן:50,ס:60,ע:70,פ:80,ף:80,צ:90,ץ:90,ק:100,ר:200,ש:300,ת:400};
-var SID={א:1,ב:2,ג:3,ד:4,ה:5,ו:6,ז:7,ח:8,ט:9,י:10,כ:11,ך:11,ל:12,מ:13,ם:13,נ:14,ן:14,ס:15,ע:16,פ:17,ף:17,צ:18,ץ:18,ק:19,ר:20,ש:21,ת:22};
-var ATB={א:'ת',ב:'ש',ג:'ר',ד:'ק',ה:'צ',ו:'פ',ז:'ע',ח:'ס',ט:'נ',י:'מ',כ:'ל',ך:'ל',ל:'כ',מ:'י',ם:'י',נ:'ט',ן:'ט',ס:'ח',ע:'ז',פ:'ו',ף:'ו',צ:'ה',ץ:'ה',ק:'ד',ר:'ג',ש:'ב',ת:'א'};
-function reduce(n){ while(n>=10){ var s=0; while(n>0){ s+=n%10; n=Math.floor(n/10); } n=s; } return n; }
-function calcGematria(){
-  var text=document.getElementById('gemInput').value;
-  var letters=text.split('').filter(function(ch){ return HECH[ch]!==undefined; });
-  if(!letters.length){ document.getElementById('gemResults').innerHTML='<p class="hint">Type a Hebrew word first.</p>'; return; }
-  var hech=0, sid=0, kat=0, atb=0, parts=[];
-  letters.forEach(function(ch){
-    hech+=HECH[ch]; sid+=SID[ch]; kat+=reduce(HECH[ch]); atb+=HECH[ATB[ch]];
-    parts.push(ch+' = '+HECH[ch]);
-  });
-  document.getElementById('gemResults').innerHTML =
-    '<div class="gemrow"><span>Mispar Hechrachi <span style="color:#6b7280">(standard)</span></span><b>'+hech+'</b></div>'+
-    '<div class="gemrow"><span>With the kolel (+1)</span><b>'+(hech+1)+'</b></div>'+
-    '<div class="gemrow"><span>Mispar Siduri <span style="color:#6b7280">(letter positions)</span></span><b>'+sid+'</b></div>'+
-    '<div class="gemrow"><span>Mispar Katan <span style="color:#6b7280">(reduced)</span></span><b>'+kat+'</b></div>'+
-    '<div class="gemrow"><span>Atbash <span style="color:#6b7280">(mirrored alphabet)</span></span><b>'+atb+'</b></div>'+
-    '<div class="breakdown"><b>Letter breakdown:</b><br>'+parts.join(' &nbsp;·&nbsp; ')+'</div>';
-}
-document.getElementById('gemCalc').addEventListener('click', calcGematria);
-calcGematria();
-var deck=[
-  {f:'גמרא', b:'Learning; completion. As a sefer: the Talmudic discussion on the Mishnah.'},
-  {f:'תנא', b:'A teacher of the Mishnah; also: it was taught (introducing a baraisa).'},
-  {f:'סברא', b:'Reasoning; a logical argument or line of thought.'}
-];
-var cardIdx=0, flipped=false;
-function renderCard(){
-  var c=deck[cardIdx];
-  document.getElementById('flashContent').innerHTML = flipped
-    ? '<div class="back">'+c.b+'</div>'
-    : '<div class="front" dir="rtl">'+c.f+'</div>';
-  document.getElementById('flashPos').textContent='Card '+(cardIdx+1)+' of '+deck.length;
-}
-document.getElementById('flashcard').addEventListener('click', function(){ flipped=!flipped; renderCard(); });
-document.getElementById('flashNext').addEventListener('click', function(){ cardIdx=(cardIdx+1)%deck.length; flipped=false; renderCard(); });
-document.getElementById('addCard').addEventListener('click', function(){
-  var fr=document.getElementById('newFront').value.trim(), bk=document.getElementById('newBack').value.trim();
-  if(!fr || !bk){ document.getElementById('addNote').textContent='Fill in both sides of the card.'; return; }
-  deck.push({f:fr, b:bk});
-  document.getElementById('newFront').value=''; document.getElementById('newBack').value='';
-  document.getElementById('addNote').textContent='Card added to your '+document.getElementById('newList').value+' list.';
-  renderCard();
-});
-renderCard();
-var READENTRIES={
-  eizehu:{h:'איזהו', m:'HEBREW · INTERROGATIVE', g:'Who is...? / Which is...?', d:'<b>Break-up:</b> אי (which) + זה (this)'},
-  chacham:{h:'חכם', m:'HEBREW · NOUN / ADJECTIVE', g:'A wise person; a sage. As an adjective: wise.', d:'<b>Root:</b> Ch-K-M'},
-  halomeid:{h:'הלומד', m:'HEBREW · VERB · PAAL (PRESENT)', g:'One who learns; the one learning.', d:'<b>Root:</b> L-M-D'},
-  mikol:{h:'מכל', m:'HEBREW · PREPOSITION', g:'From every; from all.', d:'<b>Break-up:</b> מ (from) + כל (all, every)'},
-  adam:{h:'אדם', m:'HEBREW · NOUN', g:'A person; man.', d:'<b>Root:</b> A-D-M'},
-  iyun:{h:'עיין', m:'HEBREW · VERB · IMPERATIVE', g:'See; look at. Used to refer the reader elsewhere.', d:'<b>Root:</b> A-Y-N'},
-  rashi:{h:'רש״י', m:'ABBREVIATION — EXPANDS TO', g:'Rabbi Shlomo Yitzchaki, the 11th-century French commentator on Tanach and Talmud.', d:'<b>Full form:</b> רבי שלמה יצחקי'},
-  sham:{h:'שם', m:'HEBREW · ADVERB', g:'There; in that place.', d:''}
-};
-document.querySelectorAll('.passage .w').forEach(function(w){
-  w.addEventListener('click', function(){
-    var e=READENTRIES[w.getAttribute('data-w')];
-    if(!e) return;
-    document.getElementById('readPanel').innerHTML =
-      '<div class="hw" dir="rtl">'+e.h+'</div><div class="meta">'+e.m+'</div><div class="gloss">'+e.g+'</div>'+(e.d?'<div class="detail">'+e.d+'</div>':'');
-  });
-});
-</script>
-</body></html>
+      function showDataAlert() {
+        resultsEl.innerHTML = '<div class="alert alert-warning" role="alert">Dictionary data is not available yet. Please try again later.</div>';
+      }
+
+      // Compact result row; clicking it expands the full entry card
+      // (Bootstrap collapse) below the row.
+      function summaryRow(entry, index) {
+        var firstSense = String(entry.g || '').split(' | ')[0] || '';
+        var langName = Targum.LANG_NAMES[entry.l] || entry.l || '';
+        var langAttr = entry.l === 'yiddish' ? 'yi' : 'he';
+        return '<div class="mb-2">' +
+          '<button type="button" class="btn btn-outline-secondary w-100 d-flex flex-wrap align-items-center gap-2 text-start" data-bs-toggle="collapse" data-bs-target="#entry-detail-' + index + '" aria-expanded="false" aria-controls="entry-detail-' + index + '">' +
+            '<span lang="' + langAttr + '" dir="rtl" class="targum-headword fs-5">' + Targum.escapeHtml(entry.h || entry.p || '') + '</span>' +
+            '<span class="badge text-bg-primary rounded-pill">' + Targum.escapeHtml(langName) + '</span>' +
+            (entry.pos ? '<span class="text-body-secondary small">' + Targum.escapeHtml(entry.pos) + '</span>' : '') +
+            '<span class="text-body-secondary small text-truncate">' + Targum.escapeHtml(firstSense) + '</span>' +
+          '</button>' +
+          '<div class="collapse mt-2" id="entry-detail-' + index + '">' +
+            Targum.renderEntryCard(entry) +
+          '</div>' +
+        '</div>';
+      }
+
+      // The transliteration toggle appears only when displayed Yiddish
+      // entries have a transliteration.
+      function updateTranslitToggle() {
+        var shown = currentResults.slice(0, shownCount);
+        var anyTr = shown.some(function (entry) { return entry.l === 'yiddish' && entry.tr; });
+        translitWrap.hidden = !anyTr;
+        resultsEl.classList.toggle('hide-translit', !translitToggle.checked);
+      }
+
+      function renderResults() {
+        var total = currentResults.length;
+        var shown = currentResults.slice(0, shownCount);
+        var html = '';
+        if (total === 0) {
+          html = '<p class="text-body-secondary">No entries found.</p>';
+        } else {
+          html = '<p class="text-body-secondary" role="status">Showing ' + shown.length + ' of ' + total + ' entries.</p>';
+          html += shown.map(summaryRow).join('');
+          if (shownCount < total) {
+            html += '<button type="button" class="btn btn-outline-primary mt-2" id="show-more">Show more</button>';
+          }
+        }
+        resultsEl.innerHTML = html;
+        var moreBtn = document.getElementById('show-more');
+        if (moreBtn) {
+          moreBtn.addEventListener('click', function () {
+            shownCount = Math.min(total, shownCount + PAGE_SIZE);
+            renderResults();
+          });
+        }
+        updateTranslitToggle();
+        // A single result opens on its own (e.g. a cross-link from
+        // the thesaurus that lands on one entry).
+        if (total === 1 && typeof bootstrap !== 'undefined' && bootstrap.Collapse) {
+          var detail = document.getElementById('entry-detail-0');
+          if (detail) new bootstrap.Collapse(detail, { toggle: true });
+        }
+      }
+
+      function runSearch() {
+        var q = searchInput.value.trim();
+        currentLetter = null;
+        markActiveLetter(null);
+        if (!q) {
+          currentResults = [];
+          shownCount = 0;
+          resultsEl.innerHTML = '<p class="text-body-secondary">Type a word above to search, or choose a letter below to browse.</p>';
+          updateTranslitToggle();
+          return;
+        }
+        var seq = ++searchSeq;
+        var langs = langsForFilter();
+        var glossOnly = currentLang === 'english';
+        ensureData(langs).then(function (ok) {
+          if (seq !== searchSeq) return null;
+          if (!ok) { showDataAlert(); return null; }
+          return Targum.searchDict(q, langs, { glossOnly: glossOnly });
+        }).then(function (results) {
+          if (seq !== searchSeq || !results) return;
+          currentResults = results;
+          shownCount = Math.min(PAGE_SIZE, results.length);
+          renderResults();
+        });
+      }
+
+      // First Hebrew letter of a string, skipping leading punctuation
+      // (some Jastrow headwords start with "(") and folding final
+      // letters to their regular form (ך→כ, ם→מ, ן→נ, ף→פ, ץ→צ) so
+      // entries group under the right Aleph-Beis letter.
+      var SOFIT = { 'ך': 'כ', 'ם': 'מ', 'ן': 'נ', 'ף': 'פ', 'ץ': 'צ' };
+      function firstHebrewLetter(str) {
+        for (var i = 0; i < str.length; i++) {
+          var ch = str.charAt(i);
+          if (ch >= 'א' && ch <= 'ת') return SOFIT[ch] || ch;
+        }
+        return '';
+      }
+
+      function browseLetter(letter) {
+        currentLetter = letter;
+        markActiveLetter(letter);
+        searchInput.value = '';
+        var langs = langsForFilter();
+        var seq = ++searchSeq;
+        resultsEl.innerHTML = '<p class="text-body-secondary" role="status">Loading…</p>';
+        ensureData(langs).then(function (ok) {
+          if (seq !== searchSeq) return null;
+          if (!ok) { showDataAlert(); return null; }
+          return Promise.all(langs.map(function (lang) {
+            return Targum.loadDict(lang).catch(function () { return []; });
+          }));
+        }).then(function (lists) {
+          if (seq !== searchSeq || !lists) return;
+          var matches = [];
+          lists.forEach(function (list) {
+            list.forEach(function (entry) {
+              var plain = Targum.stripNikud(entry.p || entry.h || '');
+              if (firstHebrewLetter(plain) === letter) matches.push(entry);
+            });
+          });
+          matches.sort(function (a, b) {
+            return String(a.p || '').localeCompare(String(b.p || ''), 'he');
+          });
+          currentResults = matches;
+          shownCount = Math.min(PAGE_SIZE, matches.length);
+          renderResults();
+        });
+      }
+
+      function markActiveLetter(letter) {
+        lettersEl.querySelectorAll('button').forEach(function (btn) {
+          var isActive = letter !== null && btn.getAttribute('data-letter') === letter;
+          btn.classList.toggle('btn-primary', isActive);
+          btn.classList.toggle('btn-outline-primary', !isActive);
+          btn.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+        });
+      }
+
+      Targum.HEBREW_LETTERS.forEach(function (letter) {
+        var btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'btn btn-outline-primary btn-sm';
+        btn.setAttribute('data-letter', letter);
+        btn.setAttribute('aria-pressed', 'false');
+        btn.setAttribute('aria-label', 'Browse entries starting with ' + letter);
+        btn.textContent = letter;
+        btn.addEventListener('click', function () { browseLetter(letter); });
+        lettersEl.appendChild(btn);
+      });
+
+      filterEl.querySelectorAll('button').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          filterEl.querySelectorAll('button').forEach(function (other) {
+            other.classList.remove('active');
+            other.setAttribute('aria-pressed', 'false');
+          });
+          btn.classList.add('active');
+          btn.setAttribute('aria-pressed', 'true');
+          currentLang = btn.getAttribute('data-lang');
+          updateUrl();
+          if (currentLetter) browseLetter(currentLetter);
+          else if (searchInput.value.trim()) runSearch();
+        });
+      });
+
+      function updateUrl() {
+        var params = new URLSearchParams();
+        var q = searchInput.value.trim();
+        if (q) params.set('q', q);
+        if (currentLang !== 'all') params.set('lang', currentLang);
+        var query = params.toString();
+        window.history.replaceState(null, '', window.location.pathname + (query ? '?' + query : ''));
+      }
+
+      searchForm.addEventListener('submit', function (event) {
+        event.preventDefault();
+        updateUrl();
+        runSearch();
+      });
+
+      searchInput.addEventListener('input', function () {
+        clearTimeout(searchTimer);
+        searchTimer = setTimeout(function () { updateUrl(); runSearch(); }, 250);
+      });
+
+      translitToggle.addEventListener('change', updateTranslitToggle);
+
+      // Pre-fill from ?q= and ?lang= (cross-links from other pages).
+      (function init() {
+        var params = new URLSearchParams(window.location.search);
+        var q = params.get('q') || '';
+        var lang = params.get('lang') || 'all';
+        var validLangs = ['all', 'modern', 'ancient', 'aramaic', 'yiddish', 'english'];
+        if (validLangs.indexOf(lang) === -1) lang = 'all';
+        currentLang = lang;
+        filterEl.querySelectorAll('button').forEach(function (btn) {
+          var isActive = btn.getAttribute('data-lang') === lang;
+          btn.classList.toggle('active', isActive);
+          btn.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+        });
+        if (q) {
+          searchInput.value = q;
+          runSearch();
+        } else {
+          resultsEl.innerHTML = '<p class="text-body-secondary">Type a word above to search, or choose a letter below to browse.</p>';
+        }
+      })();
+
+      // Once the thesaurus map loads, re-render so "Synonyms" links
+      // appear on entries that have a group (no-op while the
+      // thesaurus data is absent).
+      Targum.loadThesaurus().then(function (map) {
+        if (Object.keys(map).length && currentResults.length) renderResults();
+      });
+    })();
+  </script>
+</body>
+</html>

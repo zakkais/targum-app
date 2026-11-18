@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Targum — Tools</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@400;500;700&family=Heebo:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="assets/css/style.css" rel="stylesheet">
+</head>
+<body>
+  <div id="nav-root">
+    <noscript>
+      <nav class="bg-targum-navy p-3" data-bs-theme="dark" aria-label="Main navigation">
+        <a class="fw-bold text-decoration-none" href="index.html">Targum</a>
+        <span class="text-body-secondary"> · </span>
+        <a href="index.html">Dictionary</a>
+        <span class="text-body-secondary"> · </span>
+        <a href="roshei-teivos.html">Roshei Teivos</a>
+        <span class="text-body-secondary"> · </span>
+        <a href="thesaurus.html">Thesaurus</a>
+        <span class="text-body-secondary"> · </span>
+        <a href="dikduk.html">Dikduk</a>
+        <span class="text-body-secondary"> · </span>
+        <a href="loanwords.html">Loanwords</a>
+        <span class="text-body-secondary"> · </span>
+        <a href="conjugator.html">Conjugator</a>
+        <span class="text-body-secondary"> · </span>
+        <a href="tools.html">Tools</a>
+        <span class="text-body-secondary"> · </span>
+        <a href="read.html">Read Mode</a>
+        <span class="text-body-secondary"> · </span>
+        <a href="sources.html">Sources</a>
+      </nav>
+    </noscript>
+  </div>
+  <main class="container py-4">
+    <h1>Tools</h1>
+    <p class="lead">Gematria calculator: enter one or two Hebrew phrases and compare their values.</p>
+
+    <div class="row mb-3">
+      <div class="col-md-6 mb-3 mb-md-0">
+        <label for="phrase-1" class="form-label">First phrase</label>
+        <input type="text" class="form-control targum-headword fs-5" id="phrase-1" lang="he" dir="rtl" placeholder="הקלד ביטוי בעברית" aria-label="First Hebrew phrase" autocomplete="off">
+      </div>
+      <div class="col-md-6">
+        <label for="phrase-2" class="form-label">Second phrase (optional, to compare)</label>
+        <input type="text" class="form-control targum-headword fs-5" id="phrase-2" lang="he" dir="rtl" placeholder="הקלד ביטוי שני להשוואה" aria-label="Second Hebrew phrase, optional" autocomplete="off">
+      </div>
+    </div>
+
+    <fieldset class="mb-3">
+      <legend class="fs-6">Method</legend>
+      <div class="d-flex flex-wrap gap-3">
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="gematria-method" id="method-hechrachi" value="hechrachi" checked>
+          <label class="form-check-label" for="method-hechrachi">Mispar Hechrachi (standard values)</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="gematria-method" id="method-siduri" value="siduri">
+          <label class="form-check-label" for="method-siduri">Mispar Siduri (ordinal, 1–22)</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="gematria-method" id="method-katan" value="katan">
+          <label class="form-check-label" for="method-katan">Mispar Katan (each letter reduced to one digit)</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="gematria-method" id="method-atbash" value="atbash">
+          <label class="form-check-label" for="method-atbash">Atbash (aleph ↔ tav)</label>
+        </div>
+      </div>
+    </fieldset>
+
+    <fieldset class="mb-4">
+      <legend class="fs-6">Im hakolel</legend>
+      <div class="d-flex flex-wrap gap-3">
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="gematria-hakolel" id="hakolel-none" value="none" checked>
+          <label class="form-check-label" for="hakolel-none">None</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="gematria-hakolel" id="hakolel-word" value="word">
+          <label class="form-check-label" for="hakolel-word">Add 1 per word</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="gematria-hakolel" id="hakolel-letter" value="letter">
+          <label class="form-check-label" for="hakolel-letter">Add 1 per letter</label>
+        </div>
+      </div>
+    </fieldset>
+
+    <div id="gematria-results" aria-live="polite"></div>
+  </main>
+  <div id="footer-root"></div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/nav.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script src="assets/js/gematria.js"></script>
+</body>
+</html>

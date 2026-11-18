@@ -1,0 +1,72 @@
+/* Targum brand tokens and restrained polish. Bootstrap components and
+   utilities do the heavy lifting; this file carries brand colors,
+   fonts, Hebrew type, and a few small refinements. */
+
+/* Brand color as the Bootstrap primary (documented CSS-variable
+   override), so buttons, badges, pills, and focus rings all match. */
+:root {
+  --targum-blue: #1a73e8;
+  --targum-blue-dark: #1a56db;
+  --targum-navy: #0f2a44;
+  --targum-bg: #f6f8fb;
+  --bs-primary: #1a73e8;
+  --bs-primary-rgb: 26, 115, 232;
+  --bs-link-color: #1a56db;
+  --bs-link-hover-color: #1746b3;
+}
+
+/* Clean sans for the UI (Heebo covers Latin and Hebrew); soft page
+   background so white cards sit calmly on it. */
+body {
+  font-family: "Heebo", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  background-color: var(--targum-bg);
+  color: #1f2937;
+}
+
+/* Navy header background (used by the navbar injected by nav.js). */
+.bg-targum-navy {
+  background-color: var(--targum-navy);
+}
+
+.navbar-brand {
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+/* Serif stack for Hebrew and Yiddish headwords. */
+.targum-headword {
+  font-family: "Frank Ruhl Libre", "Noto Serif Hebrew", "Times New Roman", serif;
+}
+
+/* Pointed forms shown under the main word, and conjugated forms. */
+.targum-nikud,
+.hebrew-form {
+  font-family: "Frank Ruhl Libre", "Noto Serif Hebrew", "Times New Roman", serif;
+}
+
+.hebrew-form {
+  font-size: 1.25rem;
+}
+
+/* Cards: soft border, gentle shadow, slightly rounded. */
+.card {
+  border-color: #e3e8ef;
+  box-shadow: 0 1px 2px rgba(15, 42, 68, 0.05);
+}
+
+/* Entry summary rows: white, with a hover lift. */
+#results .btn-outline-secondary {
+  background-color: #fff;
+  border-color: #d7dee8;
+  color: #1f2937;
+}
+
+#results .btn-outline-secondary:hover {
+  border-color: var(--targum-blue);
+  color: #1f2937;
+}
+
+/* Hides Yiddish transliteration lines when the toggle is off. */
+.hide-translit .targum-translit {
+  display: none;
+}
