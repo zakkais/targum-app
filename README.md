@@ -31,7 +31,9 @@ entry), a **loanwords** section (Greek, French, Persian, and more), a
 ## Status
 
 Early prototype. The current site is the tappable mock (v3). The website
-comes first; the Android app follows, reusing the same data.
+comes first; the Android app follows, reusing the same data. Fluent sentence
+translation is deferred to a future update; v1 is dictionary plus word-by-word
+lookup only.
 
 ## Data sources
 
