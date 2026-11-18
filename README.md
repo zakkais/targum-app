@@ -1,5 +1,7 @@
 # Lashon Translate
 
+Live site: https://zakkais.github.io/targum-app/
+
 A one-stop shop for anything Torah-language based: translate and look up words
 across Modern Hebrew, Lashon HaKodesh, Aramaic, Yiddish, and English.
 
