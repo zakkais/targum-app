@@ -10,7 +10,8 @@ across Modern Hebrew, Lashon HaKodesh, Aramaic, Yiddish, and English.
 ## Features (planned)
 
 1. **Translate** — Google Translate-style, to and from English. Offline when the
-   language pack is fully downloaded; online also works.
+   language pack is fully downloaded; online also works. Deferred to a future
+   update; v1 is dictionary plus word-by-word lookup only.
 2. **Dictionary** — entries with shoresh (root), word break-up, binyan for
    verbs, usage examples, and phrases as entries. Alphabetical browse.
 3. **Thesaurus** — synonyms with notes on when each word is used, modeled on
@@ -21,19 +22,26 @@ across Modern Hebrew, Lashon HaKodesh, Aramaic, Yiddish, and English.
 6. **Tools** — gematria calculator (Mispar Hechrachi, Siduri, Katan, Atbash,
    with im hakolel), and more to come.
 7. **Flashcards** — make your own cards and lists (Chumash, Gemara, dikduk),
-   with optional public sharing, Quizlet-style.
+   Quizlet-style. Public sharing in a later version, once accounts exist.
 
 Plus: **Read mode** (paste a text, tap any word or abbreviation for its
-entry), a **loanwords** section (Greek, French, Persian, and more), a
-**verb conjugator** (full tables, all binyanim and tenses, offline), and
-**recorded audio** pronunciation for Hebrew and Yiddish entries.
+entry), a **loanwords** section (Greek, French, Persian, and more), and a
+**verb conjugator** (full tables, all binyanim and tenses, offline).
+
+Later versions: recorded audio pronunciation for Hebrew and Yiddish entries,
+and camera text scanning (like Google Lens).
 
 ## Status
 
-Early prototype. The current site is the tappable mock (v3). The website
-comes first; the Android app follows, reusing the same data. Fluent sentence
-translation is deferred to a future update; v1 is dictionary plus word-by-word
-lookup only.
+V1 of the website is being built from scratch (Bootstrap, static site on
+GitHub Pages). The live site still shows the tappable mock (v3) until the
+new build replaces it. The Android app follows, reusing the same data.
+
+**Databases not yet complete.** The dictionary base (22,286 entries from
+Wiktionary and Strong's) is in place; the Yiddish and Jastrow additions are
+still being merged in. The Roshei Teivos list has been extracted from all six
+source books (about 38,000 raw entries) but has not yet been merged,
+deduplicated, or checked.
 
 ## Data sources
 
