@@ -2,21 +2,28 @@
    utilities do the heavy lifting; this file carries brand colors,
    fonts, Hebrew type, and a few small refinements. */
 
-/* Brand color as the Bootstrap primary (documented CSS-variable
-   override), so buttons, badges, pills, and focus rings all match. */
+/* Brand color as the Bootstrap primary. Bootstrap 6 has no single
+   --bs-primary variable: the primary theme is a token family, so the
+   brand blue is set on the tokens that drive buttons, badges, pills,
+   and focus rings. The subtle/muted tints keep the default blue scale,
+   which is close to the brand blue. */
 :root {
   --targum-blue: #1a73e8;
   --targum-blue-dark: #1a56db;
   --targum-navy: #0f2a44;
   --targum-bg: #f6f8fb;
-  --bs-primary: #1a73e8;
-  --bs-primary-rgb: 26, 115, 232;
+  --bs-primary-base: #1a73e8;
+  --bs-primary-bg: #1a73e8;
+  --bs-primary-fg: #1a56db;
+  --bs-primary-border: #1a73e8;
+  --bs-primary-focus-ring: color-mix(in oklch, #1a73e8 50%, var(--bs-bg-body));
   --bs-link-color: #1a56db;
   --bs-link-hover-color: #1746b3;
 }
 
-/* Clean sans for the UI (Heebo covers Latin and Hebrew); soft page
-   background so white cards sit calmly on it. */
+/* Clean sans for the UI (Heebo for Latin; Hebrew and Yiddish use
+   Noto Sans Hebrew, below); soft page background so white cards sit
+   calmly on it. */
 body {
   font-family: "Heebo", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   background-color: var(--targum-bg);
@@ -33,15 +40,20 @@ body {
   letter-spacing: 0.01em;
 }
 
-/* Serif stack for Hebrew and Yiddish headwords. */
-.targum-headword {
-  font-family: "Frank Ruhl Libre", "Noto Serif Hebrew", "Times New Roman", serif;
-}
-
-/* Pointed forms shown under the main word, and conjugated forms. */
+/* Hebrew and Yiddish text renders in Noto Sans Hebrew: headwords,
+   pointed forms, conjugated forms, read-mode words, and anything
+   marked lang="he"/"yi" or dir="rtl" (letter indexes, table cells,
+   inline Hebrew spans, Hebrew inputs). Heebo also ships Hebrew
+   glyphs, so Noto Sans Hebrew must come first in this stack, or
+   Heebo would still win for Hebrew. Latin text stays in Heebo. */
+.targum-headword,
 .targum-nikud,
-.hebrew-form {
-  font-family: "Frank Ruhl Libre", "Noto Serif Hebrew", "Times New Roman", serif;
+.hebrew-form,
+.targum-word,
+[lang="he"],
+[lang="yi"],
+[dir="rtl"] {
+  font-family: "Noto Sans Hebrew", "Heebo", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
 }
 
 .hebrew-form {
@@ -55,13 +67,13 @@ body {
 }
 
 /* Entry summary rows: white, with a hover lift. */
-#results .btn-outline-secondary {
+#results .btn-outline.theme-secondary {
   background-color: #fff;
   border-color: #d7dee8;
   color: #1f2937;
 }
 
-#results .btn-outline-secondary:hover {
+#results .btn-outline.theme-secondary:hover {
   border-color: var(--targum-blue);
   color: #1f2937;
 }
@@ -69,4 +81,77 @@ body {
 /* Hides Yiddish transliteration lines when the toggle is off. */
 .hide-translit .targum-translit {
   display: none;
+}
+
+/* Selected word in Read Mode (Bootstrap 6 dropped .bg-warning-subtle):
+   the warning theme's subtle background, with the v6 radius that
+   matches the old .rounded-1. */
+.targum-selected {
+  background-color: var(--bs-warning-bg-subtle);
+  border-radius: var(--bs-radius-3);
+}
+
+/* Letter divider rows in the loanword list (Bootstrap 6 dropped
+   .list-group-item-secondary). */
+.targum-letter-divider {
+  background-color: var(--bs-gray-200, var(--bs-secondary-bg-muted));
+}
+
+/* Read Mode word buttons inherit the surrounding text color
+   (Bootstrap 6 dropped .text-reset). */
+.targum-word {
+  color: inherit;
+}
+
+/* Long link buttons inside cards wrap instead of overflowing the card
+   on narrow screens: Bootstrap 6 buttons are nowrap flex boxes, where
+   Bootstrap 5 buttons wrapped. (The Sources page has the long ones;
+   short buttons elsewhere are unaffected.) */
+.card .btn-outline,
+.card .btn-solid {
+  white-space: normal;
+}
+
+/* The nav-overflow wrapper is only initialized on desktop widths (see
+   nav.js), because in the vertical mobile drawer it would collapse the
+   nav into a "More" menu. Bootstrap hides an uninitialized nav, so
+   below the lg breakpoint the nav must stay visible. Bootstrap 6's lg
+   breakpoint is a container query on the navbar (1024px), so this
+   override queries the same width: the navbar is named here so the
+   query targets it exactly. */
+.navbar {
+  container-name: targum-navbar;
+}
+
+@container targum-navbar (width < 1024px) {
+  .nav-overflow:not(.nav-overflow-initialized) {
+    overflow: visible;
+  }
+
+  .nav-overflow:not(.nav-overflow-initialized) > .nav {
+    visibility: visible;
+  }
+
+  /* The drawer is light-themed on mobile (see nav.js), but the nav
+     link colors are set on the dark navbar and inherit resolved to
+     white — so they are re-declared here, where the light-dark()
+     values resolve against the drawer's light color scheme. */
+  #targumDrawer {
+    --bs-navbar-color: var(--bs-fg-2);
+    --bs-navbar-hover-color: var(--bs-fg-1);
+    --bs-navbar-disabled-color: var(--bs-fg-3);
+    --bs-navbar-active-color: var(--bs-fg-body);
+  }
+}
+
+/* Bootstrap's lg:navbar-expand rule that turns the nav horizontal
+   queries the nearest container — but .nav-overflow is itself a
+   container, so it shadows the navbar and the nav would stay vertical
+   at desktop widths. This named-container override restores the
+   horizontal nav (same declarations as the Bootstrap rule). */
+@container targum-navbar (width >= 1024px) {
+  #targumNavOverflow .navbar-nav {
+    --bs-nav-link-padding-x: var(--bs-navbar-nav-link-padding-x);
+    flex-direction: row;
+  }
 }

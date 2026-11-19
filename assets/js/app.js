@@ -232,25 +232,25 @@
     var headword = entry.h || entry.p || '';
     var copyTextValue = headword + (entry.g ? ' — ' + entry.g : '');
 
-    var html = '<article class="card mb-3"><div class="card-body">';
-    html += '<div class="d-flex justify-content-between align-items-start gap-2">';
-    html += '<h3 class="card-title targum-headword fs-2 mb-1">' +
+    var html = '<article class="card mb-5"><div class="card-body">';
+    html += '<div class="d-flex justify-content-between align-items-start gap-3">';
+    html += '<h3 class="card-title targum-headword fs-3xl mb-1">' +
       '<span lang="' + langAttr + '" dir="rtl">' +
       escapeHtml(headword) + '</span></h3>';
-    html += '<button type="button" class="btn btn-sm btn-outline-secondary flex-shrink-0" ' +
+    html += '<button type="button" class="btn-sm btn-outline theme-secondary flex-shrink-0" ' +
       'data-targum-copy data-copy-text="' + escapeHtml(copyTextValue) + '" ' +
       'aria-label="Copy entry text">Copy</button>';
     html += '</div>';
     if (entry.n && entry.n !== headword) {
-      html += '<p class="targum-nikud small text-body-secondary mb-2">' +
+      html += '<p class="targum-nikud small fg-secondary mb-3">' +
         '<span lang="' + langAttr + '" dir="rtl">' + escapeHtml(entry.n) + '</span></p>';
     }
-    html += '<p class="mb-2">';
+    html += '<p class="mb-3">';
     if (langName) {
-      html += '<span class="badge text-bg-primary rounded-pill">' + escapeHtml(langName) + '</span> ';
+      html += '<span class="badge theme-primary rounded-pill">' + escapeHtml(langName) + '</span> ';
     }
     if (entry.pos) {
-      html += '<span class="text-body-secondary">' + escapeHtml(entry.pos) + '</span>';
+      html += '<span class="fg-secondary">' + escapeHtml(entry.pos) + '</span>';
     }
     html += '</p>';
     if (isYiddish && (entry.yivo || entry.hasidic)) {
@@ -261,10 +261,10 @@
       if (entry.hasidic) {
         spellings.push('Hasidic: <span lang="yi" dir="rtl">' + escapeHtml(entry.hasidic) + '</span>');
       }
-      html += '<p class="card-text mb-2">' + spellings.join('<br>') + '</p>';
+      html += '<p class="card-text mb-3">' + spellings.join('<br>') + '</p>';
     }
     if (isYiddish && entry.tr) {
-      html += '<p class="card-text targum-translit fst-italic text-body-secondary mb-2">' +
+      html += '<p class="card-text targum-translit fst-italic fg-secondary mb-3">' +
         escapeHtml(entry.tr) + '</p>';
     }
     html += '</div>';
@@ -282,17 +282,17 @@
     if (entry.s || entry.o || (isVerb && entry.p) || thesGroup) {
       html += '<div class="card-footer">';
       if (entry.s) {
-        html += '<p class="text-body-secondary small mb-0">Source: ' + escapeHtml(entry.s) + '</p>';
+        html += '<p class="fg-secondary small mb-0">Source: ' + escapeHtml(entry.s) + '</p>';
       }
       if (entry.o) {
-        html += '<p class="text-body-secondary small mb-0">Origin: ' + escapeHtml(entry.o) + '</p>';
+        html += '<p class="fg-secondary small mb-0">Origin: ' + escapeHtml(entry.o) + '</p>';
       }
       if (isVerb && entry.p) {
-        html += '<a class="card-link" href="conjugator.html?verb=' +
+        html += '<a href="conjugator.html?verb=' +
           encodeURIComponent(entry.p) + '">Conjugate</a>';
       }
       if (thesGroup) {
-        html += '<a class="card-link" href="thesaurus.html?group=' +
+        html += '<a href="thesaurus.html?group=' +
           encodeURIComponent(thesGroup) + '">Synonyms</a>';
       }
       html += '</div>';

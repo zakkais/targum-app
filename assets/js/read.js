@@ -96,8 +96,8 @@
     WORD_RE.lastIndex = 0;
     while ((match = WORD_RE.exec(text)) !== null) {
       html += Targum.escapeHtml(text.slice(lastIndex, match.index));
-      html += '<button type="button" class="btn btn-link p-0 align-baseline ' +
-        'text-reset text-decoration-none targum-word" data-word="' +
+      html += '<button type="button" class="btn-link p-0 align-baseline ' +
+        'text-decoration-none targum-word" data-word="' +
         Targum.escapeHtml(match[0]) + '" aria-label="Look up ' +
         Targum.escapeHtml(match[0]) + '">' +
         Targum.escapeHtml(match[0]) + '</button>';
@@ -106,15 +106,15 @@
     html += Targum.escapeHtml(text.slice(lastIndex));
     textEl.innerHTML = html;
     output.hidden = false;
-    panelEl.innerHTML = '<p class="text-body-secondary">Tap a word above to see its entry.</p>';
+    panelEl.innerHTML = '<p class="fg-secondary">Tap a word above to see its entry.</p>';
   }
 
   function markSelected(btn) {
     if (selectedBtn) {
-      selectedBtn.classList.remove('bg-warning-subtle', 'rounded-1');
+      selectedBtn.classList.remove('targum-selected');
     }
     selectedBtn = btn;
-    if (btn) btn.classList.add('bg-warning-subtle', 'rounded-1');
+    if (btn) btn.classList.add('targum-selected');
   }
 
   function dictionaryLink(word) {
@@ -125,10 +125,10 @@
   function showAbbreviation(word, entry) {
     var abbrev = entry.a || entry.abbrev || entry.h || entry.p || word;
     var expansion = entry.e || entry.expansion || entry.g || '';
-    var html = '<article class="card mb-3"><div class="card-body">' +
-      '<h3 class="card-title targum-headword fs-2 mb-1">' +
+    var html = '<article class="card mb-5"><div class="card-body">' +
+      '<h3 class="card-title targum-headword fs-3xl mb-1">' +
       '<span lang="he" dir="rtl">' + Targum.escapeHtml(abbrev) + '</span></h3>' +
-      '<p class="mb-2"><span class="badge text-bg-primary rounded-pill">Roshei Teivos</span></p>' +
+      '<p class="mb-3"><span class="badge theme-primary rounded-pill">Roshei Teivos</span></p>' +
       '<p class="card-text mb-0"><span lang="he" dir="rtl">' +
       Targum.escapeHtml(expansion) + '</span></p>' +
       '</div></article>';
@@ -136,14 +136,14 @@
   }
 
   function showAbbreviationMissing(word) {
-    panelEl.innerHTML = '<div class="alert alert-info" role="status">' +
+    panelEl.innerHTML = '<div class="alert theme-info" role="status">' +
       '<span lang="he" dir="rtl">' + Targum.escapeHtml(word) + '</span> ' +
       'is not in the current list of Roshei Teivos.</div>';
   }
 
   function lookupAbbreviation(word) {
     var seq = ++lookupSeq;
-    panelEl.innerHTML = '<p class="text-body-secondary" role="status">Loading…</p>';
+    panelEl.innerHTML = '<p class="fg-secondary" role="status">Loading…</p>';
     loadRosheiTeivos().then(function (list) {
       if (seq !== lookupSeq) return;
       if (!list) { showAbbreviationMissing(word); return; }
@@ -161,7 +161,7 @@
 
   function lookupWord(word) {
     var seq = ++lookupSeq;
-    panelEl.innerHTML = '<p class="text-body-secondary" role="status">Loading…</p>';
+    panelEl.innerHTML = '<p class="fg-secondary" role="status">Loading…</p>';
     var plain = plainForm(word);
     Targum.searchDict(Targum.stripNikud(word), Targum.LANGS).then(function (results) {
       if (seq !== lookupSeq) return;
@@ -174,14 +174,14 @@
       }
       if (results.length) {
         panelEl.innerHTML =
-          '<p class="text-body-secondary">No exact match for ' +
+          '<p class="fg-secondary">No exact match for ' +
           '<span lang="he" dir="rtl">' + Targum.escapeHtml(word) + '</span>. ' +
           'Closest results:</p>' +
           results.slice(0, MAX_CLOSE_MATCHES).map(Targum.renderEntryCard).join('') +
           dictionaryLink(word);
         return;
       }
-      panelEl.innerHTML = '<div class="alert alert-info" role="status">' +
+      panelEl.innerHTML = '<div class="alert theme-info" role="status">' +
         'No dictionary entry found for ' +
         '<span lang="he" dir="rtl">' + Targum.escapeHtml(word) + '</span>.</div>' +
         dictionaryLink(word);

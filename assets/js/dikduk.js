@@ -1,14 +1,19 @@
 /* Dikduk page: renders the binyan rules, tables, and examples from
  * data/dikduk-binyanim.json (המסלול לדקדוק, Walder Education, 2009)
- * into a Bootstrap accordion — one item per binyan, in standard
- * binyan order — plus a General terms card above it.
+ * into native details/summary accordions (the Bootstrap 6 accordion
+ * pattern) — one item per binyan, in standard binyan order — plus a
+ * General terms card above it.
  *
- * Depends on window.Targum (escapeHtml) from app.js, and on Bootstrap
- * for the accordion behavior. The render functions are also exported
- * for Node smoke tests (module.exports) when `module` exists.
+ * Depends on window.Targum (escapeHtml) from app.js. The render
+ * functions are also exported for Node smoke tests (module.exports)
+ * when `module` exists.
  */
 (function () {
   'use strict';
+
+  // Chevron for the native details/summary accordions (Bootstrap 6
+  // accordions need the .accordion-icon SVG inside the summary).
+  var ACCORDION_ICON = '<svg class="accordion-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="m2 5 6 6 6-6"/></svg>';
 
   var TENSE_ORDER = ['past', 'present', 'future', 'imperative', 'infinitive'];
   var TENSE_NAMES = {
@@ -87,29 +92,29 @@
   function renderTense(tense, value) {
     var name = TENSE_NAMES[tense] || tense;
     if (value === null || value === undefined) {
-      return '<p class="text-body-secondary mb-2">' + name + ': none.</p>';
+      return '<p class="fg-secondary mb-3">' + name + ': none.</p>';
     }
     if (typeof value === 'string') {
-      return '<p class="mb-2">' + name + ': ' + hebrewForm(value) + '</p>';
+      return '<p class="mb-3">' + name + ': ' + hebrewForm(value) + '</p>';
     }
     var rows = Object.keys(value).map(function (person) {
       return '<tr><td>' + Targum.escapeHtml(PERSON_NAMES[person] || person) +
         '</td><td lang="he" dir="rtl" class="hebrew-form">' +
         Targum.escapeHtml(value[person]) + '</td></tr>';
     }).join('');
-    return '<h5 class="h6 mt-3 mb-1">' + name + '</h5>' +
-      '<div class="table-responsive"><table class="table table-sm table-striped mb-2">' +
+    return '<h5 class="h6 mt-5 mb-1">' + name + '</h5>' +
+      '<div class="table-responsive"><table class="table table-sm table-striped mb-3">' +
       '<thead><tr><th scope="col">Person</th><th scope="col">Form</th></tr></thead>' +
       '<tbody>' + rows + '</tbody></table></div>';
   }
 
   function renderTableEntry(entry) {
-    var html = '<h4 class="h6 mt-4 mb-1">' +
+    var html = '<h4 class="h6 mt-7 mb-1">' +
       Targum.escapeHtml(entry.label) +
       ' — root <span lang="he" dir="rtl">' +
       Targum.escapeHtml(entry.shoresh) + '</span></h4>';
     if (entry.note) {
-      html += '<p class="text-body-secondary small mb-2">' +
+      html += '<p class="fg-secondary small mb-3">' +
         hebrewSpans(entry.note) + '</p>';
     }
     TENSE_ORDER.forEach(function (tense) {
@@ -125,18 +130,18 @@
     SECTION_ORDER.forEach(function (section) {
       var list = (examples || {})[section];
       if (!list || !list.length) return;
-      html += '<h4 class="h6 mt-3 mb-2">' +
+      html += '<h4 class="h6 mt-5 mb-3">' +
         (SECTION_NAMES[section] || section) + '</h4>';
       html += '<ul class="list-unstyled">';
       list.forEach(function (ex) {
-        html += '<li class="mb-3"><span lang="he" dir="rtl" class="targum-headword fs-5">' +
+        html += '<li class="mb-5"><span lang="he" dir="rtl" class="targum-headword fs-lg">' +
           Targum.escapeHtml(ex.text) + '</span><br>' +
-          '<span class="text-body-secondary small">' +
+          '<span class="fg-secondary small">' +
           Targum.escapeHtml(ex.reference_en) +
           ' (<span lang="he" dir="rtl">' +
           Targum.escapeHtml(ex.reference) + '</span>)</span>';
         if (ex.note) {
-          html += '<br><span class="text-body-secondary small">Note: ' +
+          html += '<br><span class="fg-secondary small">Note: ' +
             hebrewSpans(ex.note) + '</span>';
         }
         html += '</li>';
@@ -157,32 +162,31 @@
   function renderBinyan(b, i) {
     var nTables = (b.tables || []).length;
     var nExamples = countExamples(b.examples);
-    return '<div class="accordion-item">' +
-      '<h2 class="accordion-header" id="binyan-heading-' + i + '">' +
-      '<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#binyan-collapse-' + i + '" aria-expanded="false" aria-controls="binyan-collapse-' + i + '">' +
-      '<span lang="he" dir="rtl" class="targum-headword fs-5">' +
+    return '<details class="accordion-item" name="binyanim-accordion" id="binyan-item-' + i + '">' +
+      '<summary class="accordion-header">' +
+      '<span lang="he" dir="rtl" class="targum-headword fs-lg">' +
       Targum.escapeHtml(b.hebrew) + '</span>' +
-      '<span class="ms-2">' + Targum.escapeHtml(b.name) + '</span>' +
-      '<span class="text-body-secondary small ms-2">' +
+      '<span class="ms-3">' + Targum.escapeHtml(b.name) + '</span>' +
+      '<span class="fg-secondary small ms-3">' +
       nTables + (nTables === 1 ? ' table' : ' tables') + ' · ' +
       nExamples + ' examples</span>' +
-      '</button></h2>' +
-      '<div id="binyan-collapse-' + i + '" class="accordion-collapse collapse" aria-labelledby="binyan-heading-' + i + '" data-bs-parent="#binyanim-accordion">' +
+      ACCORDION_ICON +
+      '</summary>' +
       '<div class="accordion-body">' +
       '<h3 class="h5">Rules</h3>' + renderRules(b.rules) +
-      '<h3 class="h5 mt-4">Tables</h3>' +
+      '<h3 class="h5 mt-7">Tables</h3>' +
       (b.tables || []).map(renderTableEntry).join('') +
-      '<h3 class="h5 mt-4">Examples</h3>' + renderExamples(b.examples) +
-      '<p class="mt-4 mb-0"><a href="conjugator.html?verb=' +
+      '<h3 class="h5 mt-7">Examples</h3>' + renderExamples(b.examples) +
+      '<p class="mt-7 mb-0"><a href="conjugator.html?verb=' +
       encodeURIComponent(b.paradigm) + '&amp;binyan=' + b.id + '">Conjugate ' +
       hebrewForm(b.paradigm_3ms) + ' (' + Targum.escapeHtml(b.name) +
       ') in the Conjugator</a></p>' +
-      '</div></div></div>';
+      '</div></details>';
   }
 
   function renderGeneral(general) {
     if (!general) return '';
-    return '<div class="card mb-4"><div class="card-body">' +
+    return '<div class="card mb-7"><div class="card-body">' +
       '<h3 class="card-title h5">' + Targum.escapeHtml(general.title) + '</h3>' +
       renderRules(general.rules) +
       '</div></div>';
@@ -222,7 +226,7 @@
           if (countEl) countEl.textContent = rendered.countText;
         })
         .catch(function () {
-          accordionEl.innerHTML = '<div class="alert alert-warning" role="alert">Dikduk data is not available yet. Please try again later.</div>';
+          accordionEl.innerHTML = '<div class="alert theme-warning" role="alert">Dikduk data is not available yet. Please try again later.</div>';
         });
     }
   }

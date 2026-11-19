@@ -1,0 +1,10 @@
+# Agent skills installed by the Skills CLI (npx skills add) — local tooling only,
+# never part of the public repo.
+.agents/
+.claude/
+agent/
+data/skills/
+skills-lock.json
+
+# Local source material for the Dikduk pages (workbook scans/notes) — not for the site.
+sources/

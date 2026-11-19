@@ -4,51 +4,51 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Targum — Dictionary</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-B/GM4XqrwHnWXNOWMbloTmrYXZg10cakYGmpfsR/bbzQ6JAJI4ihuyADKLnBgrCe" crossorigin="anonymous">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@400;500;700&family=Heebo:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700&family=Noto+Sans+Hebrew:wght@400;500;700&display=swap" rel="stylesheet">
   <link href="assets/css/style.css" rel="stylesheet">
 </head>
 <body>
   <div id="nav-root">
     <noscript>
-      <nav class="bg-targum-navy p-3" data-bs-theme="dark" aria-label="Main navigation">
+      <nav class="bg-targum-navy p-5" data-bs-theme="dark" aria-label="Main navigation">
         <a class="fw-bold text-decoration-none" href="index.html">Targum</a>
-        <span class="text-body-secondary"> · </span>
+        <span class="fg-secondary"> · </span>
         <a href="index.html">Dictionary</a>
-        <span class="text-body-secondary"> · </span>
+        <span class="fg-secondary"> · </span>
         <a href="roshei-teivos.html">Roshei Teivos</a>
-        <span class="text-body-secondary"> · </span>
+        <span class="fg-secondary"> · </span>
         <a href="thesaurus.html">Thesaurus</a>
-        <span class="text-body-secondary"> · </span>
+        <span class="fg-secondary"> · </span>
         <a href="dikduk.html">Dikduk</a>
-        <span class="text-body-secondary"> · </span>
+        <span class="fg-secondary"> · </span>
         <a href="loanwords.html">Loanwords</a>
-        <span class="text-body-secondary"> · </span>
+        <span class="fg-secondary"> · </span>
         <a href="conjugator.html">Conjugator</a>
-        <span class="text-body-secondary"> · </span>
+        <span class="fg-secondary"> · </span>
         <a href="tools.html">Tools</a>
-        <span class="text-body-secondary"> · </span>
+        <span class="fg-secondary"> · </span>
         <a href="read.html">Read Mode</a>
-        <span class="text-body-secondary"> · </span>
+        <span class="fg-secondary"> · </span>
         <a href="sources.html">Sources</a>
       </nav>
     </noscript>
   </div>
-  <main class="container py-4">
+  <main class="container py-7">
     <h1>Dictionary</h1>
-    <p class="lead">Look up words in Modern Hebrew, Lashon HaKodesh, Aramaic, Yiddish, and English.</p>
+    <p class="fs-lg fw-light">Look up words in Modern Hebrew, Lashon HaKodesh, Aramaic, Yiddish, and English.</p>
 
-    <form id="search-form" role="search" class="mb-3">
+    <form id="search-form" role="search" class="mb-5">
       <label for="dict-search" class="form-label">Search the dictionary</label>
       <div class="input-group">
         <input type="search" class="form-control form-control-lg" id="dict-search" placeholder="Search Hebrew, Aramaic, Yiddish, or English…" aria-label="Search the dictionary" autocomplete="off">
-        <button class="btn btn-primary btn-lg" type="submit">Search</button>
+        <button class="btn-solid theme-primary btn-lg" type="submit">Search</button>
       </div>
     </form>
 
-    <div class="mb-3">
+    <div class="mb-5">
       <div class="nav nav-pills flex-wrap gap-1" id="lang-filter" role="group" aria-label="Language filter">
         <button type="button" class="nav-link active" data-lang="all" aria-pressed="true">All</button>
         <button type="button" class="nav-link" data-lang="modern" aria-pressed="false">Modern Hebrew</button>
@@ -59,19 +59,22 @@
       </div>
     </div>
 
-    <div class="form-check form-switch mb-3" id="translit-wrap" hidden>
-      <input class="form-check-input" type="checkbox" role="switch" id="translit-toggle" checked>
-      <label class="form-check-label" for="translit-toggle">Show Yiddish transliteration</label>
+    <div class="form-field mb-5" id="translit-wrap" hidden>
+      <div class="switch theme-primary">
+        <input type="checkbox" role="switch" switch id="translit-toggle" checked>
+      </div>
+      <label for="translit-toggle">Show Yiddish transliteration</label>
     </div>
 
     <div id="results" aria-live="polite"></div>
 
-    <h2 class="h4 mt-5">Browse alphabetically</h2>
+    <h2 class="h4 mt-12">Browse alphabetically</h2>
     <div class="d-flex flex-wrap gap-1 mb-3" id="aleph-beis" dir="rtl" role="group" aria-label="Aleph-Beis index"></div>
-    <p class="text-body-secondary">Choose a letter to list entries starting with it, or search above.</p>
+    <button type="button" class="btn-outline theme-primary mb-5" id="browse-all-btn" aria-pressed="false">Browse all entries</button>
+    <p class="fg-secondary">Choose a letter to list entries starting with it, or browse all entries in alphabetical order.</p>
   </main>
   <div id="footer-root"></div>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script type="module" src="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-1a/pXj49ZQ1aHEmrJ+gMw1otqoVsYwlEnlD8mIfY2TV03r20Y0CN7uqx1tQogjPL" crossorigin="anonymous"></script>
   <script src="assets/js/nav.js"></script>
   <script src="assets/js/app.js"></script>
   <script>
@@ -86,6 +89,7 @@
       var translitWrap = document.getElementById('translit-wrap');
       var translitToggle = document.getElementById('translit-toggle');
       var lettersEl = document.getElementById('aleph-beis');
+      var browseAllBtn = document.getElementById('browse-all-btn');
 
       var currentLang = 'all';
       var currentResults = [];
@@ -93,6 +97,12 @@
       var currentLetter = null;
       var searchTimer = null;
       var searchSeq = 0;
+      // Browse-all (scroll) mode: entries load in chunks as the
+      // user scrolls, instead of all at once.
+      var browseAll = false;
+      var browseObserver = null;
+      var browseLastLetter = '';
+      var BROWSE_CHUNK = 100;
 
       function langsForFilter() {
         if (currentLang === 'all' || currentLang === 'english') return Targum.LANGS.slice();
@@ -109,7 +119,7 @@
       }
 
       function showDataAlert() {
-        resultsEl.innerHTML = '<div class="alert alert-warning" role="alert">Dictionary data is not available yet. Please try again later.</div>';
+        resultsEl.innerHTML = '<div class="alert theme-warning" role="alert">Dictionary data is not available yet. Please try again later.</div>';
       }
 
       // Compact result row; clicking it expands the full entry card
@@ -118,14 +128,14 @@
         var firstSense = String(entry.g || '').split(' | ')[0] || '';
         var langName = Targum.LANG_NAMES[entry.l] || entry.l || '';
         var langAttr = entry.l === 'yiddish' ? 'yi' : 'he';
-        return '<div class="mb-2">' +
-          '<button type="button" class="btn btn-outline-secondary w-100 d-flex flex-wrap align-items-center gap-2 text-start" data-bs-toggle="collapse" data-bs-target="#entry-detail-' + index + '" aria-expanded="false" aria-controls="entry-detail-' + index + '">' +
-            '<span lang="' + langAttr + '" dir="rtl" class="targum-headword fs-5">' + Targum.escapeHtml(entry.h || entry.p || '') + '</span>' +
-            '<span class="badge text-bg-primary rounded-pill">' + Targum.escapeHtml(langName) + '</span>' +
-            (entry.pos ? '<span class="text-body-secondary small">' + Targum.escapeHtml(entry.pos) + '</span>' : '') +
-            '<span class="text-body-secondary small text-truncate">' + Targum.escapeHtml(firstSense) + '</span>' +
+        return '<div class="mb-3">' +
+          '<button type="button" class="btn-outline theme-secondary w-100 d-flex flex-wrap align-items-center gap-3 text-start" data-bs-toggle="collapse" data-bs-target="#entry-detail-' + index + '" aria-expanded="false" aria-controls="entry-detail-' + index + '">' +
+            '<span lang="' + langAttr + '" dir="rtl" class="targum-headword fs-lg">' + Targum.escapeHtml(entry.h || entry.p || '') + '</span>' +
+            '<span class="badge theme-primary rounded-pill">' + Targum.escapeHtml(langName) + '</span>' +
+            (entry.pos ? '<span class="fg-secondary small">' + Targum.escapeHtml(entry.pos) + '</span>' : '') +
+            '<span class="fg-secondary small text-truncate">' + Targum.escapeHtml(firstSense) + '</span>' +
           '</button>' +
-          '<div class="collapse mt-2" id="entry-detail-' + index + '">' +
+          '<div class="collapse mt-3" id="entry-detail-' + index + '">' +
             Targum.renderEntryCard(entry) +
           '</div>' +
         '</div>';
@@ -145,12 +155,12 @@
         var shown = currentResults.slice(0, shownCount);
         var html = '';
         if (total === 0) {
-          html = '<p class="text-body-secondary">No entries found.</p>';
+          html = '<p class="fg-secondary">No entries found.</p>';
         } else {
-          html = '<p class="text-body-secondary" role="status">Showing ' + shown.length + ' of ' + total + ' entries.</p>';
+          html = '<p class="fg-secondary" role="status">Showing ' + shown.length + ' of ' + total + ' entries.</p>';
           html += shown.map(summaryRow).join('');
           if (shownCount < total) {
-            html += '<button type="button" class="btn btn-outline-primary mt-2" id="show-more">Show more</button>';
+            html += '<button type="button" class="btn-outline theme-primary mt-3" id="show-more">Show more</button>';
           }
         }
         resultsEl.innerHTML = html;
@@ -164,20 +174,26 @@
         updateTranslitToggle();
         // A single result opens on its own (e.g. a cross-link from
         // the thesaurus that lands on one entry).
-        if (total === 1 && typeof bootstrap !== 'undefined' && bootstrap.Collapse) {
+        if (total === 1) {
+          // Bootstrap 6 has no window.bootstrap global; the collapse
+          // is opened by marking it shown directly, which the
+          // Collapse data API then toggles normally.
           var detail = document.getElementById('entry-detail-0');
-          if (detail) new bootstrap.Collapse(detail, { toggle: true });
+          var toggle = document.querySelector('button[data-bs-target="#entry-detail-0"]');
+          if (detail) detail.classList.add('show');
+          if (toggle) toggle.setAttribute('aria-expanded', 'true');
         }
       }
 
       function runSearch() {
         var q = searchInput.value.trim();
+        exitBrowseAll();
         currentLetter = null;
         markActiveLetter(null);
         if (!q) {
           currentResults = [];
           shownCount = 0;
-          resultsEl.innerHTML = '<p class="text-body-secondary">Type a word above to search, or choose a letter below to browse.</p>';
+          resultsEl.innerHTML = '<p class="fg-secondary">Type a word above to search, or choose a letter below to browse.</p>';
           updateTranslitToggle();
           return;
         }
@@ -210,12 +226,13 @@
       }
 
       function browseLetter(letter) {
+        exitBrowseAll();
         currentLetter = letter;
         markActiveLetter(letter);
         searchInput.value = '';
         var langs = langsForFilter();
         var seq = ++searchSeq;
-        resultsEl.innerHTML = '<p class="text-body-secondary" role="status">Loading…</p>';
+        resultsEl.innerHTML = '<p class="fg-secondary" role="status">Loading…</p>';
         ensureData(langs).then(function (ok) {
           if (seq !== searchSeq) return null;
           if (!ok) { showDataAlert(); return null; }
@@ -243,22 +260,134 @@
       function markActiveLetter(letter) {
         lettersEl.querySelectorAll('button').forEach(function (btn) {
           var isActive = letter !== null && btn.getAttribute('data-letter') === letter;
-          btn.classList.toggle('btn-primary', isActive);
-          btn.classList.toggle('btn-outline-primary', !isActive);
+          btn.classList.toggle('btn-solid', isActive);
+          btn.classList.toggle('btn-outline', !isActive);
           btn.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+        });
+      }
+
+      function markBrowseAllActive(on) {
+        browseAllBtn.classList.toggle('btn-solid', on);
+        browseAllBtn.classList.toggle('btn-outline', !on);
+        browseAllBtn.setAttribute('aria-pressed', on ? 'true' : 'false');
+      }
+
+      // Leave browse-all mode: stop the scroll observer and clear
+      // the mode flag. The results area itself is replaced by
+      // whatever the user does next (search, letter browse, idle).
+      function exitBrowseAll() {
+        if (browseObserver) { browseObserver.disconnect(); browseObserver = null; }
+        browseAll = false;
+        browseLastLetter = '';
+        markBrowseAllActive(false);
+      }
+
+      function updateBrowseStatus() {
+        var status = document.getElementById('browse-status');
+        if (status) {
+          status.textContent = 'Showing ' + shownCount + ' of ' + currentResults.length + ' entries.';
+        }
+      }
+
+      // Append the next chunk of the browse-all list, with a letter
+      // divider whenever the initial letter changes. Rows reuse
+      // summaryRow with their global index, so each detail id stays
+      // unique and tapping a row opens its entry as usual. Entries
+      // with no Hebrew letter (a handful of punctuation-led and
+      // Syriac-script headwords) group under "#".
+      function appendBrowseChunk() {
+        var listEl = document.getElementById('browse-list');
+        if (!listEl || shownCount >= currentResults.length) return;
+        var end = Math.min(currentResults.length, shownCount + BROWSE_CHUNK);
+        var html = '';
+        for (var i = shownCount; i < end; i++) {
+          var entry = currentResults[i];
+          var letter = firstHebrewLetter(Targum.stripNikud(entry.p || entry.h || '')) || '#';
+          if (letter !== browseLastLetter) {
+            browseLastLetter = letter;
+            html += '<h3 class="h5 mt-7 mb-3 border-bottom pb-2"><span lang="he" dir="rtl">' +
+              Targum.escapeHtml(letter) + '</span></h3>';
+          }
+          html += summaryRow(entry, i);
+        }
+        listEl.insertAdjacentHTML('beforeend', html);
+        shownCount = end;
+        updateBrowseStatus();
+        updateTranslitToggle();
+        if (shownCount >= currentResults.length) {
+          if (browseObserver) { browseObserver.disconnect(); browseObserver = null; }
+          var sentinel = document.getElementById('browse-sentinel');
+          if (sentinel) sentinel.remove();
+        }
+      }
+
+      // Browse-all mode: the full alphabetical list for the current
+      // language filter, loaded 100 entries at a time as the user
+      // scrolls (an IntersectionObserver on a sentinel at the end
+      // of the list). Same sort order as letter browse.
+      function enterBrowseAll() {
+        browseAll = true;
+        currentLetter = null;
+        markActiveLetter(null);
+        searchInput.value = '';
+        markBrowseAllActive(true);
+        if (browseObserver) { browseObserver.disconnect(); browseObserver = null; }
+        var langs = langsForFilter();
+        var seq = ++searchSeq;
+        resultsEl.innerHTML = '<p class="fg-secondary" role="status">Loading…</p>';
+        ensureData(langs).then(function (ok) {
+          if (seq !== searchSeq) return null;
+          if (!ok) { exitBrowseAll(); showDataAlert(); return null; }
+          return Promise.all(langs.map(function (lang) {
+            return Targum.loadDict(lang).catch(function () { return []; });
+          }));
+        }).then(function (lists) {
+          if (seq !== searchSeq || !lists) return;
+          var all = [];
+          lists.forEach(function (list) { all = all.concat(list); });
+          all.sort(function (a, b) {
+            return String(a.p || '').localeCompare(String(b.p || ''), 'he');
+          });
+          currentResults = all;
+          shownCount = 0;
+          browseLastLetter = '';
+          resultsEl.innerHTML =
+            '<p class="fg-secondary" role="status" id="browse-status"></p>' +
+            '<div id="browse-list"></div>' +
+            '<div id="browse-sentinel" aria-hidden="true"></div>';
+          updateBrowseStatus();
+          browseObserver = new IntersectionObserver(function (entries) {
+            if (entries.some(function (e) { return e.isIntersecting; })) appendBrowseChunk();
+          }, { rootMargin: '600px 0px' });
+          browseObserver.observe(document.getElementById('browse-sentinel'));
+          appendBrowseChunk();
+          resultsEl.scrollIntoView();
         });
       }
 
       Targum.HEBREW_LETTERS.forEach(function (letter) {
         var btn = document.createElement('button');
         btn.type = 'button';
-        btn.className = 'btn btn-outline-primary btn-sm';
+        btn.className = 'btn-outline theme-primary btn-sm';
         btn.setAttribute('data-letter', letter);
         btn.setAttribute('aria-pressed', 'false');
         btn.setAttribute('aria-label', 'Browse entries starting with ' + letter);
         btn.textContent = letter;
         btn.addEventListener('click', function () { browseLetter(letter); });
         lettersEl.appendChild(btn);
+      });
+
+      browseAllBtn.addEventListener('click', function () {
+        if (browseAll) {
+          // Toggle off: back to the idle hint.
+          exitBrowseAll();
+          currentResults = [];
+          shownCount = 0;
+          resultsEl.innerHTML = '<p class="fg-secondary">Type a word above to search, or choose a letter below to browse.</p>';
+          updateTranslitToggle();
+        } else {
+          enterBrowseAll();
+        }
       });
 
       filterEl.querySelectorAll('button').forEach(function (btn) {
@@ -271,7 +400,8 @@
           btn.setAttribute('aria-pressed', 'true');
           currentLang = btn.getAttribute('data-lang');
           updateUrl();
-          if (currentLetter) browseLetter(currentLetter);
+          if (browseAll) enterBrowseAll();
+          else if (currentLetter) browseLetter(currentLetter);
           else if (searchInput.value.trim()) runSearch();
         });
       });
@@ -315,7 +445,7 @@
           searchInput.value = q;
           runSearch();
         } else {
-          resultsEl.innerHTML = '<p class="text-body-secondary">Type a word above to search, or choose a letter below to browse.</p>';
+          resultsEl.innerHTML = '<p class="fg-secondary">Type a word above to search, or choose a letter below to browse.</p>';
         }
       })();
 
@@ -323,7 +453,12 @@
       // appear on entries that have a group (no-op while the
       // thesaurus data is absent).
       Targum.loadThesaurus().then(function (map) {
-        if (Object.keys(map).length && currentResults.length) renderResults();
+        // In browse-all mode the list is appended incrementally;
+        // renderResults would replace it with a flat page, so skip
+        // the re-render there (the thesaurus map starts loading at
+        // page load and is far smaller than the dictionary files,
+        // so it is loaded before the first chunk renders).
+        if (Object.keys(map).length && currentResults.length && !browseAll) renderResults();
       });
     })();
   </script>

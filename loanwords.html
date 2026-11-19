@@ -4,26 +4,26 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Targum — Loanwords</title>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-B/GM4XqrwHnWXNOWMbloTmrYXZg10cakYGmpfsR/bbzQ6JAJI4ihuyADKLnBgrCe" crossorigin="anonymous">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@400;500;700&family=Heebo:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700&family=Noto+Sans+Hebrew:wght@400;500;700&display=swap" rel="stylesheet">
 <link href="assets/css/style.css" rel="stylesheet">
 </head>
 <body>
 <div id="nav-root"></div>
-<noscript><nav class="container py-3" aria-label="Main navigation"><ul class="nav flex-column flex-sm-row gap-2"><li class="nav-item"><a class="nav-link p-0" href="index.html">Dictionary</a></li><li class="nav-item"><a class="nav-link p-0" href="roshei-teivos.html">Roshei Teivos</a></li><li class="nav-item"><a class="nav-link p-0" href="thesaurus.html">Thesaurus</a></li><li class="nav-item"><a class="nav-link p-0" href="dikduk.html">Dikduk</a></li><li class="nav-item"><a class="nav-link p-0" href="loanwords.html">Loanwords</a></li><li class="nav-item"><a class="nav-link p-0" href="conjugator.html">Conjugator</a></li><li class="nav-item"><a class="nav-link p-0" href="tools.html">Tools</a></li><li class="nav-item"><a class="nav-link p-0" href="read.html">Read Mode</a></li><li class="nav-item"><a class="nav-link p-0" href="sources.html">Sources</a></li></ul></nav></noscript>
-<main class="container py-4">
+<noscript><nav class="container py-5" aria-label="Main navigation"><ul class="nav flex-column sm:flex-row gap-3"><li class="nav-item"><a class="nav-link p-0" href="index.html">Dictionary</a></li><li class="nav-item"><a class="nav-link p-0" href="roshei-teivos.html">Roshei Teivos</a></li><li class="nav-item"><a class="nav-link p-0" href="thesaurus.html">Thesaurus</a></li><li class="nav-item"><a class="nav-link p-0" href="dikduk.html">Dikduk</a></li><li class="nav-item"><a class="nav-link p-0" href="loanwords.html">Loanwords</a></li><li class="nav-item"><a class="nav-link p-0" href="conjugator.html">Conjugator</a></li><li class="nav-item"><a class="nav-link p-0" href="tools.html">Tools</a></li><li class="nav-item"><a class="nav-link p-0" href="read.html">Read Mode</a></li><li class="nav-item"><a class="nav-link p-0" href="sources.html">Sources</a></li></ul></nav></noscript>
+<main class="container py-7">
 <h1>Loanwords</h1>
-<p class="lead">Words that Hebrew and Aramaic borrowed from the languages Jews lived among. Greek words came in during the Hellenistic period, Latin words under Roman rule, and Persian words from the days of the Babylonian exile and the Persian empire. The French entries are Rashi's <span lang="he" dir="rtl">לעזים</span> (laazim): Old French glosses he used to explain difficult words in the Chumash.</p>
+<p class="fs-lg fw-light">Words that Hebrew and Aramaic borrowed from the languages Jews lived among. Greek words came in during the Hellenistic period, Latin words under Roman rule, and Persian words from the days of the Babylonian exile and the Persian empire. The French entries are Rashi's <span lang="he" dir="rtl">לעזים</span> (laazim): Old French glosses he used to explain difficult words in the Chumash.</p>
 <p>Every entry below is attested: each one gives the source it comes from and where the word appears.</p>
 
-<div class="row g-3 mb-3">
-<div class="col-12 col-md-6">
+<div class="row g-5 mb-5">
+<div class="col-12 md:col-6">
 <label for="loanword-search" class="form-label">Search loanwords</label>
 <input type="search" class="form-control" id="loanword-search" placeholder="Search by word, origin, or meaning" aria-label="Search loanwords">
 </div>
-<div class="col-12 col-md-6">
+<div class="col-12 md:col-6">
 <span class="form-label d-block" id="lang-filter-label">Source language</span>
 <div class="btn-group flex-wrap" role="group" aria-labelledby="lang-filter-label" id="lang-filter"></div>
 </div>
@@ -31,15 +31,15 @@
 
 <nav aria-label="Aleph-Beis index">
 <span class="form-label d-block" id="letter-index-label">Browse by letter</span>
-<div class="btn-group flex-wrap mb-3" role="group" aria-labelledby="letter-index-label" id="letter-index"></div>
+<div class="btn-group flex-wrap mb-5" role="group" aria-labelledby="letter-index-label" id="letter-index"></div>
 </nav>
 
-<p class="text-muted" id="loanword-count" aria-live="polite"></p>
+<p class="fg-secondary" id="loanword-count" aria-live="polite"></p>
 <div id="loanword-list" class="list-group"></div>
-<noscript><p class="alert alert-warning mt-3">The loanword list needs JavaScript to load. Please enable JavaScript to browse it.</p></noscript>
+<noscript><p class="alert theme-warning mt-5">The loanword list needs JavaScript to load. Please enable JavaScript to browse it.</p></noscript>
 </main>
 <div id="footer-root"></div>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-1a/pXj49ZQ1aHEmrJ+gMw1otqoVsYwlEnlD8mIfY2TV03r20Y0CN7uqx1tQogjPL" crossorigin="anonymous"></script>
 <script src="assets/js/nav.js"></script>
 <script src="assets/js/app.js"></script>
 <script>
@@ -59,11 +59,11 @@
   }
 
   function badgeClass(lang) {
-    if (lang === 'Greek') return 'text-bg-primary';
-    if (lang === 'Latin') return 'text-bg-danger';
-    if (lang === 'Persian') return 'text-bg-success';
-    if (lang === 'French') return 'text-bg-warning';
-    return 'text-bg-secondary';
+    if (lang === 'Greek') return 'theme-primary';
+    if (lang === 'Latin') return 'theme-danger';
+    if (lang === 'Persian') return 'theme-success';
+    if (lang === 'French') return 'theme-warning';
+    return 'theme-secondary';
   }
 
   function filtered() {
@@ -91,17 +91,17 @@
     shown.forEach(function (e) {
       var letter = e.p.charAt(0);
       if (letter !== lastLetter) {
-        html += '<div class="list-group-item list-group-item-secondary fw-bold" lang="he" dir="rtl">' + escapeHtml(letter) + '</div>';
+        html += '<div class="list-group-item targum-letter-divider fw-bold" lang="he" dir="rtl">' + escapeHtml(letter) + '</div>';
         lastLetter = letter;
       }
       html += '<div class="list-group-item">' +
-        '<div class="d-flex flex-wrap align-items-baseline gap-2">' +
-        '<a class="fs-5 text-decoration-none" lang="he" dir="rtl" href="index.html?q=' + encodeURIComponent(e.p) + '">' + escapeHtml(e.w) + '</a>' +
+        '<div class="d-flex flex-wrap align-items-baseline gap-3">' +
+        '<a class="fs-lg text-decoration-none" lang="he" dir="rtl" href="index.html?q=' + encodeURIComponent(e.p) + '">' + escapeHtml(e.w) + '</a>' +
         '<span class="badge ' + badgeClass(e.from) + '">' + escapeHtml(e.from) + '</span>' +
-        '<span class="text-muted">from ' + escapeHtml(e.orig) + '</span>' +
+        '<span class="fg-secondary">from ' + escapeHtml(e.orig) + '</span>' +
         '</div>' +
         '<p class="mb-0">' + escapeHtml(e.mean) + '</p>' +
-        '<p class="mb-0 small text-muted">' + escapeHtml(e.where) + '</p>' +
+        '<p class="mb-0 small fg-secondary">' + escapeHtml(e.where) + '</p>' +
         '</div>';
     });
     listEl.innerHTML = html;
@@ -117,7 +117,7 @@
       var n = lang === 'All' ? entries.length : entries.filter(function (e) { return e.from === lang; }).length;
       var btn = document.createElement('button');
       btn.type = 'button';
-      btn.className = 'btn btn-sm ' + (lang === langFilter ? 'btn-primary' : 'btn-outline-primary');
+      btn.className = 'btn-sm ' + (lang === langFilter ? 'btn-solid theme-primary' : 'btn-outline theme-primary');
       btn.setAttribute('aria-pressed', lang === langFilter ? 'true' : 'false');
       btn.textContent = lang + ' (' + n + ')';
       btn.addEventListener('click', function () {
@@ -138,7 +138,7 @@
     letterIndexEl.innerHTML = '';
     var allBtn = document.createElement('button');
     allBtn.type = 'button';
-    allBtn.className = 'btn btn-sm ' + (letterFilter === '' ? 'btn-secondary' : 'btn-outline-secondary');
+    allBtn.className = 'btn-sm ' + (letterFilter === '' ? 'btn-solid theme-secondary' : 'btn-outline theme-secondary');
     allBtn.setAttribute('aria-pressed', letterFilter === '' ? 'true' : 'false');
     allBtn.textContent = 'All';
     allBtn.addEventListener('click', function () {
@@ -150,7 +150,7 @@
     letters.forEach(function (letter) {
       var btn = document.createElement('button');
       btn.type = 'button';
-      btn.className = 'btn btn-sm ' + (letter === letterFilter ? 'btn-secondary' : 'btn-outline-secondary');
+      btn.className = 'btn-sm ' + (letter === letterFilter ? 'btn-solid theme-secondary' : 'btn-outline theme-secondary');
       btn.setAttribute('lang', 'he');
       btn.setAttribute('aria-pressed', letter === letterFilter ? 'true' : 'false');
       btn.textContent = letter;
@@ -180,7 +180,7 @@
       render();
     })
     .catch(function () {
-      listEl.innerHTML = '<div class="alert alert-danger mb-0" role="alert">The loanword list could not be loaded. Please try reloading the page.</div>';
+      listEl.innerHTML = '<div class="alert theme-danger mb-0" role="alert">The loanword list could not be loaded. Please try reloading the page.</div>';
       countEl.textContent = '';
     });
 })();

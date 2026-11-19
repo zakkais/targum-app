@@ -103,9 +103,9 @@
 
     function breakdownTable(phrase, method) {
       var rows = breakdown(phrase, method);
-      if (!rows.length) return '<p class="text-body-secondary">No Hebrew letters.</p>';
+      if (!rows.length) return '<p class="fg-secondary">No Hebrew letters.</p>';
       var body = rows.map(function (item) {
-        return '<tr><td lang="he" dir="rtl" class="targum-headword fs-5">' +
+        return '<tr><td lang="he" dir="rtl" class="targum-headword fs-lg">' +
           item.letter + '</td><td>' + item.value + '</td></tr>';
       }).join('');
       return '<div class="table-responsive"><table class="table table-sm">' +
@@ -116,11 +116,11 @@
     function phraseCard(label, phrase, method, hakolel) {
       var value = total(phrase, method, hakolel);
       var hasLetters = hebrewLetters(phrase).length > 0;
-      return '<div class="card mb-3"><div class="card-body">' +
+      return '<div class="card mb-5"><div class="card-body">' +
         '<h3 class="card-title h5">' + label + '</h3>' +
-        '<p class="card-text targum-headword fs-4 mb-1" lang="he" dir="rtl">' +
+        '<p class="card-text targum-headword fs-xl mb-1" lang="he" dir="rtl">' +
           (typeof Targum !== 'undefined' ? Targum.escapeHtml(phrase) : phrase) + '</p>' +
-        '<p class="card-text fs-5 mb-2">' + (hasLetters ? value : '—') + '</p>' +
+        '<p class="card-text fs-lg mb-3">' + (hasLetters ? value : '—') + '</p>' +
         breakdownTable(phrase, method) +
         '</div></div>';
     }
@@ -133,7 +133,7 @@
       var has1 = hebrewLetters(p1).length > 0;
       var has2 = hebrewLetters(p2).length > 0;
       if (!has1 && !has2) {
-        results.innerHTML = '<p class="text-body-secondary">Enter a Hebrew phrase above to see its value.</p>';
+        results.innerHTML = '<p class="fg-secondary">Enter a Hebrew phrase above to see its value.</p>';
         return;
       }
       var html = '';
@@ -141,15 +141,15 @@
         var t1 = total(p1, method, hakolel);
         var t2 = total(p2, method, hakolel);
         var diff = t1 - t2;
-        html += '<div class="alert ' + (diff === 0 ? 'alert-success' : 'alert-info') + '" role="status">' +
+        html += '<div class="alert ' + (diff === 0 ? 'theme-success' : 'theme-info') + '" role="status">' +
           (diff === 0
             ? 'The two phrases are equal in value.'
             : 'Difference: ' + Math.abs(diff) + ' (first phrase ' + (diff > 0 ? 'higher' : 'lower') + ').') +
           '</div>';
       }
-      html += '<div class="row"><div class="col-md-6">' +
+      html += '<div class="row"><div class="md:col-6">' +
         (has1 ? phraseCard('First phrase', p1, method, hakolel) : '') + '</div>' +
-        '<div class="col-md-6">' +
+        '<div class="md:col-6">' +
         (has2 ? phraseCard('Second phrase', p2, method, hakolel) : '') + '</div></div>';
       results.innerHTML = html;
     }

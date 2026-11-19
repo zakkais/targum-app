@@ -1235,7 +1235,7 @@
       return '<tr><th scope="row">' + esc(PERSON_LABELS[person]) +
         '</th><td lang="he" dir="rtl" class="hebrew-form">' + esc(table[person]) + '</td></tr>';
     }).join('');
-    return '<div class="col-md-6"><div class="card mb-3"><div class="card-header">' + esc(title) +
+    return '<div class="md:col-6"><div class="card mb-5"><div class="card-header">' + esc(title) +
       '</div><table class="table table-sm mb-0"><tbody>' + rows + '</tbody></table></div></div>';
   }
 
@@ -1243,12 +1243,12 @@
     var el = document.getElementById('conj-result');
     if (!el) return;
     if (!res.covered) {
-      el.innerHTML = '<div class="alert alert-warning" role="alert">' + esc(res.reason) + '</div>';
+      el.innerHTML = '<div class="alert theme-warning" role="alert">' + esc(res.reason) + '</div>';
       return;
     }
     var root = res.root.join('');
     var html = '<h2 class="h4"><span lang="he" dir="rtl">' + esc(root) + '</span> — ' +
-      esc(BINYAN_NAMES[res.binyan]) + ' <small class="text-body-secondary">(' +
+      esc(BINYAN_NAMES[res.binyan]) + ' <small class="fg-secondary">(' +
       esc(CLASS_NAMES[res.class]) + ' root)</small></h2>';
     html += '<div class="row">';
     ['past', 'present', 'future', 'imperative'].forEach(function (tense) {
@@ -1259,7 +1259,7 @@
       html += '<p>Infinitive: <span lang="he" dir="rtl" class="hebrew-form">' +
         esc(res.tables.infinitive) + '</span></p>';
     } else {
-      html += '<p class="text-body-secondary">This binyan has no imperative or infinitive forms.</p>';
+      html += '<p class="fg-secondary">This binyan has no imperative or infinitive forms.</p>';
     }
     html += '<p><a href="index.html?q=' + encodeURIComponent(root) + '">Look up ' +
       esc(root) + ' in the dictionary</a></p>';
@@ -1276,13 +1276,13 @@
         '<div><span lang="he" dir="rtl" class="hebrew-form">' + esc(m.form) + '</span> — ' +
         esc(desc) + ' of <span lang="he" dir="rtl">' + esc(m.shoresh) + '</span> (' +
         esc(m.binyanName) + ')</div>' +
-        '<a class="btn btn-sm btn-outline-primary ms-2" href="conjugator.html?verb=' +
+        '<a class="btn-sm btn-outline theme-primary ms-3" href="conjugator.html?verb=' +
         encodeURIComponent(m.shoresh) + '&binyan=' + encodeURIComponent(m.binyan) +
         '">Table</a></li>';
     }).join('');
     var html = '<ul class="list-group">' + items + '</ul>';
     if (matches.length > shown.length) {
-      html += '<p class="text-body-secondary small mt-2">Showing the ' + shown.length +
+      html += '<p class="fg-secondary small mt-3">Showing the ' + shown.length +
         ' most likely matches of ' + matches.length + ' possible parses.</p>';
     }
     return html;
@@ -1300,10 +1300,10 @@
     if (!el) return;
     var matches = identify(shoresh);
     if (!matches.length) {
-      el.innerHTML = '<div class="alert alert-warning" role="alert">Enter a shoresh of 3 or 4 Hebrew letters.</div>';
+      el.innerHTML = '<div class="alert theme-warning" role="alert">Enter a shoresh of 3 or 4 Hebrew letters.</div>';
       return;
     }
-    el.innerHTML = '<p class="text-body-secondary">That is not a shoresh — it looks like an inflected form:</p>' +
+    el.innerHTML = '<p class="fg-secondary">That is not a shoresh — it looks like an inflected form:</p>' +
       matchesListHtml(matches);
   }
 
@@ -1333,7 +1333,7 @@
         var out = document.getElementById('identify-result');
         var matches = identify(input);
         if (!matches.length) {
-          out.innerHTML = '<div class="alert alert-warning" role="alert">No matching verb form found. Try the shoresh above instead.</div>';
+          out.innerHTML = '<div class="alert theme-warning" role="alert">No matching verb form found. Try the shoresh above instead.</div>';
           return;
         }
         out.innerHTML = matchesListHtml(matches);
