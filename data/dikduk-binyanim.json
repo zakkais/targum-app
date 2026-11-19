@@ -1,0 +1,2975 @@
+{
+ "source": "המסלול לדקדוק (HaMaslul LeDikduk), Walder Education, 2009",
+ "source_note": "Rules paraphrased in our own words from the workbooks; tables and quoted sources transcribed as printed. Where the workbooks err, the error is kept as printed and flagged in a note.",
+ "general": {
+  "title": "General terms",
+  "rules": [
+   {
+    "title": "Verb (פועל):",
+    "text": "A word that shows an action or a state — e.g. אָכַל, שָׁמַר (actions); עָמַד, יָשַׁן (states)."
+   },
+   {
+    "title": "Shoresh / root (שורש):",
+    "text": "The three (usually) letters that carry the core meaning of a verb family. All words built from one root share its basic idea."
+   },
+   {
+    "title": "Root letters (אותיות השורש):",
+    "text": "Named by position — פה\"פ (first), עה\"פ (second), לה\"פ (third)."
+   },
+   {
+    "title": "Tense (זמן):",
+    "text": "Past (עבר), present (הווה), future (עתיד). The imperative (ציווי) gives commands; the infinitive (שם הפועל) is the \"to ___\" form."
+   },
+   {
+    "title": "Person (גוף):",
+    "text": "Who does the action — 1st/2nd/3rd person, singular/plural, masculine/feminine. Hebrew verbs change form for each person."
+   },
+   {
+    "title": "Musafiot (מוספיות):",
+    "text": "Extra letters added before or after the root to build verb forms (prefixes like אית\"ן, suffixes like תי/תם)."
+   },
+   {
+    "title": "Binyan (בנין):",
+    "text": "One of seven verb \"buildings\" — patterns that shape how a root is conjugated. Each binyan has its own vowels and prefixes."
+   },
+   {
+    "title": "Gizrah (גזרה):",
+    "text": "The \"form\" of a root — whether its letters are all regular (שלמים) or include weak/guttural letters that change the pattern."
+   },
+   {
+    "title": "Scope of this series:",
+    "text": "These workbooks use only complete roots (גזרת השלמים). Weak-root changes covered here are gutturals and a few assimilations only."
+   }
+  ]
+ },
+ "binyanim": [
+  {
+   "id": "paal",
+   "name": "Pa'al",
+   "hebrew": "פָּעַל",
+   "meaning": "Simple active",
+   "paradigm": "שמר",
+   "paradigm_3ms": "שָמַר",
+   "rules": [
+    {
+     "title": "Pa'al is the basic binyan.",
+     "text": "It has no binyan prefix and no dagesh of its own, so it is called \"light\" (קל). It describes actions (אָכַל, שָׁמַר) and states (עָמַד, יָשַׁן)."
+    },
+    {
+     "title": "Past pattern:",
+     "text": "פָּעַל — kamatz under R1, patach under R2 (שָׁמַר)."
+    },
+    {
+     "title": "Present, pattern 1 (most verbs):",
+     "text": "פֹּעֵל — holam under R1, tzere under R2 (שׁוֹמֵר). Feminine singular שׁוֹמֶרֶת (segol); an older form שׁוֹמְרָה is no longer used."
+    },
+    {
+     "title": "Present, pattern 2 (stative verbs):",
+     "text": "פָּעֵל — kamatz under R1, tzere under R2 (גָּדֵל). Used for verbs of state (בָּטֵל, בָּשֵׁל, זָקֵן, יָשֵׁן, כָּבֵד)."
+    },
+    {
+     "title": "Present, pattern 3 (passive adjective):",
+     "text": "פָּעוּל — kamatz under R1, shuruk under R2 (יָכוּל; also שָׁבוּר, כָּתוּב, סָגוּר as adjectives)."
+    },
+    {
+     "title": "Future, pattern 1:",
+     "text": "אֶפְעֹל — e.g. אֶשְׁמֹר (holam under R2)."
+    },
+    {
+     "title": "Future, pattern 2:",
+     "text": "אֶפְעַל — e.g. אֶלְמַד (patach under R2). Which pattern a root takes is a property of that root (אֶפְעַל roots include למד, רכב, לבש, גדל)."
+    },
+    {
+     "title": "Imperative:",
+     "text": "Built from the future by dropping the ת prefix (תִּשְׁמֹר → שְׁמֹר). Two patterns, matching the two future patterns. When two shva na'im would come together, the first becomes hirik (שְׁמֹר but שִׁמְרִי, שִׁמְרוּ)."
+    },
+    {
+     "title": "Infinitive:",
+     "text": "לִפְעֹל (לִשְׁמֹר)."
+    },
+    {
+     "title": "III-tav assimilation (past):",
+     "text": "When R3 is ת, it merges with a ת suffix: כָּרַתְתִּי becomes כָּרַתִּי; שָׁבַתְתָּ becomes שָׁבַתָּ."
+    },
+    {
+     "title": "III-nun assimilation (past):",
+     "text": "When R3 is נ, it merges with a נ suffix: זָקַנְנוּ becomes זָקַנּוּ. (2mp/2fp keep the full form with a shva under R1: זְקַנְתֶּם.)"
+    },
+    {
+     "title": "I-guttural (future + imperative):",
+     "text": "When R1 is a guttural (א/ה/ח/ע), the shva na under it becomes a chataf. The chataf vowel matches the following vowel: אֶעֱבֹד (chataf segol before segol) vs תַּעֲבֹד (chataf patach before patach). Where two shva na'im would otherwise meet, the chataf becomes a full vowel instead (תַּעַבְדִי, יַעַבְדוּ, עִבְדִי, עִבְדוּ)."
+    },
+    {
+     "title": "III-guttural (present + infinitive):",
+     "text": "When R3 is a guttural, a furtive patach appears at the end of the word (שׁוֹמֵעַ, לִשְׁמֹעַ)."
+    },
+    {
+     "title": "Modern forms:",
+     "text": "2fp/3fp future and 2fp imperative use the masculine plural forms today (תִּשְׁמְרוּ, יִשְׁמְרוּ, שִׁמְרוּ)."
+    }
+   ],
+   "tables": [
+    {
+     "shoresh": "שמר",
+     "main": true,
+     "label": "Full paradigm",
+     "tables": {
+      "past": {
+       "1s": "שָמַרְתִי",
+       "2ms": "שָמַרְתָ",
+       "2fs": "שָמַרְתְ",
+       "3ms": "שָמַר",
+       "3fs": "שָמְרָה",
+       "1p": "שָמַרְנוּ",
+       "2mp": "שָמַרְתֶם",
+       "2fp": "שָמַרְתֶן",
+       "3p": "שָמְרוּ"
+      },
+      "present": {
+       "ms": "שוֹמֵר",
+       "fs": "שוֹמֶרֶת",
+       "mp": "שוֹמְרִים",
+       "fp": "שוֹמְרוֹת"
+      },
+      "future": {
+       "1s": "אֶשְמֹר",
+       "2ms": "תִשְמֹר",
+       "2fs": "תִשְמְרִי",
+       "3ms": "יִשְמֹר",
+       "3fs": "תִשְמֹר",
+       "1p": "נִשְמֹר",
+       "2mp": "תִשְמְרוּ",
+       "2fp": "תִשְמֹרְנָה",
+       "3mp": "יִשְמְרוּ",
+       "3fp": "תִשְמֹרְנָה"
+      },
+      "imperative": {
+       "ms": "שְמֹר",
+       "fs": "שִמְרִי",
+       "mp": "שִמְרוּ",
+       "fp": "שְמֹרְנָה"
+      },
+      "infinitive": "לִשְמֹר"
+     }
+    },
+    {
+     "shoresh": "כרת",
+     "main": false,
+     "label": "III-tav assimilation",
+     "note": "III-tav assimilation: root tav assimilates before tav suffixes (dagesh chazak in suffix tav); no dagesh in root tav in 3fs/3p",
+     "tables": {
+      "past": {
+       "1s": "כָרַתִּי",
+       "2ms": "כָרַתָּ",
+       "2fs": "כָרַתְּ",
+       "3ms": "כָרַת",
+       "3fs": "כָרְתָה",
+       "1p": "כָרַתְנוּ",
+       "2mp": "כָרַתֶּם",
+       "2fp": "כָרַתֶּן",
+       "3p": "כָרְתוּ"
+      },
+      "infinitive": "לִכְרֹת"
+     }
+    },
+    {
+     "shoresh": "שבת",
+     "main": false,
+     "label": "III-tav assimilation",
+     "note": "III-tav assimilation: root tav assimilates before tav suffixes (dagesh chazak in suffix tav); infinitive has dagesh in bet (לִשְׁבֹּת)",
+     "tables": {
+      "past": {
+       "1s": "שָׁבַתִּי",
+       "2ms": "שָׁבַתָּ",
+       "2fs": "שָׁבַתְּ",
+       "3ms": "שָׁבַת",
+       "3fs": "שָׁבְתָה",
+       "1p": "שָׁבַתְנוּ",
+       "2mp": "שָׁבַתֶּם",
+       "2fp": "שָׁבַתֶּן",
+       "3p": "שָׁבְתוּ"
+      },
+      "infinitive": "לִשְׁבֹת"
+     }
+    },
+    {
+     "shoresh": "זקנ",
+     "main": false,
+     "label": "III-nun assimilation",
+     "note": "III-nun assimilation: root nun assimilates in 1p (זָקַנּוּ, dagesh in nun); shva under R1 in 2mp/2fp (זְקַנְתֶּם, זְקַנְתֶּן); stative 3ms with tzere (זָקֵן)",
+     "tables": {
+      "past": {
+       "1s": "זָקַנְתִי",
+       "2ms": "זָקַנְתָ",
+       "2fs": "זָקַנְתְ",
+       "3ms": "זָקֵן",
+       "3fs": "זָקְנָה",
+       "1p": "זָקַנּוּ",
+       "2mp": "זְקַנְתֶם",
+       "2fp": "זְקַנְתֶן",
+       "3p": "זָקְנוּ"
+      },
+      "infinitive": "לִזְקֹן"
+     }
+    },
+    {
+     "shoresh": "שמנ",
+     "main": false,
+     "label": "III-nun assimilation",
+     "note": "III-nun assimilation: root nun assimilates in 1p (שָׁמַנּוּ, dagesh in nun); shva under R1 in 2mp/2fp (שְׁמַנְתֶּם, שְׁמַנְתֶּן); stative 3ms with tzere (שָׁמֵן)",
+     "tables": {
+      "past": {
+       "1s": "שָׁמַנְתִי",
+       "2ms": "שָׁמַנְתָ",
+       "2fs": "שָׁמַנְתְ",
+       "3ms": "שָׁמֵן",
+       "3fs": "שָׁמְנָה",
+       "1p": "שָׁמַנּוּ",
+       "2mp": "שְׁמַנְתֶם",
+       "2fp": "שְׁמַנְתֶן",
+       "3p": "שָׁמְנוּ"
+      },
+      "infinitive": "לִשְׁמֹן"
+     }
+    },
+    {
+     "shoresh": "עבד",
+     "main": false,
+     "label": "I-guttural — future and imperative",
+     "note": "infinitive derived from pattern (not printed in table)",
+     "tables": {
+      "future": {
+       "1s": "אֶעֱבֹד",
+       "2ms": "תַעֲבֹד",
+       "2fs": "תַעַבְדִי",
+       "3ms": "יַעֲבֹד",
+       "3fs": "תַעֲבֹד",
+       "1p": "נַעֲבֹד",
+       "2mp": "תַעַבְדוּ",
+       "2fp": "תַעֲבֹדְנָה",
+       "3mp": "יַעַבְדוּ",
+       "3fp": "תַעֲבֹדְנָה"
+      },
+      "imperative": {
+       "ms": "עֲבֹד",
+       "fs": "עִבְדִי",
+       "mp": "עִבְדוּ",
+       "fp": "עֲבֹדְנָה"
+      },
+      "infinitive": "לַעֲבֹד"
+     }
+    },
+    {
+     "shoresh": "שמע",
+     "main": false,
+     "label": "III-guttural — present and infinitive",
+     "note": "III-guttural: patach gnuva under ayin in ms (שׁוֹמֵעַ) and infinitive (לִשְׁמֹעַ); fs שׁוֹמַעַת with patach (not segol)",
+     "tables": {
+      "present": {
+       "ms": "שׁוֹמֵעַ",
+       "fs": "שׁוֹמַעַת",
+       "mp": "שׁוֹמְעִים",
+       "fp": "שׁוֹמְעוֹת"
+      },
+      "infinitive": "לִשְׁמֹעַ"
+     }
+    }
+   ],
+   "examples": {
+    "past": [
+     {
+      "text": "אָכֵן בָּגְדָה אִשָּׁה מֵרֵעָהּ כֵּן בְּגַדְתֶּם בִּי בֵּית יִשְׂרָאֵל",
+      "reference": "ירמיה ג, כ",
+      "reference_en": "Yirmiya 3:20",
+      "source": "bemekorot"
+     },
+     {
+      "text": "כִּי גָבַר עָלֵינוּ חַסְדּוֹ",
+      "reference": "תהלים קיז, ב",
+      "reference_en": "Tehillim 117:2",
+      "source": "bemekorot"
+     },
+     {
+      "text": "בִּרְכֹת אָבִיךָ גָּבְרוּ עַל בִּרְכֹת הוֹרָי",
+      "reference": "בראשית מט, כו",
+      "reference_en": "Bereishis 49:26",
+      "source": "bemekorot"
+     },
+     {
+      "text": "לָמָּה גָנַבְתָּ אֶת אֱלֹהָי",
+      "reference": "בראשית לא, ל",
+      "reference_en": "Bereishis 31:30",
+      "source": "bemekorot"
+     },
+     {
+      "text": "וְגַם לָקְחוּ מִן הַחֵרֶם וְגַם גָּנְבוּ",
+      "reference": "יהושע ז, כא",
+      "reference_en": "Yehoshua 7:21",
+      "source": "bemekorot"
+     },
+     {
+      "text": "אָשִׁירָה לַה' כִּי גָמַל עָלָי",
+      "reference": "תהלים יג, ו",
+      "reference_en": "Tehillim 13:6",
+      "source": "bemekorot"
+     },
+     {
+      "text": "יָשָׁב יָשִׁיב לָנוּ אֵת כָּל הָרָעָה אֲשֶׁר גְּמַלְנוּ אֹתוֹ",
+      "reference": "בראשית נ, טו",
+      "reference_en": "Bereishis 50:15",
+      "source": "bemekorot"
+     },
+     {
+      "text": "כִּי שָׁמַרְתִּי דַרְכֵי ה'",
+      "reference": "שמואל ב, כב, כב",
+      "reference_en": "Shmuel II 22:22",
+      "source": "bemekorot"
+     }
+    ],
+    "present": [
+     {
+      "text": "וּמֹשֵׁל בְּרוּחוֹ מִלֹּכֵד עִיר",
+      "reference": "משלי טז, לב",
+      "reference_en": "Mishlei 16:32",
+      "source": "bemekorot"
+     },
+     {
+      "text": "וִירִיחוֹ סֹגֶרֶת וּמְסֻגֶּרֶת",
+      "reference": "יהושע ו, א",
+      "reference_en": "Yehoshua 6:1",
+      "source": "bemekorot"
+     },
+     {
+      "text": "הָיוּ שְׁנַיִם רוֹדְפִים אַחַר אֶחָד",
+      "reference": "משנה בבא קמא ג, יא",
+      "reference_en": "Mishnah Bava Kamma 3:11",
+      "source": "bemekorot"
+     },
+     {
+      "text": "וְכִי יָדָיו שֶׁל מֹשֶׁה עוֹשׂוֹת מִלְחָמָה אוֹ שׁוֹבְרוֹת מִלְחָמָה",
+      "reference": "משנה ראש השנה ג, ח",
+      "reference_en": "Mishnah Rosh Hashanah 3:8",
+      "source": "bemekorot"
+     }
+    ],
+    "future": [
+     {
+      "text": "אֶת חַג הַמַּצּוֹת תִּשְׁמֹר",
+      "reference": "שמות כג, טו",
+      "reference_en": "Shemos 23:15",
+      "source": "bemekorot"
+     },
+     {
+      "text": "וְאֶת מִשְׁפָּטַי תִּשְׁמְרוּ וַעֲשִׂיתֶם אֹתָם",
+      "reference": "שמות כה, יח",
+      "reference_en": "Shemos 25:18 [as printed; actually Vayikra 25:18]",
+      "source": "bemekorot",
+      "note": "Citation as printed; the pasuk is actually Vayikra 25:18."
+     },
+     {
+      "text": "כִּי תִרְכַּב עַל סוּסֶיךָ",
+      "reference": "חבקוק ג, ח",
+      "reference_en": "Chavakuk 3:8",
+      "source": "bemekorot"
+     },
+     {
+      "text": "וַתָּקָם רִבְקָה וְנַעֲרֹתֶיהָ וַתִּרְכַּבְנָה עַל הַגְּמַלִּים",
+      "reference": "בראשית כד, סא",
+      "reference_en": "Bereishis 24:61",
+      "source": "bemekorot"
+     },
+     {
+      "text": "וּמִכְנְסֵי בַד יִלְבַּשׁ עַל בְּשָׂרוֹ",
+      "reference": "ויקרא ו, ג",
+      "reference_en": "Vayikra 6:3",
+      "source": "bemekorot"
+     },
+     {
+      "text": "לַחְמֵנוּ נֹאכֵל וְשִׂמְלָתֵנוּ נִלְבָּשׁ",
+      "reference": "ישעיה ד, א",
+      "reference_en": "Yeshaya 4:1",
+      "source": "bemekorot"
+     },
+     {
+      "text": "אֶת תִּקְוַת חוּט הַשָּׁנִי הַזֶּה תִּקְשְׁרִי בַּחַלּוֹן",
+      "reference": "יהושע ב, יח",
+      "reference_en": "Yehoshua 2:18",
+      "source": "bemekorot"
+     }
+    ],
+    "imperative": [
+     {
+      "text": "שְׁבֹר זְרוֹעַ רָשָׁע",
+      "reference": "תהלים י, טו",
+      "reference_en": "Tehillim 10:15",
+      "source": "bemekorot"
+     },
+     {
+      "text": "קָבְרוּ אֹתִי אֶל אֲבֹתָי",
+      "reference": "בראשית מט, כט",
+      "reference_en": "Bereishis 49:29",
+      "source": "bemekorot"
+     },
+     {
+      "text": "עוּרִי עוּרִי לִבְשִׁי עֹזֵּךְ צִיּוֹן",
+      "reference": "ישעיה נב, א",
+      "reference_en": "Yeshaya 52:1",
+      "source": "bemekorot"
+     },
+     {
+      "text": "אֱמֶת וּמִשְׁפַּט שָׁלוֹם שִׁפְטוּ בְּשַׁעֲרֵיכֶם",
+      "reference": "זכריה ח, טז",
+      "reference_en": "Zecharia 8:16",
+      "source": "bemekorot"
+     },
+     {
+      "text": "וַיֹּאמֶר מֹשֶׁה אֶל אַהֲרֹן קְרַב אֶל הַמִּזְבֵּחַ",
+      "reference": "ויקרא ט, ז",
+      "reference_en": "Vayikra 9:7",
+      "source": "bemekorot"
+     }
+    ],
+    "review": [
+     {
+      "text": "וְעַתָּה יִגְדַּל נָא כֹחַ ה'",
+      "reference": "במדבר יד, יז",
+      "reference_en": "Bamidbar 14:17",
+      "source": "review"
+     },
+     {
+      "text": "וּמַה בֶּצַע כִּי שְׁמָרְנוּ מִשְׁמַרְתּוֹ",
+      "reference": "מלאכי ג, יד",
+      "reference_en": "Malachi 3:14",
+      "source": "review",
+      "note": "As printed; the pasuk reads שָׁמַרְנוּ."
+     },
+     {
+      "text": "וַיֹּאמֶר ה' אֶל מֹשֶׁה כְּתֹב זֹאת זִכָּרוֹן בַּסֵּפֶר",
+      "reference": "שמות יז, יד",
+      "reference_en": "Shemos 17:14",
+      "source": "review"
+     },
+     {
+      "text": "לִמְדוּ הֵיטֵב דִּרְשׁוּ מִשְׁפָּט",
+      "reference": "ישעיה א, יז",
+      "reference_en": "Yeshaya 1:17",
+      "source": "review"
+     },
+     {
+      "text": "הֲלוֹא אָנֹכִי אַתָּנָךְ אֲשֶׁר רָכַבְתָּ עָלָיו",
+      "reference": "במדבר כב, ל",
+      "reference_en": "Bamidbar 22:30",
+      "source": "review"
+     },
+     {
+      "text": "לָמָּה גָנַבְתָּ אֶת אֱלֹהָי",
+      "reference": "בראשית לא, ל",
+      "reference_en": "Bereishis 31:30",
+      "source": "review"
+     },
+     {
+      "text": "וְנַעֲרֹתֶיהָ הֹלְכֹת עַל יַד הַיְאֹר",
+      "reference": "שמות ב, ה",
+      "reference_en": "Shemos 2:5",
+      "source": "review"
+     },
+     {
+      "text": "וְעֶצֶם לֹא תִשְׁבְּרוּ בוֹ",
+      "reference": "שמות יב, מו",
+      "reference_en": "Shemos 12:46",
+      "source": "review"
+     },
+     {
+      "text": "וַיַּכּוּ עַם הָאָרֶץ אֶת כָּל הַקֹּשְׁרִים עַל הַמֶּלֶךְ",
+      "reference": "דברי הימים ב לג, כה",
+      "reference_en": "Divrei HaYamim II 33:25",
+      "source": "review"
+     },
+     {
+      "text": "אֶשְׁפֹּךְ לְפָנָיו שִׂיחִי",
+      "reference": "תהלים קמב, ג",
+      "reference_en": "Tehillim 142:3",
+      "source": "review"
+     },
+     {
+      "text": "הֶהָרִים רָקְדוּ כְאֵילִים",
+      "reference": "תהלים קיד, ד",
+      "reference_en": "Tehillim 114:4",
+      "source": "review"
+     },
+     {
+      "text": "מֵעֶרֶב עַד עֶרֶב תִּשְׁבְּתוּ שַׁבַּתְּכֶם",
+      "reference": "ויקרא כג, לב",
+      "reference_en": "Vayikra 23:32",
+      "source": "review"
+     },
+     {
+      "text": "וְאַתֶּם כִּתְבוּ עַל הַיְּהוּדִים כַּטּוֹב בְּעֵינֵיכֶם בְּשֵׁם הַמֶּלֶךְ",
+      "reference": "אסתר ח, ח",
+      "reference_en": "Esther 8:8",
+      "source": "review"
+     },
+     {
+      "text": "אֵין אֲנַחְנוּ פֹּשְׁטִים בְּגָדֵינוּ",
+      "reference": "נחמיה ד, יז",
+      "reference_en": "Nechemia 4:17",
+      "source": "review"
+     },
+     {
+      "text": "וּמֹכְרִים בַּשַּׁבָּת לִבְנֵי יְהוּדָה וּבִירוּשָׁלָ‍ִם",
+      "reference": "נחמיה יג, טז",
+      "reference_en": "Nechemia 13:16",
+      "source": "review"
+     }
+    ]
+   }
+  },
+  {
+   "id": "nifal",
+   "name": "Nif'al",
+   "hebrew": "נִפְעַל",
+   "meaning": "Passive or reflexive of Pa'al",
+   "paradigm": "זכר",
+   "paradigm_3ms": "נִזְכַר",
+   "rules": [
+    {
+     "title": "Meanings:",
+     "text": "Passive (נִשְׁמַר — was guarded); reflexive (נִלְחַם — fought, lit. \"fought himself\"); reciprocal (two people acting on each other); change of state (נִרְדַּם — fell asleep); plain action (נִכְנַס — entered)."
+    },
+    {
+     "title": "Past pattern:",
+     "text": "נִפְעַל — nun with hirik, then the root (נִזְכַּר)."
+    },
+    {
+     "title": "Present pattern:",
+     "text": "נִפְעָל — nun with hirik, kamatz under R2 (נִזְכָּר). Feminine singular נִזְכֶּרֶת (segol); an older form נִזְכָּרָה is no longer common."
+    },
+    {
+     "title": "Future pattern:",
+     "text": "The nun drops and R1 takes a compensatory dagesh: אִזָּכֵר (from *אִנְזָכֵר)."
+    },
+    {
+     "title": "Imperative pattern:",
+     "text": "הִפָּעֵל — הִזָּכֵר (nun drops, dagesh in R1). An imperative exists only for action verbs, not for passive ones (נִשְׁמַר has הִשָּׁמֵר; נִלְמַד has no imperative)."
+    },
+    {
+     "title": "Infinitive:",
+     "text": "לְהִפָּעֵל (לְהִזָּכֵר — nun drops, dagesh in R1)."
+    },
+    {
+     "title": "II-guttural:",
+     "text": "When R2 is a guttural, the shva na under it becomes a chataf (נִלְחֲמָה)."
+    },
+    {
+     "title": "I-guttural:",
+     "text": "When R1 is a guttural, the nun's hirik becomes segol and R1 takes chataf segol (נֶעֱנַשְׁתִּי). In 3fs/3p the chataf becomes plain segol (נֶעֱנְשָׁה, נֶעֱנְשׁוּ). In future/imperative, the assimilated nun's dagesh is \"paid back\" by lengthening the vowel instead (אֶחָתֵם for *אֶחְתֵּם, הֵרָדֵם for *הִרְדֵּם) — including for ר."
+    },
+    {
+     "title": "III-guttural:",
+     "text": "When R3 is a guttural, patach is kept where the regular pattern has tzere/segol (אֶשָּׁבַע, נִשְׁבַּעַת, הִשָּׁבַע)."
+    },
+    {
+     "title": "Modern forms:",
+     "text": "2fp/3fp future and 2fp imperative use the masculine plural forms today."
+    }
+   ],
+   "tables": [
+    {
+     "shoresh": "זכר",
+     "main": true,
+     "label": "Full paradigm",
+     "tables": {
+      "past": {
+       "1s": "נִזְכַרְתִי",
+       "2ms": "נִזְכַרְתָ",
+       "2fs": "נִזְכַרְתְ",
+       "3ms": "נִזְכַר",
+       "3fs": "נִזְכְרָה",
+       "1p": "נִזְכַרְנוּ",
+       "2mp": "נִזְכַרְתֶם",
+       "2fp": "נִזְכַרְתֶן",
+       "3p": "נִזְכְרוּ"
+      },
+      "present": {
+       "ms": "נִזְכָר",
+       "fs": "נִזְכֶרֶת",
+       "mp": "נִזְכָרִים",
+       "fp": "נִזְכָרוֹת"
+      },
+      "future": {
+       "1s": "אִזָּכֵר",
+       "2ms": "תִזָּכֵר",
+       "2fs": "תִזָּכְרִי",
+       "3ms": "יִזָּכֵר",
+       "3fs": "תִזָּכֵר",
+       "1p": "נִזָּכֵר",
+       "2mp": "תִזָּכְרוּ",
+       "2fp": "תִזָּכֵרְנָה",
+       "3mp": "יִזָּכְרוּ",
+       "3fp": "תִזָּכֵרְנָה"
+      },
+      "imperative": {
+       "ms": "הִזָּכֵר",
+       "fs": "הִזָּכְרִי",
+       "mp": "הִזָּכְרוּ",
+       "fp": "הִזָּכֵרְנָה"
+      },
+      "infinitive": "לְהִזָּכֵר"
+     }
+    },
+    {
+     "shoresh": "לחמ",
+     "main": false,
+     "label": "II-guttural",
+     "note": "II-guttural (chet); no present table printed in the book; infinitive derived from pattern (not printed in table)",
+     "tables": {
+      "past": {
+       "1s": "נִלְחַמְתִי",
+       "2ms": "נִלְחַמְתָ",
+       "2fs": "נִלְחַמְתְ",
+       "3ms": "נִלְחַם",
+       "3fs": "נִלְחֲמָה",
+       "1p": "נִלְחַמְנוּ",
+       "2mp": "נִלְחַמְתֶם",
+       "2fp": "נִלְחַמְתֶן",
+       "3p": "נִלְחֲמוּ"
+      },
+      "future": {
+       "1s": "אִלָּחֵם",
+       "2ms": "תִלָּחֵם",
+       "2fs": "תִלָּחֲמִי",
+       "3ms": "יִלָּחֵם",
+       "3fs": "תִלָּחֵם",
+       "1p": "נִלָּחֵם",
+       "2mp": "תִלָּחֲמוּ",
+       "2fp": "תִלָּחֵמְנָה",
+       "3mp": "יִלָּחֲמוּ",
+       "3fp": "תִלָּחֵמְנָה"
+      },
+      "imperative": {
+       "ms": "הִלָּחֵם",
+       "fs": "הִלָּחֲמִי",
+       "mp": "הִלָּחֲמוּ",
+       "fp": "הִלָּחֵמְנָה"
+      },
+      "infinitive": "לְהִלָּחֵם"
+     }
+    },
+    {
+     "shoresh": "ענש",
+     "main": false,
+     "label": "I-guttural — past and present",
+     "note": "I-guttural (ayin); the book gives past and present for ענש and exemplifies I-guttural future with חתמ and imperative with רדמ",
+     "tables": {
+      "past": {
+       "1s": "נֶעֱנַשְׁתִי",
+       "2ms": "נֶעֱנַשְׁתָ",
+       "2fs": "נֶעֱנַשְׁתְ",
+       "3ms": "נֶעֱנַשׁ",
+       "3fs": "נֶעֱנְשָׁה",
+       "1p": "נֶעֱנַשְׁנוּ",
+       "2mp": "נֶעֱנַשְׁתֶם",
+       "2fp": "נֶעֱנַשְׁתֶן",
+       "3p": "נֶעֱנְשׁוּ"
+      },
+      "present": {
+       "ms": "נֶעֱנָשׁ",
+       "fs": "נֶעֱנֶשֶׁת",
+       "mp": "נֶעֱנָשִׁים",
+       "fp": "נֶעֱנָשׁוֹת"
+      }
+     }
+    },
+    {
+     "shoresh": "חתמ",
+     "main": false,
+     "label": "I-guttural — future",
+     "note": "I-guttural (chet), future only — the book's I-guttural future example; tashlum dagesh; infinitive derived from pattern (not printed in table)",
+     "tables": {
+      "future": {
+       "1s": "אֶחָתֵם",
+       "2ms": "תֶחָתֵם",
+       "2fs": "תֶחָתְמִי",
+       "3ms": "יֶחָתֵם",
+       "3fs": "תֶחָתֵם",
+       "1p": "נֶחָתֵם",
+       "2mp": "תֶחָתְמוּ",
+       "2fp": "תֶחָתֵמְנָה",
+       "3mp": "יֶחָתְמוּ",
+       "3fp": "תֶחָתֵמְנָה"
+      },
+      "infinitive": "לְהֵחָתֵם"
+     }
+    },
+    {
+     "shoresh": "רדמ",
+     "main": false,
+     "label": "I-guttural (resh) — imperative",
+     "note": "I-resh, imperative only — the book's I-guttural imperative example; tashlum dagesh (resh never takes dagesh); infinitive derived from pattern (not printed in table)",
+     "tables": {
+      "imperative": {
+       "ms": "הֵרָדֵם",
+       "fs": "הֵרָדְמִי",
+       "mp": "הֵרָדְמוּ",
+       "fp": "הֵרָדֵמְנָה"
+      },
+      "infinitive": "לְהֵרָדֵם"
+     }
+    },
+    {
+     "shoresh": "שבע",
+     "main": false,
+     "label": "III-guttural",
+     "note": "III-guttural (ayin); infinitive derived from pattern (not printed in table)",
+     "tables": {
+      "past": {
+       "1s": "נִשְׁבַעְתִי",
+       "2ms": "נִשְׁבַעְתָ",
+       "2fs": "נִשְׁבַעְתְ",
+       "3ms": "נִשְׁבַע",
+       "3fs": "נִשְׁבְעָה",
+       "1p": "נִשְׁבַעְנוּ",
+       "2mp": "נִשְׁבַעְתֶם",
+       "2fp": "נִשְׁבַעְתֶן",
+       "3p": "נִשְׁבְעוּ"
+      },
+      "present": {
+       "ms": "נִשְׁבָע",
+       "fs": "נִשְׁבַעַת",
+       "mp": "נִשְׁבָעִים",
+       "fp": "נִשְׁבָעוֹת"
+      },
+      "future": {
+       "1s": "אֶשָּׁבַע",
+       "2ms": "תִשָּׁבַע",
+       "2fs": "תִשָּׁבְעִי",
+       "3ms": "יִשָּׁבַע",
+       "3fs": "תִשָּׁבַע",
+       "1p": "נִשָּׁבַע",
+       "2mp": "תִשָּׁבְעוּ",
+       "2fp": "תִשָּׁבַעְנָה",
+       "3mp": "יִשָּׁבְעוּ",
+       "3fp": "תִשָּׁבַעְנָה"
+      },
+      "imperative": {
+       "ms": "הִשָּׁבַע",
+       "fs": "הִשָּׁבְעִי",
+       "mp": "הִשָּׁבְעוּ",
+       "fp": "הִשָּׁבַעְנָה"
+      },
+      "infinitive": "לְהִשָּׁבַע"
+     }
+    }
+   ],
+   "examples": {
+    "past": [
+     {
+      "text": "נִלְכַּדְתָּ בְאִמְרֵי פִיךָ",
+      "reference": "משלי ו, ב",
+      "reference_en": "Mishlei 6:2",
+      "source": "bemekorot"
+     },
+     {
+      "text": "רוּחַ אַפֵּינוּ מְשִׁיחַ ה', נִלְכַּד בִּשְׁחִיתוֹתָם",
+      "reference": "איכה ד, כ",
+      "reference_en": "Eicha 4:20",
+      "source": "bemekorot"
+     },
+     {
+      "text": "וְנִשְׁמַרְתֶּם מְאֹד לְנַפְשֹׁתֵיכֶם",
+      "reference": "דברים ד, טו",
+      "reference_en": "Devarim 4:15",
+      "source": "bemekorot"
+     },
+     {
+      "text": "וַאֲרוֹן הָאֱלֹקִים נִלְקָחָה",
+      "reference": "שמואל א, ד, יז",
+      "reference_en": "Shmuel I 4:17",
+      "source": "bemekorot"
+     },
+     {
+      "text": "וְנִשְׁמַדְתִּי אֲנִי וּבֵיתִי",
+      "reference": "בראשית לד, ל",
+      "reference_en": "Bereishis 34:30",
+      "source": "bemekorot"
+     },
+     {
+      "text": "נִשְׁמְדוּ בְּעֵין דֹּאר",
+      "reference": "תהלים פג, יא",
+      "reference_en": "Tehillim 83:11",
+      "source": "bemekorot"
+     },
+     {
+      "text": "כִּי נִמְכַּרְנוּ אֲנִי וְעַמִּי",
+      "reference": "אסתר ז, ד",
+      "reference_en": "Esther 7:4",
+      "source": "bemekorot"
+     }
+    ],
+    "present": [
+     {
+      "text": "הַפַּח נִשְׁבָּר וַאֲנַחְנוּ נִמְלָטְנוּ",
+      "reference": "תהלים קכד, ז",
+      "reference_en": "Tehillim 124:7",
+      "source": "bemekorot"
+     },
+     {
+      "text": "וְהַיָּמִים הָאֵלֶּה נִזְכָּרִים וְנַעֲשִׂים",
+      "reference": "אסתר ט, כח",
+      "reference_en": "Esther 9:28",
+      "source": "bemekorot"
+     },
+     {
+      "text": "וְאָכַל אֶת יֶתֶר הַפְּלֵטָה הַנִּשְׁאָרֶת לָכֶם מִן הַבָּרָד",
+      "reference": "שמות י, ה",
+      "reference_en": "Shemos 10:5",
+      "source": "bemekorot"
+     }
+    ],
+    "future": [
+     {
+      "text": "וַתִּפָּקַחְנָה עֵינֵי שְׁנֵיהֶם",
+      "reference": "בראשית ג, ז",
+      "reference_en": "Bereishis 3:7",
+      "source": "bemekorot"
+     },
+     {
+      "text": "מִיָּמִים רַבִּים תִּפָּקֵד",
+      "reference": "יחזקאל לח, ח",
+      "reference_en": "Yechezkel 38:8",
+      "source": "bemekorot"
+     },
+     {
+      "text": "כִּי יִמָּכֵר לְךָ אָחִיךָ הָעִבְרִי",
+      "reference": "דברים טו, יב",
+      "reference_en": "Devarim 15:12",
+      "source": "bemekorot"
+     },
+     {
+      "text": "לֹא יִמָּכְרוּ מִמְכֶּרֶת עָבֶד",
+      "reference": "ויקרא כה, מב",
+      "reference_en": "Vayikra 25:42",
+      "source": "bemekorot"
+     },
+     {
+      "text": "מִכֹּל אֲשֶׁר אָמַרְתִּי אֶל הָאִשָּׁה תִּשָּׁמֵר",
+      "reference": "שופטים יג, יג",
+      "reference_en": "Shoftim 13:13",
+      "source": "bemekorot"
+     }
+    ],
+    "imperative": [
+     {
+      "text": "וְיֹתֵר מֵהֵמָּה בְּנִי הִזָּהֵר",
+      "reference": "קהלת יב, יב",
+      "reference_en": "Koheles 12:12",
+      "source": "bemekorot"
+     },
+     {
+      "text": "הִקָּבְצוּ וְשִׁמְעוּ בְּנֵי יַעֲקֹב",
+      "reference": "בראשית מט, ב",
+      "reference_en": "Bereishis 49:2",
+      "source": "bemekorot"
+     },
+     {
+      "text": "וְעַתָּה הִשָּׁמְרִי נָא וְאַל תִּשְׁתִּי יַיִן וְשֵׁכָר",
+      "reference": "שופטים יג, ד",
+      "reference_en": "Shoftim 13:4",
+      "source": "bemekorot"
+     },
+     {
+      "text": "שְׁמֹר אֶת הָאִישׁ הַזֶּה, אִם הִפָּקֵד יִפָּקֵד",
+      "reference": "מלכים א, כ, לט",
+      "reference_en": "Melachim I 20:39",
+      "source": "bemekorot"
+     },
+     {
+      "text": "הִבָּדְלוּ מִתּוֹךְ הָעֵדָה הַזֹּאת",
+      "reference": "במדבר טז, כא",
+      "reference_en": "Bamidbar 16:21",
+      "source": "bemekorot"
+     }
+    ],
+    "review": [
+     {
+      "text": "הִשָּׁמְרוּ לָכֶם פֶּן יִפְתֶּה לְבַבְכֶם",
+      "reference": "דברים יא, טז",
+      "reference_en": "Devarim 11:16",
+      "source": "review"
+     },
+     {
+      "text": "וַיִּקְרָא יַעֲקֹב אֶל בָּנָיו וַיֹּאמֶר הֵאָסְפוּ וְאַגִּידָה לָכֶם",
+      "reference": "בראשית מט, א",
+      "reference_en": "Bereishis 49:1",
+      "source": "review"
+     },
+     {
+      "text": "וּפֹשְׁעִים נִשְׁמְדוּ יַחְדָּו",
+      "reference": "תהלים לז, לח",
+      "reference_en": "Tehillim 37:38",
+      "source": "review"
+     },
+     {
+      "text": "בְּחַר לָנוּ אֲנָשִׁים, וְצֵא הִלָּחֵם בַּעֲמָלֵק",
+      "reference": "שמות יז, ט",
+      "reference_en": "Shemos 17:9",
+      "source": "review"
+     },
+     {
+      "text": "נִכְסְפָה וְגַם כָּלְתָה נַפְשִׁי לְחַצְרוֹת ה'",
+      "reference": "תהלים פד, ג",
+      "reference_en": "Tehillim 84:3",
+      "source": "review"
+     },
+     {
+      "text": "וְנִשְׁמַרְתָּ מִכָּל דָּבָר רָע",
+      "reference": "דברים כג, י",
+      "reference_en": "Devarim 23:10",
+      "source": "review"
+     },
+     {
+      "text": "אָז נִדְבְּרוּ יִרְאֵי ה' אִישׁ אֶת רֵעֵהוּ",
+      "reference": "מלאכי ג, טז",
+      "reference_en": "Malachi 3:16",
+      "source": "review"
+     },
+     {
+      "text": "בְּסֵפֶר חַיִּים בְּרָכָה וְשָׁלוֹם... נִזָּכֵר וְנִכָּתֵב",
+      "reference": "תפלות הימים הנוראים",
+      "reference_en": "Tefillas HaYamim HaNoraim (Rosh Hashanah / Yom Kippur liturgy)",
+      "source": "review"
+     }
+    ],
+    "ii_guttural": [
+     {
+      "text": "חֲכָמִים, הִזָּהֲרוּ בְדִבְרֵיכֶם",
+      "reference": "אבות א, יא",
+      "reference_en": "Avos 1:11",
+      "source": "note_box",
+      "note": "Extra cited source in a box under the II-guttural tables; not counted in the contents map's expected total of 28."
+     }
+    ]
+   }
+  },
+  {
+   "id": "piel",
+   "name": "Pi'el",
+   "hebrew": "פִּעֵל",
+   "meaning": "Intensive active",
+   "paradigm": "סדר",
+   "paradigm_3ms": "סִדֵּר",
+   "rules": [
+    {
+     "title": "Pi'el is one of the three \"strengthening\" (חיזוקיים) binyanim.",
+     "text": "A strong binyan has a dagesh chazak in R2."
+    },
+    {
+     "title": "Meanings:",
+     "text": "Intensified action (שָׁבַר → שִׁבֵּר, חָשַׁב → חִשֵּׁב); causing an action (לָמַד \"learned\" → לִמֵּד \"taught\"); continuing or repeated action (קִפֵּץ, דִּלֵּג); the opposite of the same root in another binyan (שֵׁרֵשׁ \"uproot\" vs הִשְׁרִישׁ \"take root\"; סִקֵּל \"clear of stones\" vs סָקַל \"stone\"); plain action like Pa'al (דִּבֵּר, צִלֵּם, בִּקֵּשׁ, שִׁלֵּם)."
+    },
+    {
+     "title": "Past pattern:",
+     "text": "פִּעֵל — hirik under R1, tzere under R2, dagesh chazak in R2 (סִדֵּר)."
+    },
+    {
+     "title": "Present pattern:",
+     "text": "מְפַעֵל — מְ prefix, patach under R1, tzere under R2, dagesh in R2 (מְסַדֵּר). Feminine singular מְסַדֶּרֶת (segol)."
+    },
+    {
+     "title": "Future pattern:",
+     "text": "אֹתִין + פַעֵל (אֲסַדֵּר)."
+    },
+    {
+     "title": "Imperative:",
+     "text": "Drop the future ת prefix (תְּסַדֵּר → סַדֵּר)."
+    },
+    {
+     "title": "Infinitive:",
+     "text": "לְפַעֵל (לְסַדֵּר)."
+    },
+    {
+     "title": "II-guttural (א/ר):",
+     "text": "These letters cannot take a dagesh, so the dagesh is \"paid back\" by lengthening the vowel: hirik becomes tzere in the past (פֵּרֵק), patach becomes kamatz in present/future/imperative (מְפָרֵק, אֲפָרֵק, פָּרֵק). With ה/ח/ע there is no payback and no change."
+    },
+    {
+     "title": "III-guttural (ח/א):",
+     "text": "A furtive patach appears at the end of the word (שִׂמֵּחַ), and patach forms also exist as alternatives (שִׂמַּח, אֲשַׂמַּח, שַׂמַּח). Present feminine singular takes patach instead of segol (מְשַׂמַּחַת)."
+    },
+    {
+     "title": "Look-alike warning:",
+     "text": "לִמְדוּ (Pa'al imperative, \"learn!\") vs לִמְּדוּ (Pi'el past, \"they taught\") — same letters, different dagesh and vowels."
+    },
+    {
+     "title": "Modern forms:",
+     "text": "2fp/3fp future and 2fp imperative use the masculine plural forms today."
+    }
+   ],
+   "tables": [
+    {
+     "shoresh": "סדר",
+     "main": true,
+     "label": "Full paradigm",
+     "tables": {
+      "past": {
+       "1s": "סִדַּרְתִי",
+       "2ms": "סִדַּרְתָ",
+       "2fs": "סִדַּרְתְ",
+       "3ms": "סִדֵּר",
+       "3fs": "סִדְּרָה",
+       "1p": "סִדַּרְנוּ",
+       "2mp": "סִדַּרְתֶם",
+       "2fp": "סִדַּרְתֶן",
+       "3p": "סִדְּרוּ"
+      },
+      "present": {
+       "ms": "מְסַדֵּר",
+       "fs": "מְסַדֶּרֶת",
+       "mp": "מְסַדְּרִים",
+       "fp": "מְסַדְּרוֹת"
+      },
+      "future": {
+       "1s": "אֲסַדֵּר",
+       "2ms": "תְסַדֵּר",
+       "2fs": "תְסַדְּרִי",
+       "3ms": "יְסַדֵּר",
+       "3fs": "תְסַדֵּר",
+       "1p": "נְסַדֵּר",
+       "2mp": "תְסַדְּרוּ",
+       "2fp": "תְסַדֵּרְנָה",
+       "3mp": "יְסַדְּרוּ",
+       "3fp": "תְסַדֵּרְנָה"
+      },
+      "imperative": {
+       "ms": "סַדֵּר",
+       "fs": "סַדְּרִי",
+       "mp": "סַדְּרוּ",
+       "fp": "סַדֵּרְנָה"
+      },
+      "infinitive": "לְסַדֵּר"
+     }
+    },
+    {
+     "shoresh": "פרק",
+     "main": false,
+     "label": "II-guttural",
+     "note": "II-guttural (resh), tashlum dagesh; infinitive derived from pattern (not printed in table)",
+     "tables": {
+      "past": {
+       "1s": "פֵרַקְתִי",
+       "2ms": "פֵרַקְתָ",
+       "2fs": "פֵרַקְתְ",
+       "3ms": "פֵרֵק",
+       "3fs": "פֵרְקָה",
+       "1p": "פֵרַקְנוּ",
+       "2mp": "פֵרַקְתֶם",
+       "2fp": "פֵרַקְתֶן",
+       "3p": "פֵרְקוּ"
+      },
+      "present": {
+       "ms": "מְפָרֵק",
+       "fs": "מְפָרֶקֶת",
+       "mp": "מְפָרְקִים",
+       "fp": "מְפָרְקוֹת"
+      },
+      "future": {
+       "1s": "אֲפָרֵק",
+       "2ms": "תְפָרֵק",
+       "2fs": "תְפָרְקִי",
+       "3ms": "יְפָרֵק",
+       "3fs": "תְפָרֵק",
+       "1p": "נְפָרֵק",
+       "2mp": "תְפָרְקוּ",
+       "2fp": "תְפָרֵקְנָה",
+       "3mp": "יְפָרְקוּ",
+       "3fp": "תְפָרֵקְנָה"
+      },
+      "imperative": {
+       "ms": "פָרֵק",
+       "fs": "פָרְקִי",
+       "mp": "פָרְקוּ",
+       "fp": "פָרֵקְנָה"
+      },
+      "infinitive": "לְפָרֵק"
+     }
+    },
+    {
+     "shoresh": "שמח",
+     "main": false,
+     "label": "III-guttural",
+     "note": "III-guttural (chet), furtive patach; alternate patach forms: שִׂמַּח (past 3ms), אֲשַׂמַּח (future 1s), שַׂמַּח (imperative ms); infinitive derived from pattern (not printed in table)",
+     "tables": {
+      "past": {
+       "1s": "שִׂמַּחְתִי",
+       "2ms": "שִׂמַּחְתָ",
+       "2fs": "שִׂמַּחְתְ",
+       "3ms": "שִׂמֵּחַ",
+       "3fs": "שִׂמְּחָה",
+       "1p": "שִׂמַּחְנוּ",
+       "2mp": "שִׂמַּחְתֶם",
+       "2fp": "שִׂמַּחְתֶן",
+       "3p": "שִׂמְּחוּ"
+      },
+      "present": {
+       "ms": "מְשַׂמֵּחַ",
+       "fs": "מְשַׂמַּחַת",
+       "mp": "מְשַׂמְּחִים",
+       "fp": "מְשַׂמְּחוֹת"
+      },
+      "future": {
+       "1s": "אֲשַׂמֵּחַ",
+       "2ms": "תְשַׂמֵּחַ",
+       "2fs": "תְשַׂמְּחִי",
+       "3ms": "יְשַׂמֵּחַ",
+       "3fs": "תְשַׂמֵּחַ",
+       "1p": "נְשַׂמֵּחַ",
+       "2mp": "תְשַׂמְּחוּ",
+       "2fp": "תְשַׂמֵּחְנָה",
+       "3mp": "יְשַׂמְּחוּ",
+       "3fp": "תְשַׂמֵּחְנָה"
+      },
+      "imperative": {
+       "ms": "שַׂמֵּחַ",
+       "fs": "שַׂמְּחִי",
+       "mp": "שַׂמְּחוּ",
+       "fp": "שַׂמֵּחְנָה"
+      },
+      "infinitive": "לְשַׂמֵּחַ"
+     }
+    }
+   ],
+   "examples": {
+    "past": [
+     {
+      "text": "רְאֵה לִמַּדְתִּי אֶתְכֶם חֻקִּים וּמִשְׁפָּטִים",
+      "reference": "דברים ד, ה",
+      "reference_en": "Devarim 4:5",
+      "source": "bemekorot"
+     },
+     {
+      "text": "גַּם אֶת הָרָעוֹת לִמַּדְתְּ אֶת דְּרָכַיִךְ",
+      "reference": "ירמיה ב, לג",
+      "reference_en": "Yirmiya 2:33",
+      "source": "bemekorot"
+     },
+     {
+      "text": "לָמָּה שִׁלַּמְתֶּם רָעָה תַּחַת טוֹבָה",
+      "reference": "בראשית מד, ד",
+      "reference_en": "Bereishis 44:4",
+      "source": "bemekorot"
+     },
+     {
+      "text": "אָמַר הַקָּבָּ\"ה: כְּשֶׁבִּקַּשְׁתִּי, לֹא בִקַּשְׁתְּ...",
+      "reference": "שמות רבה מה, ה",
+      "reference_en": "Shemos Rabbah 45:5",
+      "source": "bemekorot"
+     },
+     {
+      "text": "בִּקֵּשׁ קֹהֶלֶת לִמְצֹא דִּבְרֵי חֵפֶץ",
+      "reference": "קהלת יב, י",
+      "reference_en": "Koheles 12:10",
+      "source": "bemekorot"
+     },
+     {
+      "text": "בְּאָזְנֵינוּ שָׁמַעְנוּ, אֲבוֹתֵינוּ סִפְּרוּ לָנוּ",
+      "reference": "תהלים מד, ב",
+      "reference_en": "Tehillim 44:2",
+      "source": "bemekorot"
+     },
+     {
+      "text": "אָמַר רַבָּן שִׁמְעוֹן בֶּן גַּמְלִיאֵל: קִבַּלְנוּ עֵדוּתְכֶם",
+      "reference": "משנה עדויות ח, ג",
+      "reference_en": "Mishnah Eduyos 8:3",
+      "source": "bemekorot"
+     }
+    ],
+    "present": [
+     {
+      "text": "מְלַמֵּד יָדַי לַמִּלְחָמָה",
+      "reference": "תהלים יח, לה",
+      "reference_en": "Tehillim 18:35",
+      "source": "bemekorot"
+     },
+     {
+      "text": "עוֹד הֵם מְדַבְּרִים וַאֲנִי אֶשְׁמָע",
+      "reference": "ישעיה סה, כד",
+      "reference_en": "Yeshaya 65:24",
+      "source": "bemekorot"
+     },
+     {
+      "text": "אַהֲבָה מְבַטֶּלֶת שׁוּרָה שֶׁל גְּדוֹלָה",
+      "reference": "גמרא סנהדרין קה עמי ב",
+      "reference_en": "Gemara Sanhedrin 105b",
+      "source": "bemekorot",
+      "note": "Printed reference reads 'קה עמי ב', apparently a misprint for ק״ה ע״ב (105b)."
+     },
+     {
+      "text": "דְּבָרֶיךָ אָנוּ מְבַקְשׁוֹת לְקַיֵּים",
+      "reference": "שמות רבה א, טז",
+      "reference_en": "Shemos Rabbah 1:16",
+      "source": "bemekorot"
+     }
+    ],
+    "future": [
+     {
+      "text": "וְיָדַיִם רָפוֹת תְּחַזֵּק",
+      "reference": "איוב ד, ג",
+      "reference_en": "Iyov 4:3",
+      "source": "bemekorot"
+     },
+     {
+      "text": "גַּם אַתְּ תְּבַקְשִׁי מָעוֹז מֵאוֹיֵב",
+      "reference": "נחום ג, יא",
+      "reference_en": "Nachum 3:11",
+      "source": "bemekorot"
+     },
+     {
+      "text": "לֵב נָבוֹן יְבַקֶּשׁ דָּעַת",
+      "reference": "משלי טו, יד",
+      "reference_en": "Mishlei 15:14",
+      "source": "bemekorot"
+     },
+     {
+      "text": "לְדֹר וָדֹר נְסַפֵּר תְּהִלָּתֶךָ",
+      "reference": "תהלים עט, יג",
+      "reference_en": "Tehillim 79:13",
+      "source": "bemekorot"
+     },
+     {
+      "text": "פַּסְּגוּ אַרְמְנוֹתֶיהָ לְמַעַן תְּסַפְּרוּ לְדוֹר אַחֲרוֹן",
+      "reference": "תהלים מח, יד",
+      "reference_en": "Tehillim 48:14",
+      "source": "bemekorot"
+     },
+     {
+      "text": "וְהָיָה בָּעֵת הַהִיא אֲחַפֵּשׂ אֶת יְרוּשָׁלַ‍ִם",
+      "reference": "צפניה א, יב",
+      "reference_en": "Tzefania 1:12",
+      "source": "bemekorot"
+     }
+    ],
+    "imperative": [
+     {
+      "text": "דַּבֵּר אֶל בְּנֵי יִשְׂרָאֵל",
+      "reference": "שמות יד, ב",
+      "reference_en": "Shemos 14:2",
+      "source": "bemekorot"
+     },
+     {
+      "text": "סַפְּרוּ בְגוֹיִם כְּבוֹדוֹ",
+      "reference": "תהלים צו, ג",
+      "reference_en": "Tehillim 96:3",
+      "source": "bemekorot"
+     },
+     {
+      "text": "חַזְּקִי מִבְצָרָיִךְ",
+      "reference": "נחום ג, יד",
+      "reference_en": "Nachum 3:14",
+      "source": "bemekorot"
+     },
+     {
+      "text": "וְעַתָּה חַלֵּק אֶת הָאָרֶץ הַזֹּאת",
+      "reference": "יהושע יג, ז",
+      "reference_en": "Yehoshua 13:7",
+      "source": "bemekorot"
+     },
+     {
+      "text": "בַּשְּׁלוּ אֶת הַבָּשָׂר פֶּתַח אֹהֶל מוֹעֵד",
+      "reference": "ויקרא ח, לא",
+      "reference_en": "Vayikra 8:31",
+      "source": "bemekorot"
+     }
+    ],
+    "iii_guttural": [
+     {
+      "text": "לִמְדוּ הֵיטֵב דִּרְשׁוּ מִשְׁפָּט",
+      "reference": "ישעיה א, יז",
+      "reference_en": "Yeshaya 1:17",
+      "source": "note_box"
+     },
+     {
+      "text": "לִמְּדוּ לְשׁוֹנָם דַּבֵּר שֶׁקֶר",
+      "reference": "ירמיה ט, ד",
+      "reference_en": "Yirmiya 9:4",
+      "source": "note_box"
+     },
+     {
+      "text": "שַׂמֵּחַ תְּשַׂמַּח רֵעִים הָאֲהוּבִים",
+      "reference": "מתוך שבע ברכות",
+      "reference_en": "Sheva Berachos liturgy",
+      "source": "note_box",
+      "note": "Extra cited source (Sheva Berachos quote under the III-guttural tables); not counted in the contents map's expected total of 40."
+     }
+    ],
+    "summary_test_1": [
+     {
+      "text": "לָמָּה שִׁלַּמְתֶּם רָעָה תַּחַת טוֹבָה",
+      "reference": "בראשית מד, ד",
+      "reference_en": "Bereishis 44:4",
+      "source": "summary_test"
+     },
+     {
+      "text": "וּלְמַעַן תְּסַפֵּר בְּאָזְנֵי בִנְךָ",
+      "reference": "שמות י, ב",
+      "reference_en": "Shemos 10:2",
+      "source": "summary_test"
+     },
+     {
+      "text": "אֲשֶׁר אָנֹכִי מְלַמֵּד אֶתְכֶם לַעֲשׂוֹת",
+      "reference": "דברים ד, א",
+      "reference_en": "Devarim 4:1",
+      "source": "summary_test"
+     },
+     {
+      "text": "הֵן גֵּרַשְׁתָּ אֹתִי",
+      "reference": "בראשית ד, יד",
+      "reference_en": "Bereishis 4:14",
+      "source": "summary_test"
+     },
+     {
+      "text": "שַׁבְּחִי יְרוּשָׁלַ‍ִם אֶת ה'",
+      "reference": "תהלים קמז, יב",
+      "reference_en": "Tehillim 147:12",
+      "source": "summary_test"
+     },
+     {
+      "text": "וְשֵׁרֵת בְּשֵׁם ה' אֱלֹקָיו",
+      "reference": "דברים יח, ז",
+      "reference_en": "Devarim 18:7",
+      "source": "summary_test"
+     },
+     {
+      "text": "וְרוּחַ גְּדוֹלָה וְחָזָק מְפָרֵק הָרִים",
+      "reference": "מלכים א, יט, יא",
+      "reference_en": "Melachim I 19:11",
+      "source": "summary_test"
+     },
+     {
+      "text": "כַּבֵּד אֶת אָבִיךָ וְאֶת אִמֶּךָ",
+      "reference": "שמות כ, יא",
+      "reference_en": "Shemos 20:11 [as printed; actually 20:12]",
+      "source": "summary_test",
+      "note": "Citation as printed; the pasuk is Shemos 20:12."
+     },
+     {
+      "text": "לְמַעַן תְּסַפְּרוּ לְדוֹר אַחֲרוֹן",
+      "reference": "תהלים מח, יד",
+      "reference_en": "Tehillim 48:14",
+      "source": "summary_test"
+     },
+     {
+      "text": "כִּי נִחַמְתִּי עַל הָרָעָה אֲשֶׁר עָשִׂיתִי לָהֶם",
+      "reference": "ירמיה מב, י",
+      "reference_en": "Yirmiya 42:10",
+      "source": "summary_test"
+     },
+     {
+      "text": "וְיַיִן יְשַׂמַּח לְבַב אֱנוֹשׁ",
+      "reference": "תהלים קד, טו",
+      "reference_en": "Tehillim 104:15",
+      "source": "summary_test"
+     },
+     {
+      "text": "כִּי חִלַּצְתָּ נַפְשִׁי מִמָּוֶת",
+      "reference": "תהלים קטז, ח",
+      "reference_en": "Tehillim 116:8",
+      "source": "summary_test"
+     },
+     {
+      "text": "וְהִנֵּה אֲנַחְנוּ מְאַלְּמִים אֲלֻמִּים בְּתוֹךְ הַשָּׂדֶה",
+      "reference": "בראשית לז, ז",
+      "reference_en": "Bereishis 37:7",
+      "source": "summary_test"
+     },
+     {
+      "text": "וְגַם נֵצַח יִשְׂרָאֵל לֹא יְשַׁקֵּר",
+      "reference": "שמואל א, טו, כט",
+      "reference_en": "Shmuel I 15:29",
+      "source": "summary_test"
+     },
+     {
+      "text": "שַׁלַּח לַחְמְךָ עַל פְּנֵי הַמָּיִם",
+      "reference": "קהלת יא, א",
+      "reference_en": "Koheles 11:1",
+      "source": "summary_test"
+     },
+     {
+      "text": "הַשָּׁמַיִם מְסַפְּרִים כְּבוֹד קֵל",
+      "reference": "תהלים יט, ב",
+      "reference_en": "Tehillim 19:2",
+      "source": "summary_test"
+     }
+    ]
+   }
+  },
+  {
+   "id": "pual",
+   "name": "Pu'al",
+   "hebrew": "פֻּעַל",
+   "meaning": "Passive of Pi'el",
+   "paradigm": "צלמ",
+   "paradigm_3ms": "צֻלַּם",
+   "rules": [
+    {
+     "title": "Pu'al is one of the three \"strengthening\" binyanim (dagesh chazak in R2). It has ONE meaning: passive — the passive of Pi'el",
+     "text": "(קִשֵּׁט \"decorated\" → קֻשַּׁט \"was decorated\")."
+    },
+    {
+     "title": "Modern use:",
+     "text": "Pu'al present forms are widely used as adjectives (אָדָם מְכֻבָּד, אִשָּׁה מְלֻמֶּדֶת)."
+    },
+    {
+     "title": "Past pattern:",
+     "text": "פֻּעַל — kubutz under R1, patach under R2, dagesh in R2 (צֻלַּם)."
+    },
+    {
+     "title": "Present pattern:",
+     "text": "מְפֻעָל — מְ prefix, kubutz under R1, kamatz under R2, dagesh in R2 (מְצֻלָּם). Feminine singular מְצֻלֶּמֶת (segol)."
+    },
+    {
+     "title": "Future pattern:",
+     "text": "אֹתִין + פֻּעַל (אֲצֻלַּם)."
+    },
+    {
+     "title": "Imperative: none.",
+     "text": "You cannot command someone to be acted upon — the action does not depend on them."
+    },
+    {
+     "title": "",
+     "text": "Infinitive: none."
+    },
+    {
+     "title": "R1 vowel:",
+     "text": "The \"o\" vowel under R1 can appear as kubutz, shuruk, or kamatz katan (מְצֻלָּם, מְאָדָּם — the א has kamatz katan, pronounced \"o\")."
+    },
+    {
+     "title": "II-guttural (א/ה/ע/ר):",
+     "text": "These letters cannot take a dagesh, so the kubutz becomes holam chaser in all tenses (גֹּרַשׁ, מְגֹרָשׁ, אֶגֹּרַשׁ). With ח there is no payback and no change."
+    },
+    {
+     "title": "Pausal forms:",
+     "text": "At the end of a pasuk (sof pasuk) or at an etnachta, the vowel changes: future forms that should have patach under R1 take kamatz instead (תְּחֻלַּק, יְשֻׁלַּם, יְכֻפַּר)."
+    },
+    {
+     "title": "Modern forms:",
+     "text": "2fp/3fp future use the masculine plural forms today."
+    }
+   ],
+   "tables": [
+    {
+     "shoresh": "צלמ",
+     "main": true,
+     "label": "Full paradigm",
+     "tables": {
+      "past": {
+       "1s": "צֻלַּמְתִי",
+       "2ms": "צֻלַּמְתָ",
+       "2fs": "צֻלַּמְתְ",
+       "3ms": "צֻלַּם",
+       "3fs": "צֻלְּמָה",
+       "1p": "צֻלַּמְנוּ",
+       "2mp": "צֻלַּמְתֶם",
+       "2fp": "צֻלַּמְתֶן",
+       "3p": "צֻלְּמוּ"
+      },
+      "present": {
+       "ms": "מְצֻלָּם",
+       "fs": "מְצֻלֶּמֶת",
+       "mp": "מְצֻלָּמִים",
+       "fp": "מְצֻלָּמוֹת"
+      },
+      "future": {
+       "1s": "אֲצֻלַּם",
+       "2ms": "תְצֻלַּם",
+       "2fs": "תְצֻלְּמִי",
+       "3ms": "יְצֻלַּם",
+       "3fs": "תְצֻלַּם",
+       "1p": "נְצֻלַּם",
+       "2mp": "תְצֻלְּמוּ",
+       "2fp": "תְצֻלַּמְנָה",
+       "3mp": "יְצֻלְּמוּ",
+       "3fp": "תְצֻלַּמְנָה"
+      },
+      "imperative": null,
+      "infinitive": null
+     }
+    },
+    {
+     "shoresh": "גרש",
+     "main": false,
+     "label": "II-guttural",
+     "note": "II-guttural (resh), tashlum dagesh (kubutz → holam chaser)",
+     "tables": {
+      "past": {
+       "1s": "גֹרַשְׁתִי",
+       "2ms": "גֹרַשְׁתָ",
+       "2fs": "גֹרַשְׁתְ",
+       "3ms": "גֹרַשׁ",
+       "3fs": "גֹרְשָׁה",
+       "1p": "גֹרַשְׁנוּ",
+       "2mp": "גֹרַשְׁתֶם",
+       "2fp": "גֹרַשְׁתֶן",
+       "3p": "גֹרְשׁוּ"
+      },
+      "present": {
+       "ms": "מְגֹרָשׁ",
+       "fs": "מְגֹרֶשֶׁת",
+       "mp": "מְגֹרָשִׁים",
+       "fp": "מְגֹרָשׁוֹת"
+      },
+      "future": {
+       "1s": "אֲגֹרַשׁ",
+       "2ms": "תְגֹרַשׁ",
+       "2fs": "תְגֹרְשִׁי",
+       "3ms": "יְגֹרַשׁ",
+       "3fs": "תְגֹרַשׁ",
+       "1p": "נְגֹרַשׁ",
+       "2mp": "תְגֹרְשׁוּ",
+       "2fp": "תְגֹרַשְׁנָה",
+       "3mp": "יְגֹרְשׁוּ",
+       "3fp": "תְגֹרַשְׁנָה"
+      },
+      "imperative": null,
+      "infinitive": null
+     }
+    }
+   ],
+   "examples": {
+    "past": [
+     {
+      "text": "אָז חֻלַּק עַד שָׁלָל מַרְבֶּה",
+      "reference": "ישעיה לג, כג",
+      "reference_en": "Yeshaya 33:23",
+      "source": "bemekorot"
+     },
+     {
+      "text": "כִּי אֲשֶׁר לֹא סֻפַּר לָהֶם רָאוּ",
+      "reference": "ישעיה נב, טו",
+      "reference_en": "Yeshaya 52:15",
+      "source": "bemekorot"
+     },
+     {
+      "text": "רוּחִי חֻבָּלָה יָמַי נִזְעָכוּ",
+      "reference": "איוב יז, א",
+      "reference_en": "Iyov 17:1",
+      "source": "bemekorot",
+      "note": "Footnote as printed: * צורה זו מקבילה ל-חֻבְּלָה."
+     },
+     {
+      "text": "ה' יִשְׁמְרֵהוּ וִיחַיֵּהוּ וְאֻשַּׁר בָּאָרֶץ",
+      "reference": "תהלים מא, ג",
+      "reference_en": "Tehillim 41:3",
+      "source": "bemekorot"
+     },
+     {
+      "text": "וְאָכְלוּ אֹתָם אֲשֶׁר כֻּפַּר בָּהֶם",
+      "reference": "שמות כט, לג",
+      "reference_en": "Shemos 29:33",
+      "source": "bemekorot"
+     },
+     {
+      "text": "כִּי יִתֵּן אִישׁ אֶל רֵעֵהוּ כֶּסֶף אוֹ כֵלִים לִשְׁמֹר וְגֻנַּב מִבֵּית הָאִישׁ",
+      "reference": "שמות כב, ו",
+      "reference_en": "Shemos 22:6",
+      "source": "bemekorot"
+     },
+     {
+      "text": "כִּי גֻנֹּב גֻּנַּבְתִּי מֵאֶרֶץ הָעִבְרִים",
+      "reference": "בראשית מ, טו",
+      "reference_en": "Bereishis 40:15",
+      "source": "bemekorot"
+     }
+    ],
+    "present": [
+     {
+      "text": "וּבָשֵׁל מְבֻשָּׁל בַּמָּיִם",
+      "reference": "שמות יב, ט",
+      "reference_en": "Shemos 12:9",
+      "source": "bemekorot"
+     },
+     {
+      "text": "וְתֹמְכֶיהָ מְאֻשָּׁר",
+      "reference": "משלי ג, יח",
+      "reference_en": "Mishlei 3:18",
+      "source": "bemekorot"
+     },
+     {
+      "text": "אֵיזֶהוּ מְכֻבָּד? הַמְכַבֵּד אֶת הַבְּרִיּוֹת",
+      "reference": "אבות ד, א",
+      "reference_en": "Avos 4:1",
+      "source": "bemekorot"
+     },
+     {
+      "text": "וְעֹרֹת אֵילִם מְאָדָּמִים",
+      "reference": "שמות כה, ה",
+      "reference_en": "Shemos 25:5",
+      "source": "bemekorot"
+     }
+    ],
+    "future": [
+     {
+      "text": "וְאַדְמָתְךָ בְּחֶבֶל תְּחֻלָּק",
+      "reference": "עמוס ז, יז",
+      "reference_en": "Amos 7:17",
+      "source": "bemekorot"
+     },
+     {
+      "text": "וְיָרֵא מִצְוָה הוּא יְשֻׁלָּם",
+      "reference": "משלי יג, יג",
+      "reference_en": "Mishlei 13:13",
+      "source": "bemekorot"
+     },
+     {
+      "text": "יְסֻפַּר לַה' לַדּוֹר",
+      "reference": "תהלים כב, לא",
+      "reference_en": "Tehillim 22:31",
+      "source": "bemekorot"
+     },
+     {
+      "text": "וּכְלִי חֶרֶשׂ אֲשֶׁר תְּבֻשַּׁל בּוֹ יִשָּׁבֵר",
+      "reference": "ויקרא ו, כא",
+      "reference_en": "Vayikra 6:21",
+      "source": "bemekorot"
+     },
+     {
+      "text": "בְּחֶסֶד וֶאֱמֶת יְכֻפַּר עָוֹן",
+      "reference": "משלי טז, ו",
+      "reference_en": "Mishlei 16:6",
+      "source": "bemekorot"
+     }
+    ],
+    "summary_test_1": [
+     {
+      "text": "יוֹצִיב וְנָכוֹן... וּמְתֻקָּן וּמְקֻבָּל...",
+      "reference": "תפלה, ברכות ק\"ש",
+      "reference_en": "Tefillah, Birkos Krias Shema",
+      "source": "summary_test"
+     },
+     {
+      "text": "הַקֵּל, הָאָב הָרַחֲמָן, הַמְהֻלָּל בְּפִי עַמּוֹ",
+      "reference": "תפלת \"ברוך שאמר\"",
+      "reference_en": "Tefillah, Baruch She'amar",
+      "source": "summary_test"
+     },
+     {
+      "text": "וַיְבֻקַּשׁ הַדָּבָר וַיִּמָּצֵא",
+      "reference": "אסתר ב, כג",
+      "reference_en": "Esther 2:23",
+      "source": "summary_test"
+     },
+     {
+      "text": "סְבָבוּנִי כִדְבוֹרִים דֹּעֲכוּ כְּאֵשׁ קוֹצִים",
+      "reference": "תהלים קיח, יב",
+      "reference_en": "Tehillim 118:12",
+      "source": "summary_test"
+     },
+     {
+      "text": "מְשֻׁבָּח וּמְפֹאָר בִּלְשׁוֹן חֲסִידָיו וַעֲבָדָיו",
+      "reference": "תפלת \"ברוך שאמר\"",
+      "reference_en": "Tefillah, Baruch She'amar",
+      "source": "summary_test"
+     },
+     {
+      "text": "וְאֵלַי דָּבָר יְגֻנָּב",
+      "reference": "איוב ד, יב",
+      "reference_en": "Iyov 4:12",
+      "source": "summary_test"
+     },
+     {
+      "text": "וּכְלִי חֶרֶשׂ אֲשֶׁר תְּבֻשַּׁל בּוֹ יִשָּׁבֵר",
+      "reference": "ויקרא ו, כא",
+      "reference_en": "Vayikra 6:21",
+      "source": "summary_test"
+     },
+     {
+      "text": "וְאַתֶּם תְּלֻקְּטוּ לְאַחַד אֶחָד בְּנֵי יִשְׂרָאֵל",
+      "reference": "ישעיה כז, יב",
+      "reference_en": "Yeshaya 27:12",
+      "source": "summary_test"
+     },
+     {
+      "text": "וְאִם תְּמָאֲנוּ וּמְרִיתֶם, חֶרֶב תְּאֻכְּלוּ",
+      "reference": "ישעיה א, כ",
+      "reference_en": "Yeshaya 1:20",
+      "source": "summary_test"
+     },
+     {
+      "text": "וְכֻפַּר בְּרִיתְכֶם אֶת מָוֶת",
+      "reference": "ישעיה כח, יח",
+      "reference_en": "Yeshaya 28:18",
+      "source": "summary_test"
+     },
+     {
+      "text": "הַבִּיטוּ אֶל צוּר חֻצַּבְתֶּם",
+      "reference": "ישעיה נא, א",
+      "reference_en": "Yeshaya 51:1",
+      "source": "summary_test"
+     },
+     {
+      "text": "וְחֻלַּק שְׁלָלֵךְ בְּקִרְבֵּךְ",
+      "reference": "זכריה יד, א",
+      "reference_en": "Zecharia 14:1",
+      "source": "summary_test"
+     },
+     {
+      "text": "וְהִנֵּה נֻתַּץ מִזְבַּח הַבַּעַל וְהָאֲשֵׁרָה",
+      "reference": "שופטים ו, כח",
+      "reference_en": "Shoftim 6:28",
+      "source": "summary_test"
+     },
+     {
+      "text": "לָכֵן בְּזֹאת יְכֻפַּר עֲוֹן יַעֲקֹב",
+      "reference": "ישעיה כז, ט",
+      "reference_en": "Yeshaya 27:9",
+      "source": "summary_test"
+     },
+     {
+      "text": "וְלָאָרֶץ לֹא יְכֻפַּר לַדָּם אֲשֶׁר שֻׁפַּךְ בָּהּ",
+      "reference": "במדבר לה, לג",
+      "reference_en": "Bamidbar 35:33",
+      "source": "summary_test"
+     }
+    ]
+   }
+  },
+  {
+   "id": "hifil",
+   "name": "Hif'il",
+   "hebrew": "הִפְעִיל",
+   "meaning": "Causative",
+   "paradigm": "שלמ",
+   "paradigm_3ms": "הִשְלִים",
+   "rules": [
+    {
+     "title": "Meanings:",
+     "text": "Causing an action (גרימת הפעולה); turning an intransitive Pa'al verb transitive; change of state; turning a noun or adjective into a verb (אֹזֶן → הֶאֱזִין \"listened\", שָׁמֵן → הִשְׁמִין \"fattened\", שָׁחֹר → הִשְׁחִיר \"blackened\"); plain action (הִשְׁלִיךְ, הִקְשִׁיב); Nif'al roots used in Hif'il (נִכְנַס → הִכְנִיס); a verb before an infinitive in place of an adjective (הֵיטִיב לְדַבֵּר, הִרְחִיק לָלֶכֶת)."
+    },
+    {
+     "title": "Past pattern:",
+     "text": "הִפְעִיל — הִ prefix, shva under R1, hirik-yod before R3 (הִשְׁלִים)."
+    },
+    {
+     "title": "Present pattern:",
+     "text": "מַפְעִיל — מַ prefix, shva under R1 (מַשְׁלִים). Feminine singular מַשְׁלִימָה; an older form מַשְׁלֶמֶת is no longer used."
+    },
+    {
+     "title": "Future pattern:",
+     "text": "אֹתִין + פְעִיל (אַשְׁלִים)."
+    },
+    {
+     "title": "Imperative:",
+     "text": "Drop the future ת prefix and replace it with ה (תַּשְׁלִים → הַשְׁלֵם). Pattern הַפְעֵל (tzere under R2). Note: when R2 is ב/כ/פ, it takes a dagesh after the shva nach."
+    },
+    {
+     "title": "Infinitive:",
+     "text": "לְהַפְעִיל (לְהַשְׁלִים)."
+    },
+    {
+     "title": "I-guttural (א/ח/ע):",
+     "text": "The shva na under R1 becomes a chataf instead. The hirik of the past becomes tzere (הֶעְסִיק), and the patach of present/future/imperative becomes kamatz (מַעֲסִיק, אַעֲסִיק, הַעֲסֵק). Note: ח sometimes keeps its shva (הֶחְזִיק, הֶחְזִיר)."
+    },
+    {
+     "title": "III-guttural (א/ח/ע):",
+     "text": "A furtive patach appears at the end of the word (הִצְלִיחַ). The tzere before a final guttural becomes patach in 2fp/3fp forms (תַּצְלַחְנָה, הַצְלַחְנָה)."
+    },
+    {
+     "title": "Modern forms:",
+     "text": "2fp/3fp future and 2fp imperative use the masculine plural forms today."
+    }
+   ],
+   "tables": [
+    {
+     "shoresh": "שלמ",
+     "main": true,
+     "label": "Full paradigm",
+     "tables": {
+      "past": {
+       "1s": "הִשְלַמְתִי",
+       "2ms": "הִשְלַמְתָ",
+       "2fs": "הִשְלַמְתְ",
+       "3ms": "הִשְלִים",
+       "3fs": "הִשְלִימָה",
+       "1p": "הִשְלַמְנוּ",
+       "2mp": "הִשְלַמְתֶם",
+       "2fp": "הִשְלַמְתֶן",
+       "3p": "הִשְלִימוּ"
+      },
+      "present": {
+       "ms": "מַשְלִים",
+       "fs": "מַשְלִימָה",
+       "mp": "מַשְלִימִים",
+       "fp": "מַשְלִימוֹת"
+      },
+      "future": {
+       "1s": "אַשְלִים",
+       "2ms": "תַשְלִים",
+       "2fs": "תַשְלִימִי",
+       "3ms": "יַשְלִים",
+       "3fs": "תַשְלִים",
+       "1p": "נַשְלִים",
+       "2mp": "תַשְלִימוּ",
+       "2fp": "תַשְלֵמְנָה",
+       "3mp": "יַשְלִימוּ",
+       "3fp": "תַשְלֵמְנָה"
+      },
+      "imperative": {
+       "ms": "הַשְלֵם",
+       "fs": "הַשְלִימִי",
+       "mp": "הַשְלִימוּ",
+       "fp": "הַשְלֵמְנָה"
+      },
+      "infinitive": "לְהַשְלִים"
+     }
+    },
+    {
+     "shoresh": "עסק",
+     "main": false,
+     "label": "I-guttural",
+     "note": "I-guttural (ayin); infinitive derived from pattern (not printed in table)",
+     "tables": {
+      "past": {
+       "1s": "הֶעֱסַקְתִי",
+       "2ms": "הֶעֱסַקְתָ",
+       "2fs": "הֶעֱסַקְתְ",
+       "3ms": "הֶעֱסִיק",
+       "3fs": "הֶעֱסִיקָה",
+       "1p": "הֶעֱסַקְנוּ",
+       "2mp": "הֶעֱסַקְתֶם",
+       "2fp": "הֶעֱסַקְתֶן",
+       "3p": "הֶעֱסִיקוּ"
+      },
+      "present": {
+       "ms": "מַעֲסִיק",
+       "fs": "מַעֲסִיקָה",
+       "mp": "מַעֲסִיקִים",
+       "fp": "מַעֲסִיקוֹת"
+      },
+      "future": {
+       "1s": "אַעֲסִיק",
+       "2ms": "תַעֲסִיק",
+       "2fs": "תַעֲסִיקִי",
+       "3ms": "יַעֲסִיק",
+       "3fs": "תַעֲסִיק",
+       "1p": "נַעֲסִיק",
+       "2mp": "תַעֲסִיקוּ",
+       "2fp": "תַעֲסֵקְנָה",
+       "3mp": "יַעֲסִיקוּ",
+       "3fp": "תַעֲסֵקְנָה"
+      },
+      "imperative": {
+       "ms": "הַעֲסֵק",
+       "fs": "הַעֲסִיקִי",
+       "mp": "הַעֲסִיקוּ",
+       "fp": "הַעֲסֵקְנָה"
+      },
+      "infinitive": "לְהַעֲסִיק"
+     }
+    },
+    {
+     "shoresh": "צלח",
+     "main": false,
+     "label": "III-guttural",
+     "note": "III-guttural (chet), furtive patach; infinitive derived from pattern (not printed in table)",
+     "tables": {
+      "past": {
+       "1s": "הִצְלַחְתִי",
+       "2ms": "הִצְלַחְתָ",
+       "2fs": "הִצְלַחְתְ",
+       "3ms": "הִצְלִיחַ",
+       "3fs": "הִצְלִיחָה",
+       "1p": "הִצְלַחְנוּ",
+       "2mp": "הִצְלַחְתֶם",
+       "2fp": "הִצְלַחְתֶן",
+       "3p": "הִצְלִיחוּ"
+      },
+      "present": {
+       "ms": "מַצְלִיחַ",
+       "fs": "מַצְלִיחָה",
+       "mp": "מַצְלִיחִים",
+       "fp": "מַצְלִיחוֹת"
+      },
+      "future": {
+       "1s": "אַצְלִיחַ",
+       "2ms": "תַצְלִיחַ",
+       "2fs": "תַצְלִיחִי",
+       "3ms": "יַצְלִיחַ",
+       "3fs": "תַצְלִיחַ",
+       "1p": "נַצְלִיחַ",
+       "2mp": "תַצְלִיחוּ",
+       "2fp": "תַצְלַחְנָה",
+       "3mp": "יַצְלִיחוּ",
+       "3fp": "תַצְלַחְנָה"
+      },
+      "imperative": {
+       "ms": "הַצְלַח",
+       "fs": "הַצְלִיחִי",
+       "mp": "הַצְלִיחוּ",
+       "fp": "הַצְלַחְנָה"
+      },
+      "infinitive": "לְהַצְלִיחַ"
+     }
+    }
+   ],
+   "examples": {
+    "past": [
+     {
+      "text": "וְאָכַל אֶת כָּל עֵשֶׂב הָאָרֶץ אֵת כָּל אֲשֶׁר הִשְׁאִיר הַבָּרָד",
+      "reference": "שמות י, יב",
+      "reference_en": "Shemos 10:12",
+      "source": "bemekorot"
+     },
+     {
+      "text": "לֹא הִשְׁאִירוּ כָּל נְשָׁמָה",
+      "reference": "יהושע יא, יד",
+      "reference_en": "Yehoshua 11:14",
+      "source": "bemekorot"
+     },
+     {
+      "text": "בֹּא אֶל פַּרְעֹה כִּי אֲנִי הִכְבַּדְתִּי אֶת לִבּוֹ",
+      "reference": "שמות י, א",
+      "reference_en": "Shemos 10:1",
+      "source": "bemekorot"
+     },
+     {
+      "text": "עַל זָקֵן הִכְבַּדְתְּ עֻלֵּךְ מְאֹד",
+      "reference": "ישעיה מז, ו",
+      "reference_en": "Yeshaya 47:6",
+      "source": "bemekorot"
+     },
+     {
+      "text": "וְהִבְדַּלְתֶּם בֵּין הַבְּהֵמָה הַטְּהֹרָה לַטְּמֵאָה",
+      "reference": "ויקרא כ, כה",
+      "reference_en": "Vayikra 20:25",
+      "source": "bemekorot"
+     },
+     {
+      "text": "וְאַתָּה הִמְלַכְתָּ אֶת עַבְדְּךָ תַּחַת דָּוִד אָבִי",
+      "reference": "מלכים א, ג, ז",
+      "reference_en": "Melachim I 3:7",
+      "source": "bemekorot"
+     },
+     {
+      "text": "הֵם הִמְלִיכוּ וְלֹא מִמֶּנִּי",
+      "reference": "הושע ח, ד",
+      "reference_en": "Hoshea 8:4",
+      "source": "bemekorot"
+     },
+     {
+      "text": "וְאֵת עֹרֹת גְּדָיֵי הָעִזִּים הִלְבִּישָׁה עַל יָדָיו",
+      "reference": "בראשית כז, טז",
+      "reference_en": "Bereishis 27:16",
+      "source": "bemekorot"
+     }
+    ],
+    "present": [
+     {
+      "text": "אֶת חֲטָאַי אֲנִי מַזְכִּיר הַיּוֹם",
+      "reference": "בראשית מא, ט",
+      "reference_en": "Bereishis 41:9",
+      "source": "bemekorot"
+     },
+     {
+      "text": "וְכֻלָּם פּוֹתְחִים אֶת פִּיהֶם... וּמַקְדִּישִׁים וּמַמְלִיכִים",
+      "reference": "תפלת שחרית",
+      "reference_en": "Tefillas Shacharis",
+      "source": "bemekorot"
+     },
+     {
+      "text": "וְהַמַּלְבִּין פְּנֵי חֲבֵרוֹ בָּרַבִּים... אֵין לוֹ חֵלֶק לָעוֹלָם הַבָּא",
+      "reference": "משנה אבות ג, יא",
+      "reference_en": "Mishnah Avos 3:11",
+      "source": "bemekorot"
+     },
+     {
+      "text": "וְתֵבְאן וַתִּדְלֶנָה, מְלַמֵּד שֶׁהָיוּ מַקְדִּימוֹת לָבֹא מִפְּנֵי פַּחַד הָרוֹעִים",
+      "reference": "שמות רבה א, לב",
+      "reference_en": "Shemos Rabbah 1:32",
+      "source": "bemekorot"
+     }
+    ],
+    "future": [
+     {
+      "text": "וְאִם לֹא תַשְׁלִים עִמְּךָ וְעָשְׂתָה עִמְּךָ מִלְחָמָה",
+      "reference": "דברים כ, יב",
+      "reference_en": "Devarim 20:12",
+      "source": "bemekorot"
+     },
+     {
+      "text": "וַיְדַבֵּר אֲלֵהֶם כַּעֲצַת הַיְלָדִים לֵאמֹר אַכְבִּיד אֶת עֻלְּכֶם",
+      "reference": "דברי הימים ב, י, יד",
+      "reference_en": "Divrei HaYamim II 10:14",
+      "source": "bemekorot"
+     },
+     {
+      "text": "כָּל אֲשֶׁר יַזְכִּיר אֹתָהּ אֵלָיו יִפְחָד",
+      "reference": "ישעיה יט, יז",
+      "reference_en": "Yeshaya 19:17",
+      "source": "bemekorot"
+     },
+     {
+      "text": "אֵלֶּה בָרֶכֶב וְאֵלֶּה בַסּוּסִים וַאֲנַחְנוּ בְּשֵׁם ה'... נַזְכִּיר",
+      "reference": "תהלים כ, ח",
+      "reference_en": "Tehillim 20:8",
+      "source": "bemekorot"
+     },
+     {
+      "text": "שָׁלוֹשׁ עָרִים תַּבְדִּיל לָךְ",
+      "reference": "דברים יט, ב",
+      "reference_en": "Devarim 19:2",
+      "source": "bemekorot"
+     },
+     {
+      "text": "וְאַנְשֵׁי תָמִיד יַבְדִּילוּ עֹבְרִים בָּאָרֶץ",
+      "reference": "יחזקאל לט, יד",
+      "reference_en": "Yechezkel 39:14",
+      "source": "bemekorot"
+     },
+     {
+      "text": "אָמַר הַקָּבָּ״ה לְיִשְׂרָאֵל אִם תַּדְלִיקוּ לְפָנַי נֵרוֹת אֲנִי מֵאִיר לָכֶם מִן הַמָּאוֹר הַגָּדוֹל",
+      "reference": "תנחומא תצוה סימן ד'",
+      "reference_en": "Tanchuma Tetzaveh 4",
+      "source": "bemekorot"
+     }
+    ],
+    "imperative": [
+     {
+      "text": "שְׁלֹשָׁה דְבָרִים צָרִיךְ אָדָם לוֹמַר בְּתוֹךְ בֵּיתוֹ עֶרֶב שַׁבָּת עִם חֲשֵׁכָה... הִדְלִיקוּ אֶת הַנֵּר",
+      "reference": "משנה שבת ב, ז",
+      "reference_en": "Mishnah Shabbos 2:7",
+      "source": "bemekorot"
+     },
+     {
+      "text": "הַשְׁמֵן לֵב הָעָם הַזֶּה וְאָזְנָיו הַכְבֵּד",
+      "reference": "ישעיה ו, י",
+      "reference_en": "Yeshaya 6:10",
+      "source": "bemekorot"
+     },
+     {
+      "text": "אֶרֶץ, אֶרֶץ, הַכְנִיסִי פֵירוֹתַיִךְ",
+      "reference": "בבלי כתובות קי\"ב, ע\"א",
+      "reference_en": "Bavli Kesubos 112a",
+      "source": "bemekorot"
+     },
+     {
+      "text": "הַזְכִּירוּ כִּי נִשְׂגָּב שְׁמוֹ",
+      "reference": "ישעיה יב, ד",
+      "reference_en": "Yeshaya 12:4",
+      "source": "bemekorot"
+     }
+    ],
+    "review": [
+     {
+      "text": "ה' חָפֵץ לְמַעַן צִדְקוֹ יַגְדִּיל תּוֹרָה וְיַאְדִּיר",
+      "reference": "ישעיהו מב, כא",
+      "reference_en": "Yeshaya 42:21",
+      "source": "review"
+     },
+     {
+      "text": "רָם וְנִשָּׂא גָּדוֹל וְנוֹרָא מַשְׁפִּיל גֵּאִים",
+      "reference": "תפלה",
+      "reference_en": "Tefillah",
+      "source": "review"
+     },
+     {
+      "text": "בְּיָדוֹ אַפְקִיד רוּחִי",
+      "reference": "תפלה",
+      "reference_en": "Tefillah",
+      "source": "review"
+     },
+     {
+      "text": "עֵץ חַיִּים הִיא לַמַּחֲזִיקִים בָּהּ",
+      "reference": "משלי ג, יח",
+      "reference_en": "Mishlei 3:18",
+      "source": "review"
+     },
+     {
+      "text": "לוּלֵי הֶאֱמַנְתִּי לִרְאוֹת בְּטוּב ה'",
+      "reference": "תהלים כז, יג",
+      "reference_en": "Tehillim 27:13",
+      "source": "review"
+     },
+     {
+      "text": "פּוֹתֵחַ אֶת יָדֶךָ וּמַשְׂבִּיעַ לְכָל חַי רָצוֹן",
+      "reference": "תהלים קמה, טז",
+      "reference_en": "Tehillim 145:16",
+      "source": "review"
+     },
+     {
+      "text": "וְאִם גָּאֹל יִגְאַל אֶת הַשָּׂדֶה הַמַּקְדִּישׁ אֹתוֹ",
+      "reference": "ויקרא כז, יט",
+      "reference_en": "Vayikra 27:19",
+      "source": "review"
+     },
+     {
+      "text": "וְקוֹץ וְדַרְדַּר תַּצְמִיחַ לָךְ",
+      "reference": "בראשית ג, יח",
+      "reference_en": "Bereishis 3:18",
+      "source": "review"
+     },
+     {
+      "text": "מַה נָּאווּ עַל הֶהָרִים רַגְלֵי מְבַשֵּׂר מַשְׁמִיעַ שָׁלוֹם מְבַשֵּׂר טוֹב",
+      "reference": "ישעיהו נב, ז",
+      "reference_en": "Yeshaya 52:7",
+      "source": "review"
+     },
+     {
+      "text": "גַּם אֱוִיל מַחֲרִישׁ חָכָם יֵחָשֵׁב",
+      "reference": "משלי יז, כח",
+      "reference_en": "Mishlei 17:28",
+      "source": "review"
+     },
+     {
+      "text": "אַךְ בַּיּוֹם הָרִאשׁוֹן תַּשְׁבִּיתוּ שְׂאֹר מִבָּתֵּיכֶם",
+      "reference": "בראשית יב, טו",
+      "reference_en": "Bereishis 12:15",
+      "source": "review",
+      "note": "Workbook cites as Bereishis 12:15; the pasuk is Shemos 12:15"
+     },
+     {
+      "text": "עַל חוֹמֹתַיִךְ יְרוּשָׁלַיִם הִפְקַדְתִּי שֹׁמְרִים",
+      "reference": "ישעיהו סב, ו",
+      "reference_en": "Yeshaya 62:6",
+      "source": "review"
+     },
+     {
+      "text": "וְלֹא תֹאמַר אֲנִי הֶעֱשַׁרְתִּי אֶת אַבְרָם",
+      "reference": "בראשית יד, כג",
+      "reference_en": "Bereishis 14:23",
+      "source": "review"
+     },
+     {
+      "text": "הַאֲזִינוּ הַשָּׁמַיִם וַאֲדַבֵּרָה",
+      "reference": "דברים לב, א",
+      "reference_en": "Devarim 32:1",
+      "source": "review"
+     },
+     {
+      "text": "כִּי אֲנִי הִכְבַּדְתִּי אֶת לִבּוֹ וְאֶת לֵב עֲבָדָיו",
+      "reference": "שמות י, א",
+      "reference_en": "Shemos 10:1",
+      "source": "review"
+     }
+    ]
+   }
+  },
+  {
+   "id": "hufal",
+   "name": "Huf'al",
+   "hebrew": "הָפְעַל",
+   "meaning": "Passive of Hif'il",
+   "paradigm": "כנס",
+   "paradigm_3ms": "הָכְנַס",
+   "rules": [
+    {
+     "title": "Huf'al is a passive binyan (passive). It has ONE meaning: passive — the passive of Hif'il",
+     "text": "(הִפְחִיד \"frightened\" → הָפְחַד \"was frightened\")."
+    },
+    {
+     "title": "Past pattern:",
+     "text": "הָפְעַל — הָ prefix (kamatz katan, pronounced \"o\"), shva under R1, patach under R2 (הָכְנַס)."
+    },
+    {
+     "title": "Present pattern:",
+     "text": "מָפְעָל — מָ prefix (kamatz), shva under R1, kamatz under R2 (מָכְנָס). Feminine singular מָכְנֶסֶת (segol) is no longer used today."
+    },
+    {
+     "title": "Future pattern:",
+     "text": "אֹתִין + פְעַל (אָכְנַס)."
+    },
+    {
+     "title": "",
+     "text": "Imperative: none. Infinitive: none."
+    },
+    {
+     "title": "R1 vowel:",
+     "text": "In Biblical Hebrew the prefix vowel is kubutz/shuruk (הֻכְנַס); in modern use it is kamatz katan (הָכְנַס, pronounced \"hoch-nas\")."
+    },
+    {
+     "title": "I-guttural (א/ע):",
+     "text": "R1 takes chataf-kamatz (הָאֳשַׁם, מָאֳשָׁם, אָאֳשַׁם). With ח the conjugation is regular. (The chataf becomes kamatz where two shva na'im would otherwise meet.)"
+    },
+    {
+     "title": "II-guttural (א/ה/ח/ע):",
+     "text": "A chataf-patach comes in place of the shva, and the \"a\" sound is heard (הָשְׁאֲרָה, הָשְׁאֲרוּ). With ר there is no change."
+    },
+    {
+     "title": "Modern forms:",
+     "text": "2fp/3fp future use the masculine plural forms today."
+    }
+   ],
+   "tables": [
+    {
+     "shoresh": "כנס",
+     "main": true,
+     "label": "Full paradigm",
+     "tables": {
+      "past": {
+       "1s": "הָכְנַסְתִי",
+       "2ms": "הָכְנַסְתָ",
+       "2fs": "הָכְנַסְתְ",
+       "3ms": "הָכְנַס",
+       "3fs": "הָכְנְסָה",
+       "1p": "הָכְנַסְנוּ",
+       "2mp": "הָכְנַסְתֶם",
+       "2fp": "הָכְנַסְתֶן",
+       "3p": "הָכְנְסוּ"
+      },
+      "present": {
+       "ms": "מָכְנָס",
+       "fs": "מָכְנֶסֶת",
+       "mp": "מָכְנָסִים",
+       "fp": "מָכְנָסוֹת"
+      },
+      "future": {
+       "1s": "אָכְנַס",
+       "2ms": "תָכְנַס",
+       "2fs": "תָכְנְסִי",
+       "3ms": "יָכְנַס",
+       "3fs": "תָכְנַס",
+       "1p": "נָכְנַס",
+       "2mp": "תָכְנְסוּ",
+       "2fp": "תָכְנַסְנָה",
+       "3mp": "יָכְנְסוּ",
+       "3fp": "תָכְנַסְנָה"
+      },
+      "imperative": null,
+      "infinitive": null
+     }
+    },
+    {
+     "shoresh": "אשמ",
+     "main": false,
+     "label": "I-guttural",
+     "note": "I-guttural (alef), chataf-kamatz on R1; in 3fs/3p the chataf becomes kamatz to avoid two consecutive shva na'im",
+     "tables": {
+      "past": {
+       "1s": "הָאֳשַׁמְתִי",
+       "2ms": "הָאֳשַׁמְתָ",
+       "2fs": "הָאֳשַׁמְתְ",
+       "3ms": "הָאֳשַׁם",
+       "3fs": "הָאָשְׁמָה",
+       "1p": "הָאֳשַׁמְנוּ",
+       "2mp": "הָאֳשַׁמְתֶם",
+       "2fp": "הָאֳשַׁמְתֶן",
+       "3p": "הָאָשְׁמוּ"
+      },
+      "present": {
+       "ms": "מָאֳשָׁם",
+       "fs": "מָאֳשֶׁמֶת",
+       "mp": "מָאֳשָׁמִים",
+       "fp": "מָאֳשָׁמוֹת"
+      },
+      "future": {
+       "1s": "אָאֳשַׁם",
+       "2ms": "תָאֳשַׁם",
+       "2fs": "תָאֳשְׁמִי",
+       "3ms": "יָאֳשַׁם",
+       "3fs": "תָאֳשַׁם",
+       "1p": "נָאֳשַׁם",
+       "2mp": "תָאֳשְׁמוּ",
+       "2fp": "תָאֳשַׁמְנָה",
+       "3mp": "יָאֳשְׁמוּ",
+       "3fp": "תָאֳשַׁמְנָה"
+      },
+      "imperative": null,
+      "infinitive": null
+     }
+    },
+    {
+     "shoresh": "שאר",
+     "main": false,
+     "label": "II-guttural",
+     "note": "II-guttural (alef), chataf-patach instead of shva; no present table in the book",
+     "tables": {
+      "past": {
+       "1s": "הָשְׁאַרְתִי",
+       "2ms": "הָשְׁאַרְתָ",
+       "2fs": "הָשְׁאַרְתְ",
+       "3ms": "הָשְׁאַר",
+       "3fs": "הָשְׁאֲרָה",
+       "1p": "הָשְׁאַרְנוּ",
+       "2mp": "הָשְׁאַרְתֶם",
+       "2fp": "הָשְׁאַרְתֶן",
+       "3p": "הָשְׁאֲרוּ"
+      },
+      "future": {
+       "1s": "אָשְׁאַר",
+       "2ms": "תָשְׁאַר",
+       "2fs": "תָשְׁאֲרִי",
+       "3ms": "יָשְׁאַר",
+       "3fs": "תָשְׁאַר",
+       "1p": "נָשְׁאַר",
+       "2mp": "תָשְׁאֲרוּ",
+       "2fp": "תָשְׁאַרְנָה",
+       "3mp": "יָשְׁאֲרוּ",
+       "3fp": "תָשְׁאַרְנָה"
+      },
+      "imperative": null,
+      "infinitive": null
+     }
+    }
+   ],
+   "examples": {
+    "summary_test_1": [
+     {
+      "text": "וְהַמֶּלֶךְ הָיָה מָעֳמָד בַּמֶּרְכָּבָה",
+      "reference": "מ\"א כ\"ב, לה",
+      "reference_en": "Melachim I 22:35",
+      "source": "summary_test"
+     },
+     {
+      "text": "וְהַשָּׂעִיר... יָעֳמַד חַי לִפְנֵי ה'",
+      "reference": "ויקרא טז, י",
+      "reference_en": "Vayikra 16:10",
+      "source": "summary_test"
+     },
+     {
+      "text": "אוֹ אֶת הַפִּקָּדוֹן אֲשֶׁר הָפְקַד אִתּוֹ",
+      "reference": "ויקרא ה, כג",
+      "reference_en": "Vayikra 5:23",
+      "source": "summary_test"
+     },
+     {
+      "text": "וְחַיַּת הַשָּׂדֶה הָשְׁלְמָה לָךְ",
+      "reference": "איוב ה, כג",
+      "reference_en": "Iyov 5:23",
+      "source": "summary_test"
+     },
+     {
+      "text": "וְעֲלֵיהֶם מֻפְקָדִים יַחַת וְעָבְדְיָהוּ",
+      "reference": "דברי הימים ב, לד, יב",
+      "reference_en": "Divrei HaYamim II 34:12",
+      "source": "summary_test"
+     }
+    ]
+   }
+  },
+  {
+   "id": "hitpael",
+   "name": "Hitpa'el",
+   "hebrew": "הִתְפַּעֵל",
+   "meaning": "Reflexive or reciprocal",
+   "paradigm": "לבש",
+   "paradigm_3ms": "הִתְלַבֵּש",
+   "rules": [
+    {
+     "title": "",
+     "text": "Hitpa'el is one of the three \"strengthening\" binyanim (dagesh chazak in R2)."
+    },
+    {
+     "title": "Meanings:",
+     "text": "Reflexive — the subject acts on itself (הִתְלַבֵּשׁ \"dressed himself\"); reciprocal — two people acting on each other (הִתְחַתֵּן); passive (הִתְבַּטֵּל, הִתְקַבֵּל); expressing feelings (הִתְנַצֵּל, הִתְחַשֵּׁב, הִתְאַהֵב); pretending (הִתְנַדֵּב \"acted generous\", הִתְחַפֵּשׂ); change of state (הִתְיַבֵּשׁ, הִתְגַּבֵּר, הִתְקַדֵּם)."
+    },
+    {
+     "title": "Past pattern:",
+     "text": "הִתְפַּעֵל — הִתְ prefix, patach under R1, tzere under R2, dagesh in R2 (הִתְלַבֵּשׁ)."
+    },
+    {
+     "title": "Present pattern:",
+     "text": "מִתְפַּעֵל — מִתְ prefix (מִתְלַבֵּשׁ). Feminine singular מִתְלַבֶּשֶׁת (segol)."
+    },
+    {
+     "title": "Future pattern:",
+     "text": "אֹתִין + תְפַּעֵל (אֶתְלַבֵּשׁ)."
+    },
+    {
+     "title": "Imperative pattern:",
+     "text": "הִתְפַּעֵל (הִתְלַבֵּשׁ)."
+    },
+    {
+     "title": "Infinitive:",
+     "text": "לְהִתְפַּעֵל (לְהִתְלַבֵּשׁ)."
+    },
+    {
+     "title": "Special group 1 — R1 is a sibilant (ס/ש/ש):",
+     "text": "The ת of Hitpa'el and R1 swap places (metathesis, שיכול עיצורים), because ת + sibilant would sound like a foreign \"ch\"/\"tz\" cluster. The ת takes a dagesh lene: *הִתְסַפֵּר → הִסְתַּפֵּר; *הִתְשַׁלֵּב → הִשְׁתַּלֵּב."
+    },
+    {
+     "title": "Special group 2 — R1 is ז:",
+     "text": "The voiced ז turns the ת into ד (voicing assimilation), then metathesis follows (since \"dz\" is foreign): *הִתְזַמֵּן → *הִדְזַמֵּן → הִזְדַּמֵּן. The ד takes a dagesh lene."
+    },
+    {
+     "title": "Special group 3 — R1 is צ:",
+     "text": "The ת becomes ט (easier to say before צ), then metathesis follows: *הִתְצַדֵּק → *הִטְצַדֵּק → הִצְטַדֵּק."
+    },
+    {
+     "title": "Special group 4 — R1 is a dental (ד/ט/ת):",
+     "text": "The ת of Hitpa'el is swallowed into R1, which takes a compensatory dagesh chazak: *הִתְדַּבֵּק → הִדַּבֵּק; *הִתְטַפֵּל → הִטַּפֵּל; *הִתְתַּמֵּם → הִתַּמֵּם."
+    },
+    {
+     "title": "II-guttural (א/ר):",
+     "text": "Patach becomes kamatz before R2 as payback for the dagesh (הִתְיָאֵשׁ). With ה/ח/ע there is no dagesh and no payback. When R2 is א/ה/ח/ע, a shva na that comes from a vowel becomes chataf-patach (הִתְיָאֲשָׁה, מִתְיָאֲשִׁים). Note: the workbook contradicts itself on ע — its rule text says no payback, but its full tables for יעצ print kamatz (הִתְיָעֵץ), and its infinitive table prints the same root both ways (לְהִתְיָעֵץ vs לְהִתְיַעֵץ). The tables extracted here follow the full paradigm tables (kamatz); treat the ע forms as uncertain."
+    },
+    {
+     "title": "III-guttural (ח/א):",
+     "text": "A furtive patach appears at the end of the word (הִתְוַכֵּחַ), and patach forms also exist as alternatives (הִתְוַכַּח, אֶתְוַכַּח). Present feminine singular takes patach instead of segol (מִתְוַכַּחַת)."
+    },
+    {
+     "title": "Furtive patach (פתח גנובה):",
+     "text": "A helper patach that \"sneaks in\" under a final ה/ח/ע to ease pronunciation. It appears only when the preceding vowel is not \"a\" (תָּפוּחַ, שָׁבוּעַ, גָּבוֹהַּ)."
+    },
+    {
+     "title": "Modern forms:",
+     "text": "2fp/3fp future and 2fp imperative use the masculine plural forms today."
+    }
+   ],
+   "tables": [
+    {
+     "shoresh": "לבש",
+     "main": true,
+     "label": "Full paradigm",
+     "note": "Past suffixed forms have patach under R2 (הִתְלַבַּשְׁתִּי); only 3ms has tzere.",
+     "tables": {
+      "past": {
+       "1s": "הִתְלַבַּשְתִי",
+       "2ms": "הִתְלַבַּשְתָ",
+       "2fs": "הִתְלַבַּשְתְ",
+       "3ms": "הִתְלַבֵּש",
+       "3fs": "הִתְלַבְּשָה",
+       "1p": "הִתְלַבַּשְנוּ",
+       "2mp": "הִתְלַבַּשְתֶם",
+       "2fp": "הִתְלַבַּשְתֶן",
+       "3p": "הִתְלַבְּשוּ"
+      },
+      "present": {
+       "ms": "מִתְלַבֵּש",
+       "fs": "מִתְלַבֶּשֶת",
+       "mp": "מִתְלַבְּשִים",
+       "fp": "מִתְלַבְּשוֹת"
+      },
+      "future": {
+       "1s": "אֶתְלַבֵּש",
+       "2ms": "תִתְלַבֵּש",
+       "2fs": "תִתְלַבְּשִי",
+       "3ms": "יִתְלַבֵּש",
+       "3fs": "תִתְלַבֵּש",
+       "1p": "נִתְלַבֵּש",
+       "2mp": "תִתְלַבְּשוּ",
+       "2fp": "תִתְלַבֵּשְנָה",
+       "3mp": "יִתְלַבְּשוּ",
+       "3fp": "תִתְלַבֵּשְנָה"
+      },
+      "imperative": {
+       "ms": "הִתְלַבֵּש",
+       "fs": "הִתְלַבְּשִי",
+       "mp": "הִתְלַבְּשוּ",
+       "fp": "הִתְלַבֵּשְנָה"
+      },
+      "infinitive": "לְהִתְלַבֵּש"
+     }
+    },
+    {
+     "shoresh": "סכל",
+     "main": false,
+     "label": "Group 1 — I-sibilant",
+     "note": "Group 1: I-sibilant metathesis (ת swaps with R1, dagesh lene in ת)",
+     "tables": {
+      "past": {
+       "1s": "הִסְתַכַּלְתִי",
+       "2ms": "הִסְתַכַּלְתָ",
+       "2fs": "הִסְתַכַּלְתְ",
+       "3ms": "הִסְתַכֵּל",
+       "3fs": "הִסְתַכְּלָה",
+       "1p": "הִסְתַכַּלְנוּ",
+       "2mp": "הִסְתַכַּלְתֶם",
+       "2fp": "הִסְתַכַּלְתֶן",
+       "3p": "הִסְתַכְּלוּ"
+      },
+      "present": {
+       "ms": "מִסְתַכֵּל",
+       "fs": "מִסְתַכֶּלֶת",
+       "mp": "מִסְתַכְּלִים",
+       "fp": "מִסְתַכְּלוֹת"
+      },
+      "future": {
+       "1s": "אֶסְתַכֵּל",
+       "2ms": "תִסְתַכֵּל",
+       "2fs": "תִסְתַכְּלִי",
+       "3ms": "יִסְתַכֵּל",
+       "3fs": "תִסְתַכֵּל",
+       "1p": "נִסְתַכֵּל",
+       "2mp": "תִסְתַכְּלוּ",
+       "2fp": "תִסְתַכֵּלְנָה",
+       "3mp": "יִסְתַכְּלוּ",
+       "3fp": "תִסְתַכֵּלְנָה"
+      },
+      "imperative": {
+       "ms": "הִסְתַכֵּל",
+       "fs": "הִסְתַכְּלִי",
+       "mp": "הִסְתַכְּלוּ",
+       "fp": "הִסְתַכֵּלְנָה"
+      },
+      "infinitive": "לְהִסְתַכֵּל"
+     }
+    },
+    {
+     "shoresh": "זקנ",
+     "main": false,
+     "label": "Group 2 — I-zayin",
+     "note": "Group 2: I-zayin, ת→ד + metathesis; doubled nun (dagesh) in past 1p, future 2fp/3fp, imperative fp",
+     "tables": {
+      "past": {
+       "1s": "הִזְדַקַּנְתִי",
+       "2ms": "הִזְדַקַּנְתָ",
+       "2fs": "הִזְדַקַּנְתְ",
+       "3ms": "הִזְדַקֵּן",
+       "3fs": "הִזְדַקְּנָה",
+       "1p": "הִזְדַקַּנּוּ",
+       "2mp": "הִזְדַקַּנְתֶם",
+       "2fp": "הִזְדַקַּנְתֶן",
+       "3p": "הִזְדַקְּנוּ"
+      },
+      "present": {
+       "ms": "מִזְדַקֵּן",
+       "fs": "מִזְדַקֶּנֶת",
+       "mp": "מִזְדַקְּנִים",
+       "fp": "מִזְדַקְּנוֹת"
+      },
+      "future": {
+       "1s": "אֶזְדַקֵּן",
+       "2ms": "תִזְדַקֵּן",
+       "2fs": "תִזְדַקְּנִי",
+       "3ms": "יִזְדַקֵּן",
+       "3fs": "תִזְדַקֵּן",
+       "1p": "נִזְדַקֵּן",
+       "2mp": "תִזְדַקְּנוּ",
+       "2fp": "תִזְדַקֵּנָּה",
+       "3mp": "יִזְדַקְּנוּ",
+       "3fp": "תִזְדַקֵּנָּה"
+      },
+      "imperative": {
+       "ms": "הִזְדַקֵּן",
+       "fs": "הִזְדַקְּנִי",
+       "mp": "הִזְדַקְּנוּ",
+       "fp": "הִזְדַקֵּנָּה"
+      },
+      "infinitive": "לְהִזְדַקֵּן"
+     }
+    },
+    {
+     "shoresh": "צלמ",
+     "main": false,
+     "label": "Group 3 — I-tzadi",
+     "note": "Group 3: I-tzadi, ת→ט + metathesis; the book's imperative column misprints the סכל forms (copy-paste error), so no imperative is extracted for צלמ",
+     "tables": {
+      "past": {
+       "1s": "הִצְטַלַּמְתִי",
+       "2ms": "הִצְטַלַּמְתָ",
+       "2fs": "הִצְטַלַּמְתְ",
+       "3ms": "הִצְטַלֵּם",
+       "3fs": "הִצְטַלְּמָה",
+       "1p": "הִצְטַלַּמְנוּ",
+       "2mp": "הִצְטַלַּמְתֶם",
+       "2fp": "הִצְטַלַּמְתֶן",
+       "3p": "הִצְטַלְּמוּ"
+      },
+      "present": {
+       "ms": "מִצְטַלֵּם",
+       "fs": "מִצְטַלֶּמֶת",
+       "mp": "מִצְטַלְּמִים",
+       "fp": "מִצְטַלְּמוֹת"
+      },
+      "future": {
+       "1s": "אֶצְטַלֵּם",
+       "2ms": "תִצְטַלֵּם",
+       "2fs": "תִצְטַלְּמִי",
+       "3ms": "יִצְטַלֵּם",
+       "3fs": "תִצְטַלֵּם",
+       "1p": "נִצְטַלֵּם",
+       "2mp": "תִצְטַלְּמוּ",
+       "2fp": "תִצְטַלֵּמְנָה",
+       "3mp": "יִצְטַלְּמוּ",
+       "3fp": "תִצְטַלֵּמְנָה"
+      },
+      "infinitive": "לְהִצְטַלֵּם"
+     }
+    },
+    {
+     "shoresh": "דפק",
+     "main": false,
+     "label": "Group 4 — I-dental",
+     "note": "Group 4: I-dental assimilation (ת swallowed into R1, compensatory dagesh chazak in R1)",
+     "tables": {
+      "past": {
+       "1s": "הִדַּפַּקְתִי",
+       "2ms": "הִדַּפַּקְתָ",
+       "2fs": "הִדַּפַּקְתְ",
+       "3ms": "הִדַּפֵּק",
+       "3fs": "הִדַּפְּקָה",
+       "1p": "הִדַּפַּקְנוּ",
+       "2mp": "הִדַּפַּקְתֶם",
+       "2fp": "הִדַּפַּקְתֶן",
+       "3p": "הִדַּפְּקוּ"
+      },
+      "present": {
+       "ms": "מִדַּפֵּק",
+       "fs": "מִדַּפֶּקֶת",
+       "mp": "מִדַּפְּקִים",
+       "fp": "מִדַּפְּקוֹת"
+      },
+      "future": {
+       "1s": "אֶדַּפֵּק",
+       "2ms": "תִדַּפֵּק",
+       "2fs": "תִדַּפְּקִי",
+       "3ms": "יִדַּפֵּק",
+       "3fs": "תִדַּפֵּק",
+       "1p": "נִדַּפֵּק",
+       "2mp": "תִדַּפְּקוּ",
+       "2fp": "תִדַּפֵּקְנָה",
+       "3mp": "יִדַּפְּקוּ",
+       "3fp": "תִדַּפֵּקְנָה"
+      },
+      "imperative": {
+       "ms": "הִדַּפֵּק",
+       "fs": "הִדַּפְּקִי",
+       "mp": "הִדַּפְּקוּ",
+       "fp": "הִדַּפֵּקְנָה"
+      },
+      "infinitive": "לְהִדַּפֵּק"
+     }
+    },
+    {
+     "shoresh": "יאש",
+     "main": false,
+     "label": "II-guttural",
+     "note": "II-guttural (aleph); tashlum dagesh (kamatz before R2), chataf-patach under R2",
+     "tables": {
+      "past": {
+       "1s": "הִתְיָאֵשְתִי",
+       "2ms": "הִתְיָאֵשְתָ",
+       "2fs": "הִתְיָאֵשְתְ",
+       "3ms": "הִתְיָאֵש",
+       "3fs": "הִתְיָאֲשָה",
+       "1p": "הִתְיָאֵשְנוּ",
+       "2mp": "הִתְיָאֵשְתֶם",
+       "2fp": "הִתְיָאֵשְתֶן",
+       "3p": "הִתְיָאֲשוּ"
+      },
+      "present": {
+       "ms": "מִתְיָאֵש",
+       "fs": "מִתְיָאֵשֶת",
+       "mp": "מִתְיָאֲשִים",
+       "fp": "מִתְיָאֲשוֹת"
+      },
+      "future": {
+       "1s": "אֶתְיָאֵש",
+       "2ms": "תִתְיָאֵש",
+       "2fs": "תִתְיָאֲשִי",
+       "3ms": "יִתְיָאֵש",
+       "3fs": "תִתְיָאֵש",
+       "1p": "נִתְיָאֵש",
+       "2mp": "תִתְיָאֲשוּ",
+       "2fp": "תִתְיָאֵשְנָה",
+       "3mp": "יִתְיָאֲשוּ",
+       "3fp": "תִתְיָאֵשְנָה"
+      },
+      "imperative": {
+       "ms": "הִתְיָאֵש",
+       "fs": "הִתְיָאֲשִי",
+       "mp": "הִתְיָאֲשוּ",
+       "fp": "הִתְיָאֵשְנָה"
+      },
+      "infinitive": "לְהִתְיָאֵש"
+     }
+    },
+    {
+     "shoresh": "יעצ",
+     "main": false,
+     "label": "II-guttural",
+     "note": "II-guttural (ayin); tables show kamatz before R2 (tashlum dagesh) despite the rule text saying ayin takes none; the p.15 infinitive table prints the same root with patach",
+     "tables": {
+      "past": {
+       "1s": "הִתְיָעֵצְתִי",
+       "2ms": "הִתְיָעֵצְתָ",
+       "2fs": "הִתְיָעֵצְתְ",
+       "3ms": "הִתְיָעֵץ",
+       "3fs": "הִתְיָעֲצָה",
+       "1p": "הִתְיָעֵצְנוּ",
+       "2mp": "הִתְיָעֵצְתֶם",
+       "2fp": "הִתְיָעֵצְתֶן",
+       "3p": "הִתְיָעֲצוּ"
+      },
+      "present": {
+       "ms": "מִתְיָעֵץ",
+       "fs": "מִתְיָעֵצֶת",
+       "mp": "מִתְיָעֲצִים",
+       "fp": "מִתְיָעֲצוֹת"
+      },
+      "future": {
+       "1s": "אֶתְיָעֵץ",
+       "2ms": "תִתְיָעֵץ",
+       "2fs": "תִתְיָעֲצִי",
+       "3ms": "יִתְיָעֵץ",
+       "3fs": "תִתְיָעֵץ",
+       "1p": "נִתְיָעֵץ",
+       "2mp": "תִתְיָעֲצוּ",
+       "2fp": "תִתְיָעֵצְנָה",
+       "3mp": "יִתְיָעֲצוּ",
+       "3fp": "תִתְיָעֵצְנָה"
+      },
+      "imperative": {
+       "ms": "הִתְיָעֵץ",
+       "fs": "הִתְיָעֲצִי",
+       "mp": "הִתְיָעֲצוּ",
+       "fp": "הִתְיָעֵצְנָה"
+      },
+      "infinitive": "לְהִתְיָעֵץ"
+     }
+    },
+    {
+     "shoresh": "וכח",
+     "main": false,
+     "label": "III-guttural",
+     "note": "III-guttural (chet), furtive patach; alternate patach forms (footnotes): הִתְוַכַּחַ, אֶתְוַכַּחַ, תִתְוַכַּחַ, יִתְוַכַּחַ, נִתְוַכַּחַ",
+     "tables": {
+      "past": {
+       "1s": "הִתְוַכֵּחְתִי",
+       "2ms": "הִתְוַכֵּחְתָ",
+       "2fs": "הִתְוַכֵּחְתְ",
+       "3ms": "הִתְוַכֵּחַ",
+       "3fs": "הִתְוַכְּחָה",
+       "1p": "הִתְוַכֵּחְנוּ",
+       "2mp": "הִתְוַכֵּחְתֶם",
+       "2fp": "הִתְוַכֵּחְתֶן",
+       "3p": "הִתְוַכְּחוּ"
+      },
+      "present": {
+       "ms": "מִתְוַכֵּחַ",
+       "fs": "מִתְוַכַּחַת",
+       "mp": "מִתְוַכְּחִים",
+       "fp": "מִתְוַכְּחוֹת"
+      },
+      "future": {
+       "1s": "אֶתְוַכֵּחַ",
+       "2ms": "תִתְוַכֵּחַ",
+       "2fs": "תִתְוַכְּחִי",
+       "3ms": "יִתְוַכֵּחַ",
+       "3fs": "תִתְוַכֵּחַ",
+       "1p": "נִתְוַכֵּחַ",
+       "2mp": "תִתְוַכְּחוּ",
+       "2fp": "תִתְוַכֵּחְנָה",
+       "3mp": "יִתְוַכְּחוּ",
+       "3fp": "תִתְוַכֵּחְנָה"
+      },
+      "imperative": {
+       "ms": "הִתְוַכֵּחַ",
+       "fs": "הִתְוַכְּחִי",
+       "mp": "הִתְוַכְּחוּ",
+       "fp": "הִתְוַכֵּחְנָה"
+      },
+      "infinitive": "לְהִתְוַכֵּחַ"
+     }
+    }
+   ],
+   "examples": {
+    "past": [
+     {
+      "text": "וַיֹּאמֶר אֵלַי ה' אֲשֶׁר הִתְהַלַּכְתִּי לְפָנָיו",
+      "reference": "בראשית כד, מ",
+      "reference_en": "Bereishis 24:40",
+      "source": "bemekorot"
+     },
+     {
+      "text": "הָאֱלֹקִים אֲשֶׁר הִתְהַלְּכוּ אֲבֹתַי לְפָנָיו",
+      "reference": "בראשית מח, טו",
+      "reference_en": "Bereishis 48:15",
+      "source": "bemekorot"
+     },
+     {
+      "text": "וְהַמֶּלֶךְ רְחַבְעָם הִתְאַמֵּץ לַעֲלוֹת בַּמֶּרְכָּבָה",
+      "reference": "מלכים א, יב, יח",
+      "reference_en": "Melachim I 12:18",
+      "source": "bemekorot"
+     },
+     {
+      "text": "וַיֻּגַּד לַאֲבִימֶלֶךְ כִּי הִתְקַבְּצוּ כָּל בַּעֲלֵי מִגְדַּל שְׁכֶם",
+      "reference": "שופטים ט, מז",
+      "reference_en": "Shoftim 9:47",
+      "source": "bemekorot"
+     },
+     {
+      "text": "לֹא הָיָה כְאַחְאָב אֲשֶׁר הִתְמַכֵּר לַעֲשׂוֹת הָרַע בְּעֵינֵי ה'",
+      "reference": "מלכים א, כא, כה",
+      "reference_en": "Melachim I 21:25",
+      "source": "bemekorot"
+     },
+     {
+      "text": "כֹּה אָמַר ה' אֱלֹקֵי יִשְׂרָאֵל אֲשֶׁר הִתְפַּלַּלְתָּ אֵלַי",
+      "reference": "מלכים ב, יט, כ",
+      "reference_en": "Melachim II 19:20",
+      "source": "bemekorot"
+     }
+    ],
+    "present": [
+     {
+      "text": "וַתֵּרֶא כִּי מִתְאַמֶּצֶת הִיא לָלֶכֶת אִתָּהּ",
+      "reference": "רות א, יח",
+      "reference_en": "Rus 1:18",
+      "source": "bemekorot"
+     },
+     {
+      "text": "וְהִנֵּה צְלִיל לֶחֶם שְׂעֹרִים מִתְהַפֵּךְ בַּמַּחֲנֶה",
+      "reference": "שופטים ז, יג",
+      "reference_en": "Shoftim 7:13",
+      "source": "bemekorot"
+     },
+     {
+      "text": "וְהָיִיתְ כְּאִשָּׁה זֶה יָמִים רַבִּים מִתְאַבֶּלֶת עַל מֵת",
+      "reference": "שמואל ב, יד, ב",
+      "reference_en": "Shmuel II 14:2",
+      "source": "bemekorot"
+     },
+     {
+      "text": "וַיִּשְׁמְעוּ אֶת קוֹל ה' אֱלֹקִים מִתְהַלֵּךְ בַּגָּן",
+      "reference": "בראשית ג, ח",
+      "reference_en": "Bereishis 3:8",
+      "source": "bemekorot"
+     }
+    ],
+    "future": [
+     {
+      "text": "וָאֶתְפַּלֵּל אֶל ה' וָאֹמַר",
+      "reference": "דברים ט, כו",
+      "reference_en": "Devarim 9:26",
+      "source": "bemekorot"
+     },
+     {
+      "text": "תִּתְהַפֵּךְ כְּחֹמֶר חוֹתָם",
+      "reference": "איוב לח, יד",
+      "reference_en": "Iyov 38:14",
+      "source": "bemekorot"
+     },
+     {
+      "text": "וַיִּתְנַצְּלוּ בְנֵי יִשְׂרָאֵל אֶת עֶדְיָם מֵהַר חוֹרֵב",
+      "reference": "שמות לג, ו",
+      "reference_en": "Shemos 33:6",
+      "source": "bemekorot"
+     },
+     {
+      "text": "וַיִּתְחַפֵּשׂ שָׁאוּל וַיִּלְבַּשׁ בְּגָדִים אֲחֵרִים",
+      "reference": "שמואל א, כח, ח",
+      "reference_en": "Shmuel I 28:8",
+      "source": "bemekorot"
+     }
+    ],
+    "imperative": [
+     {
+      "text": "הִתְהַלֵּךְ לְפָנַי וֶהְיֵה תָמִים",
+      "reference": "בראשית יז, א",
+      "reference_en": "Bereishis 17:1",
+      "source": "bemekorot"
+     },
+     {
+      "text": "וַיֹּאמֶר אֵלֶיהָ הִתְאַבְּלִי נָא",
+      "reference": "שמואל ב, יד, ב",
+      "reference_en": "Shmuel II 14:2",
+      "source": "bemekorot"
+     },
+     {
+      "text": "וַיֹּאמְרוּ כָל הָעָם אֶל שְׁמוּאֵל הִתְפַּלֵּל בְּעַד עֲבָדֶיךָ",
+      "reference": "שמואל א, יב, יט",
+      "reference_en": "Shmuel I 12:19",
+      "source": "bemekorot"
+     },
+     {
+      "text": "וַיֹּאמֶר הִתְקַדְּשׁוּ לְמָחָר",
+      "reference": "יהושע ז, יג",
+      "reference_en": "Yehoshua 7:13",
+      "source": "bemekorot"
+     }
+    ],
+    "review": [
+     {
+      "text": "הִתְפַּלֵּל אֶל ה' וְיָסֵר מֵעָלֵינוּ אֶת הַנָּחָשׁ",
+      "reference": "במדבר כא, ז",
+      "reference_en": "Bamidbar 21:7",
+      "source": "review"
+     },
+     {
+      "text": "וְגַם הַכֹּהֲנִים הַנִּגָּשִׁים אֶל ה' יִתְקַדָּשׁוּ",
+      "reference": "שמות יט, כב",
+      "reference_en": "Shemos 19:22",
+      "source": "review"
+     },
+     {
+      "text": "וְאֵת לַהַט הַחֶרֶב הַמִּתְהַפֶּכֶת",
+      "reference": "בראשית ג, כד",
+      "reference_en": "Bereishis 3:24",
+      "source": "review"
+     },
+     {
+      "text": "לֹא תִרְאֶה... וְהִתְעַלַּמְתָּ מֵהֶם",
+      "reference": "דברים כב, א",
+      "reference_en": "Devarim 22:1",
+      "source": "review"
+     },
+     {
+      "text": "לֹא יִתְיַצֵּב אִישׁ בְּפָנֶיךָ",
+      "reference": "דברים ז, כד",
+      "reference_en": "Devarim 7:24",
+      "source": "review"
+     },
+     {
+      "text": "הִתְיַצְּבוּ וּרְאוּ אֶת יְשׁוּעַת ה'",
+      "reference": "שמות יד, יג",
+      "reference_en": "Shemos 14:13",
+      "source": "review"
+     },
+     {
+      "text": "אֲשֶׁר עַבְדְּךָ מִתְפַּלֵּל לְפָנֶיךָ הַיּוֹם",
+      "reference": "מלכים א, ח, כח",
+      "reference_en": "Melachim I 8:28",
+      "source": "review"
+     },
+     {
+      "text": "רַבָּן גַּמְלִיאֵל אוֹמֵר עֲשֵׂה לְךָ רַב וְהִסְתַּלֵּק מִן הַסָּפֵק",
+      "reference": "אבות א, טז",
+      "reference_en": "Avos 1:16",
+      "source": "review"
+     },
+     {
+      "text": "מִשְׂתַּכֵּר אֶל צְרוֹר נָקוּב",
+      "reference": "חגי א, ו",
+      "reference_en": "Chaggai 1:6",
+      "source": "review"
+     },
+     {
+      "text": "וְאֵהִי תָמִים עִמּוֹ וָאֶשְׁתַּמֵּר מֵעֲוֹנִי",
+      "reference": "תהלים יח, כד",
+      "reference_en": "Tehillim 18:24",
+      "source": "review"
+     },
+     {
+      "text": "כִּי הִתְאַבֵּל שְׁמוּאֵל אֶל שָׁאוּל",
+      "reference": "שמואל א, טו, לה",
+      "reference_en": "Shmuel I 15:35",
+      "source": "review"
+     },
+     {
+      "text": "בַּת עַמִּי חִגְרִי שַׂק וְהִתְפַּלְּשִׁי בָאֵפֶר",
+      "reference": "ירמיה ו, כו",
+      "reference_en": "Yirmiya 6:26",
+      "source": "review"
+     },
+     {
+      "text": "וְהִתְחַזַּקְתֶּם וּלְקַחְתֶּם מִפְּרִי הָאָרֶץ",
+      "reference": "במדבר יג, כ",
+      "reference_en": "Bamidbar 13:20",
+      "source": "review"
+     },
+     {
+      "text": "רַבִּי אוֹמֵר: אַל תִּסְתַּכֵּל בַּקַּנְקַן אֶלָּא בְמַה שֶּׁיֵּשׁ בּוֹ",
+      "reference": "אבות ד, כ",
+      "reference_en": "Avos 4:20",
+      "source": "review"
+     },
+     {
+      "text": "תִּשְׁתַּפֵּכְנָה אַבְנֵי קֹדֶשׁ בְּרֹאשׁ כָּל חוּצוֹת",
+      "reference": "איכה ד, א",
+      "reference_en": "Eicha 4:1",
+      "source": "review"
+     }
+    ]
+   }
+  }
+ ]
+}

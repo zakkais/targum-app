@@ -59,7 +59,11 @@
   function parseRoot(input) {
     var letters = stripMarks(input).replace(/[^א-ת]/g, '').split('');
     if (letters.length !== 3 && letters.length !== 4) return null;
-    return letters;
+    // Normalize final letters to regular form: a shoresh is stored
+    // with regular letters, but users naturally type a final ן/ם/etc.
+    // at the end (זקן -> זקנ). Without this, root-based checks
+    // (stative set, III-nun assimilation) miss.
+    return letters.map(function (ch) { return FINALS[ch] || ch; });
   }
 
   // Detect the root class. Order matters: check the most specific first.
@@ -82,8 +86,12 @@
 
   // Substitute root letters into a template ({1}..{4}).
   // Final letters (ךםןףץ) become regular mid-word: only the last
-  // Hebrew letter of the form keeps its final shape.
+  // Hebrew letter of the form keeps its final shape. Conversely, a
+  // regular כ/מ/נ/פ/צ in word-final position takes its final shape
+  // (a shoresh is typed with regular letters, e.g. שלמ, but the
+  // conjugated form ends in ם: הִשְלִים).
   var FINALS = { 'ך': 'כ', 'ם': 'מ', 'ן': 'נ', 'ף': 'פ', 'ץ': 'צ' };
+  var REG_TO_FINAL = { 'כ': 'ך', 'מ': 'ם', 'נ': 'ן', 'פ': 'ף', 'צ': 'ץ' };
   function fill(template, root) {
     var form = template.replace(/\{(\d)\}/g, function (m, n) {
       return root[Number(n) - 1] || '';
@@ -95,7 +103,8 @@
     var out = '';
     for (var j = 0; j < form.length; j++) {
       var ch = form[j];
-      out += (j !== lastIdx && FINALS[ch]) ? FINALS[ch] : ch;
+      if (j === lastIdx && REG_TO_FINAL[ch]) out += REG_TO_FINAL[ch];
+      else out += (j !== lastIdx && FINALS[ch]) ? FINALS[ch] : ch;
     }
     return out;
   }
@@ -106,50 +115,158 @@
     return form;
   }
 
-  // Guttural adjustments applied to a generated form.
-  // - A shva under א or ע always becomes a hataf (they cannot take a
-  //   shva at all). A shva under ח or ה becomes a hataf unless the
-  //   next consonant carries a long vowel (kamatz/tzere/holam), in
-  //   which case the guttural closes the syllable and keeps a plain
-  //   shva (יַחְשֹׁב, but הֶחֱזִיר). The hataf matches the preceding
-  //   vowel: segol/tzere/hirik -> hataf segol, kamatz/holam/kubutz ->
-  //   hataf kamatz, otherwise hataf patach.
-  // - In Nifal/Hifil, a prefix hirik before a guttural R1 becomes
-  //   segol (נִ -> נֶ, הִ -> הֶ).
-  // - In future-tense prefixes, the prefix vowel becomes patach before
-  //   a guttural R1 (Paal), tzere in Nifal. Handled via opts.
+  // Map from filled-form index to root slot (1/2/3/4, or 0 for a
+  // non-root character). Computed from the template: each {n}
+  // placeholder becomes exactly one root letter in the filled form,
+  // and every other template character appears as-is, so the map
+  // lines up with the filled form index for index.
+  function rootSlotMap(template) {
+    var map = [];
+    for (var i = 0; i < template.length; i++) {
+      if (template[i] === '{') {
+        map.push(parseInt(template[i + 1], 10));
+        i += 2;
+      } else {
+        map.push(0);
+      }
+    }
+    return map;
+  }
+
+  // Does the consonant after form[i] carry a shva? Used for the
+  // double-shva-na rule (a dagesh between the consonant and its shva
+  // is skipped).
+  function nextHasShva(form, i) {
+    for (var j = i + 1; j < form.length; j++) {
+      if (isHebrewLetter(form[j])) {
+        var k = j + 1;
+        if (form[k] === DAGESH) k++;
+        return form[k] === 'ְ';
+      }
+    }
+    return false;
+  }
+
+  // Replace the vowel mark after the root letter in the given slot
+  // (skipping a dagesh), if it equals `from`. Returns the new form.
+  function replaceVowelAfterSlot(form, slots, slot, from, to) {
+    if (!slots) return form;
+    for (var i = 0; i < form.length; i++) {
+      if (slots[i] === slot && isHebrewLetter(form[i])) {
+        var j = i + 1;
+        if (form[j] === DAGESH) j++;
+        if (form[j] === from) {
+          return form.slice(0, j) + to + form.slice(j + 1);
+        }
+        return form;
+      }
+    }
+    return form;
+  }
+
+  // Guttural adjustments applied to a generated form. Runs right after
+  // fill(), before any step that changes string length, so the slot
+  // map (opts.slots) stays valid. Every replacement here is one
+  // character for one character, so the map stays valid throughout.
+  //
+  // Prefix vowels are fixed FIRST, so the chataf under R1 matches the
+  // final prefix vowel (אֶעֱבֹד, not *אַעֱבֹד; תַּעֲבֹד, not *תַּעֱבֹד).
+  // - Nif'al past/present, I-guttural: נִ -> נֶ.
+  // - Nif'al future, I-guttural or I-resh: prefix hirik -> segol
+  //   (אֶחָתֵם; tashlum dagesh, including for ר).
+  // - Nif'al imperative/infinitive, I-guttural or I-resh: הִ -> הֵ
+  //   (הֵרָדֵם, לְהֵחָתֵם).
+  // - Hif'il past, I-guttural: הִ -> הֶ.
+  // - Pa'al future, I-guttural: prefix hirik -> patach (תַּעֲבֹד);
+  //   1s segol stays (אֶעֱבֹד). Pa'al infinitive: לִ -> לַ (לַעֲבֹד).
+  //
+  // Shva under a guttural:
+  // - R3 before a suffix (past ת/נ suffixes, fp נָה): the shva closes
+  //   the stem syllable (shva nach) and stays plain — for every
+  //   guttural, including א/ע (הִצְלַחְתִּי, נִשְׁבַּעְתִּי).
+  // - R2: the shva is always na here, and the chataf is always patach
+  //   (נִלְחֲמָה, הָשְׁאֲרָה, הִתְיָאֲשָׁה).
+  // - R1, א/ע: always a chataf, matching the preceding vowel
+  //   (segol/tzere/hirik -> hataf-segol, kamatz/holam/kubutz ->
+  //   hataf-kamatz, otherwise hataf-patach).
+  // - R1, ח/ה: a plain shva after a prefix vowel (the syllable closes:
+  //   הֶחְזִיר, יַחְשֹׁב); a chataf-patach word-initially (חֲשֹׁב).
+  //
+  // Double shva na: where an R1 chataf would be followed by another
+  // shva na, the chataf becomes a full vowel instead — in Pa'al
+  // future/imperative (תַּעַבְדִי) and in Huf'al past (הָאָשְׁמָה).
+  // In Nif'al past (נֶעֱנְשָׁה) and Huf'al future (תָּאֳשְׁמִי) the
+  // R1 shva is nach (the prefix + R1 form a closed syllable), so the
+  // chataf stands even before a second shva.
+  //
+  // III-guttural vowels (R3 ח/ע):
+  // - Present fs: segol becomes patach under R2 and R3 (שׁוֹמַעַת).
+  // - Nif'al future/imperative/infinitive: R2 tzere becomes patach
+  //   (אֶשָּׁבַע); future 1s prefix becomes segol (אֶשָּׁבַע).
+  // - Hif'il future 2fp/3fp and imperative ms/fp: R2 tzere becomes
+  //   patach (תַּצְלַחְנָה, הַצְלַח).
   function gutturalize(form, root, opts) {
     opts = opts || {};
+    var binyan = opts.binyan;
+    var tense = opts.tense;
+    var slots = opts.slots || null;
+    if (root.length === 3) {
+      var r1 = root[0];
+      var r1Gut = isGuttural(r1);
+      var r1Resh = r1 === 'ר';
+      if (r1Gut || (r1Resh && binyan === 'nifal')) {
+        if (binyan === 'nifal') {
+          if (tense === 'past' || tense === 'present') {
+            if (r1Gut) form = form.replace(/^נִ/, 'נֶ');
+          } else if (tense === 'future') {
+            form = form.replace(/^([איתנ])ִ/, '$1ֶ');
+          } else if (tense === 'imperative' || tense === 'infinitive') {
+            form = form.replace(/^לְהִ/, 'לְהֵ').replace(/^הִ/, 'הֵ');
+          }
+        } else if (binyan === 'hifil') {
+          if (r1Gut && tense === 'past') form = form.replace(/^הִ/, 'הֶ');
+        } else if (binyan === 'paal') {
+          if (tense === 'future') {
+            form = form.replace(/^([תינ])ִ/, '$1ַ');
+          } else if (tense === 'infinitive') {
+            form = form.replace(/^לִ/, 'לַ');
+          }
+        }
+      }
+    }
     var out = '';
     var prevVowel = '';
     var prevLetter = '';
     for (var i = 0; i < form.length; i++) {
       var ch = form[i];
       if (ch === 'ְ' && isGuttural(prevLetter)) {
-        var useHataf = prevLetter === 'א' || prevLetter === 'ע';
-        if (!useHataf) {
-          var j = i + 1;
-          var nextVowel = '';
-          while (j < form.length) {
-            var c = form[j];
-            if (isHebrewLetter(c)) {
-              j++;
-              while (j < form.length && !isHebrewLetter(form[j])) {
-                if (form[j] >= 'ֱ' && form[j] <= 'ֻ') nextVowel = form[j];
-                j++;
-              }
-              break;
-            }
-            j++;
-          }
-          useHataf = !(nextVowel === 'ָ' || nextVowel === 'ֵ' || nextVowel === 'ֹ');
-        }
-        if (useHataf) {
-          var hataf = 'ֲ';
-          if (prevVowel === 'ֶ' || prevVowel === 'ֵ' || prevVowel === 'ִ') hataf = 'ֱ';
-          else if (prevVowel === 'ָ' || prevVowel === 'ֹ' || prevVowel === 'ֻ') hataf = 'ֳ';
-          out += hataf;
+        var slot = slots ? slots[i - 1] : 0;
+        if (slot === 3) {
+          // R3 before a suffix: plain shva nach. Keep it.
+        } else if (slot === 2) {
+          out += 'ֲ'; // R2: always chataf-patach.
           continue;
+        } else if (slot === 1 || slot === 0) {
+          if (prevLetter === 'א' || prevLetter === 'ע') {
+            var hataf = 'ֲ';
+            if (prevVowel === 'ֶ' || prevVowel === 'ֵ' || prevVowel === 'ִ') hataf = 'ֱ';
+            else if (prevVowel === 'ָ' || prevVowel === 'ֹ' || prevVowel === 'ֻ') hataf = 'ֳ';
+            var doubleNa = nextHasShva(form, i) &&
+              ((binyan === 'paal' && (tense === 'future' || tense === 'imperative')) ||
+               (binyan === 'hufal' && tense === 'past'));
+            if (doubleNa) {
+              out += { 'ֱ': 'ֶ', 'ֲ': 'ַ', 'ֳ': 'ָ' }[hataf];
+            } else {
+              out += hataf;
+            }
+            continue;
+          }
+          // ח/ה as R1: plain shva after a prefix vowel; chataf-patach
+          // word-initially (the guttural is the first letter).
+          if (i - 1 === 0) {
+            out += 'ֲ';
+            continue;
+          }
         }
       }
       if (ch >= 'ֱ' && ch <= 'ֻ') prevVowel = ch;
@@ -157,30 +274,45 @@
       out += ch;
     }
     form = out;
-    if (root.length === 3 && isGuttural(root[0])) {
-      if (opts.binyan === 'nifal' || opts.binyan === 'hifil') {
-        form = form.replace(/^לְהִ/, 'לְהֶ').replace(/^הִ/, 'הֶ').replace(/^נִ/, 'נֶ');
-      }
-      if (opts.futurePrefix === 'patach') {
-        form = form.replace(/^([איתנ])[ִֶ]/, '$1ַ');
-      } else if (opts.futurePrefix === 'tzere') {
-        form = form.replace(/^([איתנ])[ִֶ]/, '$1ֵ');
+    // III-guttural vowel changes.
+    if (root.length === 3 && (root[2] === 'ח' || root[2] === 'ע')) {
+      if (tense === 'present' && opts.person === 'fs') {
+        form = replaceVowelAfterSlot(form, slots, 2, 'ֶ', 'ַ');
+        form = replaceVowelAfterSlot(form, slots, 3, 'ֶ', 'ַ');
+      } else if (binyan === 'nifal' &&
+          (tense === 'future' || tense === 'imperative' || tense === 'infinitive')) {
+        form = replaceVowelAfterSlot(form, slots, 2, 'ֵ', 'ַ');
+        if (tense === 'future' && opts.person === '1s') {
+          form = form.replace(/^אִ/, 'אֶ');
+        }
+      } else if (binyan === 'hifil' &&
+          ((tense === 'future' && (opts.person === '2fp' || opts.person === '3fp')) ||
+           (tense === 'imperative' && (opts.person === 'ms' || opts.person === 'fp')))) {
+        form = replaceVowelAfterSlot(form, slots, 2, 'ֵ', 'ַ');
       }
     }
     return form;
   }
 
-  // Patach ganuv: when a form ends in a guttural R3 (ח/ע/ה) preceded by
-  // a long vowel (holam, tzere, kamatz), a patach is written under the
-  // final guttural (pronounced before it). The ְנָה suffix is not R3.
+  // Patach ganuv: when a form ends in a guttural R3 (ח/ע) preceded by
+  // a long vowel (holam, tzere, or hirik-yod), a patach is written
+  // under the final guttural (pronounced before it). The ְנָה suffix
+  // is not R3. The workbook takes NO furtive patach after kamatz
+  // (נִשְׁבָּע, not *נִשְׁבָּעַ), so kamatz is not a trigger here.
+  // R3 ה is excluded: in III-he roots the final ה is a vowel letter,
+  // not a consonant, and takes no furtive patach (גָּלָה, not גָּלָהַ).
   function patachGanuv(form, root) {
     if (root.length !== 3) return form;
     var r3 = root[2];
-    if (r3 !== 'ח' && r3 !== 'ע' && r3 !== 'ה') return form;
+    if (r3 !== 'ח' && r3 !== 'ע') return form;
     if (form[form.length - 1] !== r3) return form;
     if (/ְנָה$/.test(form)) return form;
     var before = form[form.length - 2];
-    if (before !== 'ֹ' && before !== 'ֵ' && before !== 'ָ') return form;
+    if (before === 'י' && form[form.length - 3] === 'ִ') {
+      // Hirik-yod is a long vowel (הִצְלִיחַ).
+    } else if (before !== 'ֹ' && before !== 'ֵ') {
+      return form;
+    }
     return form + 'ַ';
   }
 
@@ -743,35 +875,116 @@
   // lengthen the preceding short vowel (compensation). Applies to the
   // Piel/Pual/Hitpael/Hufal templates. The vowel before R2 sits on R1
   // (or on the prefix for Hitpael): hirik->tzere, patach->kamatz,
-  // kubutz->holam.
+  // kubutz->holam. Only a dagesh sitting immediately after R2 is
+  // removed — a dagesh elsewhere in the form (e.g. the shuruk at the
+  // end of a 3p past form) must be left alone.
   function compensateGutturalR2(form, root, binyan) {
     if (root.length !== 3) return form;
     var r2 = root[1];
     if (!isGuttural(r2) && r2 !== 'ר') return form;
     if (['piel', 'pual', 'hitpael', 'hufal'].indexOf(binyan) === -1) return form;
-    if (form.indexOf(DAGESH) === -1) return form;
-    var out = form.replace(DAGESH, '');
+    // Find R2 by the dagesh after it (indexOf(r2) alone would catch a
+    // prefix א/ה first). Only a dagesh sitting immediately after R2 is
+    // removed — a dagesh elsewhere (e.g. the shuruk of a 3p past form)
+    // must be left alone.
+    var idx = form.indexOf(r2 + DAGESH);
+    if (idx === -1) return form;
+    var out = form.slice(0, idx + 1) + form.slice(idx + 2);
     // Lengthen the vowel immediately before R2.
-    var idx = out.indexOf(r2);
     if (idx > 0) {
       var before = out[idx - 1];
       var repl = { 'ִ': 'ֵ', 'ַ': 'ָ', 'ֻ': 'ֹ' }[before];
       if (repl) out = out.slice(0, idx - 1) + repl + out.slice(idx);
     }
+    // A segol under a true guttural R2 (א/ה/ח/ע) also lengthens to
+    // tzere when the dagesh is lost (Hitpa'el present fs:
+    // מִתְיָאֵשֶׁת, not *מִתְיָאֶשֶׁת). Resh keeps its segol
+    // (מְפָרֶקֶת), though the preceding vowel still lengthens.
+    if (isGuttural(r2) && out[idx + 1] === 'ֶ') {
+      out = out.slice(0, idx + 1) + 'ֵ' + out.slice(idx + 2);
+    }
     return out;
   }
 
-  // Hitpael metathesis: when R1 is a sibilant (ז/ס/ש), the ת of the
-  // prefix swaps with it (הסתדר, הזדמן, השתמר); when R1 is צ, the ת
-  // becomes ט and swaps (הצטלם). The swap replaces תְ+R1 with R1ְ+ת
-  // (or צְט), so the original R1 is not duplicated.
+  // Hitpael R1 adjustments: metathesis and assimilation.
+  // - R1 is a sibilant (ס/ש): the ת of the prefix swaps with it
+  //   (הסתדר, השתמר).
+  // - R1 is ז: the ת becomes ד (voicing), then metathesis follows
+  //   (הִזְדַּמֵּן). The ד takes a dagesh lene, which we do not mark.
+  // - R1 is צ: the ת becomes ט, then metathesis follows (הצטלם).
+  // - R1 is a dental (ד/ט/ת): the ת is swallowed into R1, which takes
+  //   a compensatory dagesh hazak (הִדַּבֵּק, הִטַּפֵּל, הִתַּמֵּם).
+  // The swap replaces תְ+R1 with R1ְ+ת (or צְט, זְד), so the original
+  // R1 is not duplicated. The dental replacement drops the תְ and puts
+  // a dagesh hazak on R1.
   function hitpaelMetathesis(form, root) {
-    if (root.length !== 3) return form;
+    if (root.length !== 3 && root.length !== 4) return form;
     var r1 = root[0];
-    if (SIBILANTS.indexOf(r1) === -1 && r1 !== 'צ') return form;
-    var rep = r1 === 'צ' ? 'צְט' : r1 + 'ְת';
+    if (SIBILANTS.indexOf(r1) === -1 && r1 !== 'צ' &&
+        r1 !== 'ד' && r1 !== 'ט' && r1 !== 'ת') return form;
+    if (r1 === 'ד' || r1 === 'ט' || r1 === 'ת') {
+      // Dental assimilation: drop the תְ, dagesh hazak on R1.
+      var reDental = new RegExp('^((?:לְהִ|הִ|מִ|[איתנ][ִֶ]))תְ' + r1);
+      return form.replace(reDental, '$1' + r1 + DAGESH);
+    }
+    var rep = r1 === 'צ' ? 'צְט' : r1 === 'ז' ? 'זְד' : r1 + 'ְת';
     var re = new RegExp('^((?:לְהִ|הִ|מִ|[איתנ][ִֶ]))תְ' + r1);
     return form.replace(re, '$1' + rep);
+  }
+
+  // III-tav / III-nun assimilation. When R3 is ת and a ת suffix
+  // follows, the two tavs merge into one with dagesh hazak
+  // (כָּרַתְתִּי -> כָּרַתִּי). When R3 is נ and a נ suffix follows
+  // (past 1p נוּ, future/imperative fp נָה), the two nuns merge the
+  // same way (זָקַנְנוּ -> זָקַנּוּ, תִּזְדַּקֵּנְנָה -> תִּזְדַּקֵּנָּה).
+  function assimilateThirdTavNun(form, root) {
+    if (root.length !== 3) return form;
+    var r3 = root[2];
+    if (r3 === 'ת') {
+      return form.replace('תְת', 'תּ');
+    }
+    if (r3 === 'נ') {
+      return form.replace('נְנ', 'נּ');
+    }
+    return form;
+  }
+
+  // Stative Pa'al verbs (rules.md: present pattern 2) take tzere in
+  // past 3ms (זָקֵן, שָׁמֵן) instead of the regular patach.
+  var STATIVE_ROOTS = ['בטל', 'בשל', 'גדל', 'זקנ', 'ישנ', 'כבד', 'שמנ'];
+
+  // Pa'al past adjustments: stative 3ms tzere, and III-nun 2mp/2fp
+  // keeping the full form with a shva under R1 (זְקַנְתֶּם).
+  function stativeAdjust(form, root, binyan, tense, person) {
+    if (binyan !== 'paal' || tense !== 'past' || root.length !== 3) return form;
+    if (root[2] === 'נ' && (person === '2mp' || person === '2fp')) {
+      return form.replace(/^([א-ת])ָ/, '$1ְ');
+    }
+    if (person === '3ms' && STATIVE_ROOTS.indexOf(root.join('')) !== -1) {
+      return form.replace(/^(.{3})ַ/, '$1ֵ');
+    }
+    return form;
+  }
+
+  // Hitpa'el suffixed-past tzere -> patach (הִתְלַבַּשְׁתִּי, matching
+  // Pi'el). The shift is blocked when R2 is a guttural or resh (the
+  // dagesh is lost and the tzere stands: הִתְיָאֵשְׁתִּי) and when R3
+  // is a guttural ח/ע (הִתְוַכֵּחְתִּי). Uses the slot map to find R2's
+  // vowel. Also applies to 4-letter roots (R3 is the doubled slot).
+  function hitpaelPastPatach(form, root, binyan, tense, person, slots) {
+    if (binyan !== 'hitpael' || tense !== 'past') return form;
+    if (['1s', '2ms', '2fs', '1p', '2mp', '2fp'].indexOf(person) === -1) return form;
+    if (root.length === 3) {
+      if (isGuttural(root[1]) || root[1] === 'ר') return form;
+      if (root[2] === 'ח' || root[2] === 'ע') return form;
+      return replaceVowelAfterSlot(form, slots, 2, 'ֵ', 'ַ');
+    }
+    if (root.length === 4) {
+      if (isGuttural(root[2]) || root[2] === 'ר') return form;
+      if (root[3] === 'ח' || root[3] === 'ע') return form;
+      return replaceVowelAfterSlot(form, slots, 3, 'ֵ', 'ַ');
+    }
+    return form;
   }
 
   // Which binyanim each root class covers. Regular covers all eight.
@@ -783,8 +996,8 @@
     'hollow-yod': ['paal'],
     'geminate': ['paal', 'piel'],
     'i-nun': ['paal', 'hifil'],
-    'i-yod': ['paal', 'hifil'],
-    'i-aleph': ['paal']
+    'i-yod': ['paal', 'hifil', 'hitpael'],
+    'i-aleph': ['paal', 'hufal']
   };
   var CLASS_NAMES = {
     'regular': 'Regular', 'iii-he': 'III-he', 'iii-aleph': 'III-aleph',
@@ -802,16 +1015,17 @@
       : IMPERATIVE_PERSONS;
     persons.forEach(function (person) {
       var tpl = paradigm[tense][person];
+      var slots = rootSlotMap(tpl);
       var form = fill(tpl, root);
+      // Guttural adjustments run first, while the slot map is still
+      // valid (later steps change string length).
+      form = gutturalize(form, root, { binyan: binyan, tense: tense, person: person, slots: slots });
+      form = hitpaelPastPatach(form, root, binyan, tense, person, slots);
       form = compensateGutturalR2(form, root, binyan);
       if (binyan === 'hitpael') form = hitpaelMetathesis(form, root);
-      var opts = { binyan: binyan };
-      if (tense === 'future') {
-        opts.futurePrefix = binyan === 'nifal' ? 'tzere'
-          : binyan === 'paal' ? 'patach' : null;
-      }
-      form = gutturalize(form, root, opts);
-      if (tense === 'future' || tense === 'imperative') form = patachGanuv(form, root);
+      form = assimilateThirdTavNun(form, root);
+      form = stativeAdjust(form, root, binyan, tense, person);
+      form = patachGanuv(form, root);
       out[person] = finalKafShva(form);
     });
     return out;
@@ -844,10 +1058,12 @@
       tables[tense] = paradigm[tense] ? buildTense(paradigm, root, binyan, tense) : null;
     });
     if (paradigm.infinitive) {
+      var slots = rootSlotMap(paradigm.infinitive);
       var inf = fill(paradigm.infinitive, root);
+      inf = gutturalize(inf, root, { binyan: binyan, tense: 'infinitive', slots: slots });
       inf = compensateGutturalR2(inf, root, binyan);
       if (binyan === 'hitpael') inf = hitpaelMetathesis(inf, root);
-      inf = gutturalize(inf, root, { binyan: binyan });
+      inf = assimilateThirdTavNun(inf, root);
       tables.infinitive = finalKafShva(patachGanuv(inf, root));
     } else {
       tables.infinitive = null;

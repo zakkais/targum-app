@@ -15,7 +15,8 @@ counts unchanged, 24,969 entries gained an `n` field.
 | `data/dict-aramaic.json` | 21,742 | 3.1 MB | jastrow 19,363; wiktionary 1,747; strongs 396; wiktionary+strongs 220; ledger 16 |
 | `data/dict-yiddish.json` | 11,369 | 2.1 MB | kaikki-yiddish 11,369 |
 | `data/roshei-teivos.json` | — | — | **NOT CREATED — RT data not ready** (see below) |
-| **Total** | **53,018** | **~8.6 MB** | |
+| `data/dikduk-binyanim.json` | 7 binyanim; 32 tables; 216 examples; 88 rules | 105 KB | המסלול לדקדוק (Walder Education, 2009) |
+| **Total (dictionary)** | **53,018** | **~8.6 MB** | |
 
 ## Reconciliation
 
@@ -84,6 +85,11 @@ or from a later enrichment pass. (Jastrow does carry `verbal_stem` data on
 2,337 records; entries whose gloss starts with "to " and whose record has a
 verbal stem are tagged `pos: "verb"` — 2,052 entries. All other Jastrow
 entries have `pos: null`.)
+
+Update 2026-11-19: binyan tables and verb examples now exist in
+`data/dikduk-binyanim.json` (see below), and the conjugator is validated
+against them (696/696). Dictionary entries still carry no shoresh/binyan
+fields.
 
 ### `pos` coverage
 - Modern: all 13,760 have pos. Yiddish: all 11,369 have pos.
@@ -190,6 +196,45 @@ them without an explanation rather than inventing one. Two headwords
 appear twice deliberately (מטה: staff group and bed group; עזר: with
 ישע and with סעד) — separate groups in the book. The seed group אור was
 dropped: it is not in the book at all.
+
+### Dikduk binyanim — READY (added 2026-11-19)
+`data/dikduk-binyanim.json` (105 KB) was built by
+`~/workspace/targum-app/sources/hifil-workbook/build_dikduk_data.py`
+from the extraction in the same directory: **7 binyanim** (Pa'al,
+Nif'al, Pi'el, Pu'al, Hif'il, Huf'al, Hitpa'el), **32 conjugation
+tables** (7 full paradigms + 25 guttural/special tables), **216 cited
+examples** (pesukim, Mishnah, Gemara, Midrash, tefillah), and **88
+rules** (9 general terms + 79 per-binyan). Schema: `{"source",
+"source_note", "general": {"title", "rules": [{"title", "text"}]},
+"binyanim": [{"id", "name", "hebrew", "meaning", "paradigm",
+"paradigm_3ms", "rules", "tables": [{"shoresh", "main", "label",
+"note"?, "tables": {past/present/future/imperative/infinitive}}],
+"examples": {section: [{text, reference, reference_en, source,
+note?}]}}]}`. Rendered by `assets/js/dikduk.js` into a Bootstrap
+accordion on `dikduk.html` (one item per binyan, in standard binyan
+order), with the General terms as a card above it.
+
+Rules are paraphrased in our own words from the workbooks (the
+extraction's `rules.md` was written as paraphrase, not quotation);
+tables and quoted sources are transcribed as printed. Workbook errors
+are kept as printed and flagged in `note` fields: several wrong
+citations (e.g. a pasuk cited to Bereishis 12:15 that is really
+Shemos 12:15), the Hitpa'el צלמ imperative column misprinting the
+סכל forms, and the יעצ rule/table self-contradiction (rule text says
+ayin takes no tashlum dagesh; the tables print kamatz). The Nif'al
+I-guttural section genuinely uses a different example root per tense
+(ענש past/present, חתמ future, רדמ imperative) — kept as separate
+tables with explanatory notes. Pu'al and Huf'al have no imperative or
+infinitive (`null` in the data; the page says "none").
+
+Validation: counts asserted by the build script (7 binyanim, 32
+tables, 216 examples, 88 rules); render logic smoke-tested in Node
+(32 checks) plus a DOM-stub integration test (14 checks); rendered
+page verified in headless Chromium at phone width (390px) — 7
+accordion items, 95 tense tables in responsive wrappers, no console
+errors, no horizontal overflow, accordion collapse works. The
+conjugator re-validated 696/696 against the workbook tables after
+the fix (see `sources/hifil-workbook/validation-report.md`).
 
 ## Notes for the site builder
 - `dict-aramaic.json` is the largest file (3.1 MB, 21,742 entries); consider
