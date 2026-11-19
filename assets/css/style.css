@@ -8,6 +8,12 @@
    and focus rings. The subtle/muted tints keep the default blue scale,
    which is close to the brand blue. */
 :root {
+  /* The site is light-only by design. Bootstrap 6 follows the OS color
+     scheme by default, which turned form controls, pills and tables
+     black on dark-mode phones while the page itself stayed light.
+     data-bs-theme="light" on <html> pins the Bootstrap tokens; this
+     pins native controls too. */
+  color-scheme: light;
   --targum-blue: #1a73e8;
   --targum-blue-dark: #1a56db;
   --targum-navy: #0f2a44;
